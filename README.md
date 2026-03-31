@@ -1,5 +1,8 @@
 [![MCP Badge](https://lobehub.com/badge/mcp-full/seonaru-lexguard-mcp)](https://lobehub.com/mcp/seonaru-lexguard-mcp)
 
+> 최근 관심 가져주신 분들 덕분에 프로젝트를 다시 정리하고 있습니다.
+> 부족한 부분이 많지만, 더 안정적이고 유용하게 다듬어보겠습니다.
+
 # ⚖️ LexGuard MCP (법실마리)
 
 > **한국 법률·판례·법령해석을 AI가 이해하기 쉬운 형태로 연결하는 MCP 서버**
