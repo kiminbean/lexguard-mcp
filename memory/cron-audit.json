@@ -1,0 +1,4770 @@
+[
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 17,
+    "active": 17,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ai-customer-support",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "total": 19,
+    "active": 19,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "total": 26,
+    "active": 26,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "이메일",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Voice-to-TextNote",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ROS2",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Obsidian",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "total": 26,
+    "active": 26,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "이메일",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Voice-to-TextNote",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ROS2",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Obsidian",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "total": 26,
+    "active": 26,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "이메일",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Voice-to-TextNote",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ROS2",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Obsidian",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "total": 26,
+    "active": 26,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "이메일",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Voice-to-TextNote",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ROS2",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Obsidian",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "total": 26,
+    "active": 26,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "이메일",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Voice-to-TextNote",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ROS2",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Obsidian",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "total": 26,
+    "active": 26,
+    "problems": 0,
+    "details": [
+      {
+        "name": "Name",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Gateway",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "하트비트:",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GeekNews",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "이메일",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "타로",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Voice-to-TextNote",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Moltbook",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "MoltGram",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "ROS2",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Obsidian",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "OpenClaw",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "달력",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "bylunai.com",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "X(Twitter)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "Reddit",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "macOS",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "북촌",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "GitHub",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "AI",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HuggingFace",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      },
+      {
+        "name": "HyperAgents",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false
+      }
+    ]
+  }
+]

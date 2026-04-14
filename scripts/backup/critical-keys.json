@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "description": "OpenClaw 핵심 설정 — 업데이트 후 반드시 확인",
+  "checks": [
+    {
+      "path": "tools.exec.security",
+      "expected": "full",
+      "critical": true,
+      "description": "exec 전체 권한"
+    },
+    {
+      "path": "agents.defaults.model.primary",
+      "expected": "zai/glm-5.1",
+      "critical": true,
+      "description": "기본 모델"
+    },
+    {
+      "path": "agents.defaults.imageModel.primary",
+      "expected": "google/gemini-3-pro-preview",
+      "critical": true,
+      "description": "이미지 모델"
+    },
+    {
+      "path": "agents.defaults.memorySearch.provider",
+      "expected": "openai",
+      "critical": true,
+      "description": "메모리 검색 프로바이더"
+    },
+    {
+      "path": "agents.defaults.memorySearch.enabled",
+      "expected": true,
+      "critical": true,
+      "description": "메모리 검색 활성화"
+    },
+    {
+      "path": "agents.defaults.heartbeat.every",
+      "expected": "1h",
+      "critical": false,
+      "description": "하트비트 주기"
+    },
+    {
+      "path": "channels.telegram.enabled",
+      "expected": true,
+      "critical": true,
+      "description": "Telegram 활성화"
+    },
+    {
+      "path": "channels.telegram.allowFrom",
+      "expected_contains": "8137155160",
+      "critical": true,
+      "description": "Telegram 허용 발신자"
+    },
+    {
+      "path": "plugins.slots.memory",
+      "expected": "memory-core",
+      "critical": true,
+      "description": "메모리 슬롯"
+    },
+    {
+      "path": "agents.defaults.workspace",
+      "expected": "/Users/ibkim/Projects/openclaw",
+      "critical": true,
+      "description": "워크스페이스 경로"
+    }
+  ],
+  "protected_files": [
+    {"path": "AGENTS.md", "description": "에이전트 규칙 (진화 엔진 영유지)"},
+    {"path": "MEMORY.md", "description": "장기 기억"},
+    {"path": "HEARTBEAT.md", "description": "하트비트 루틴"},
+    {"path": "SOUL.md", "description": "에이전트 성격"},
+    {"path": "USER.md", "description": "사용자 프로필"},
+    {"path": "TOOLS.md", "description": "도구 설정"},
+    {"path": "scripts/evolve.sh", "description": "진화 엔진"},
+    {"path": "scripts/metacognitive.sh", "description": "메타인지 엔진"},
+    {"path": "scripts/self-modify.sh", "description": "자기수정 루프"},
+    {"path": "scripts/auto-skill.sh", "description": "자동 스킬 생성"},
+    {"path": "scripts/cron-audit.sh", "description": "크론잡 감사"},
+    {"path": "scripts/prediction-tracker.sh", "description": "예측 추적"},
+    {"path": "scripts/settings-guard.sh", "description": "설정 보호 가드"},
+    {"path": "scripts/hyperagents-restore.sh", "description": "HyperAgents 자동 복구"},
+    {"path": "memory/failure-patterns.md", "description": "실패 패턴 DB"},
+    {"path": "memory/learning-state.json", "description": "학습 상태"},
+    {"path": "memory/evolution-log.md", "description": "진화 로그"},
+    {"path": "memory/metacognitive-log.md", "description": "메타인지 로그"}
+  ]
+}

@@ -59,3 +59,4 @@ start_server.ps1
 # Development intermediate documents (not needed for end users)
 docs/
 
+.vercel

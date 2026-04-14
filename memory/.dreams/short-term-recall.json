@@ -1,0 +1,458 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-14T23:49:47.512Z",
+  "entries": {
+    "memory:memory/2026-04-04.md:1:37": {
+      "key": "memory:memory/2026-04-04.md:1:37",
+      "path": "memory/2026-04-04.md",
+      "startLine": 1,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "# 2026-04-04 Daily Notes ## 🧠 학습 루프 구현 (옵션 A) ### 구현 내용 Hermes Agent의 자기 학습 개념을 OpenClaw에 적용 **1. 학습 상태 추적** — `memory/learning-state.json` - 스킬 생성/개선 횟수, 패턴 감지, 사용자 모델 업데이트 추적 **2. 자동 스킬 생성** — `scripts/auto-skill.sh` - 반복 작업 패턴 감지 시 자동으로 스킬 스캐폴드 생성 - 이미 존재하면 개선 모드로 전환 - 학습 상태 자동 업데이트 **3. HEARTBEAT 학습 루프** — 5단계 추가 - 6. 패턴 감지 및 스킬 자동 생성 - 7. 사용자 모델 자동 업데이트 (USER.md) - 8. 스킬 자기 개선 (사용 이력 기반) - 9. 학습 메트릭 기록 **4. 사용자 모델 강화** — `USER.md` - 관심사, 작업 패턴, 명시적 피드백, 커뮤니케이션 스타일 추적 - 학습 루프에 의해 자동 업데이트 **5. MEMORY.md 학습 메트릭 섹션** 추가 ### Hermes Agent → OpenClaw 매핑 | Hermes 기능 | OpenClaw 구현 | |---|---| | 스킬 자동 생성 | auto-skill.sh + HEARTBEAT 루틴 | | 스킬 자기 개선 | HEARTBEAT 8번 항목 | | 사용자 모델링 | USER.md",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7721148639917372,
+      "maxScore": 0.42630892693996425,
+      "firstRecalledAt": "2026-04-11T07:07:09.437Z",
+      "lastRecalledAt": "2026-04-12T05:11:00.443Z",
+      "queryHashes": [
+        "29bc90976c4d",
+        "72842de1dac5"
+      ],
+      "recallDays": [
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "memory/learning-state.json",
+        "생성/개선",
+        "scripts/auto-skill.sh",
+        "user.md",
+        "memory.md",
+        "auto-skill.sh",
+        "학습",
+        "루프"
+      ]
+    },
+    "memory:memory/2026-04-04.md:57:86": {
+      "key": "memory:memory/2026-04-04.md:57:86",
+      "path": "memory/2026-04-04.md",
+      "startLine": 57,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "- 최대 50개 제한, 한국어 이름에 `ko-` prefix - 학습 상태 자동 업데이트 **3. HEARTBEAT 학습 루프** — 12개 루틴 (3단계 실행 빈도) - ⚡ 매 Heartbeat: 이상 탐지만 — 정상이면 HEARTBEAT_OK - 📍 일 1회: 지식 정리, 인사이트, 보안, 메트릭 - 🧠 주 1회 (일요일): 패턴 감지, 스킬 생성, 예측 검증, 크론잡 감사 **4. 사용자 모델 강화** — `USER.md` - 관심사, 작업 패턴, 명시적 피드백, 커뮤니케이션 스타일 추적 **5. MEMORY.md 학습 메트릭 섹션** 추가 ### 추가 구현 (5가지 개선) 1. **오류 기반 학습** — `memory/failure-patterns.md` (6개 과거 실패 기록) 2. **크론잡 성과 추적** — `scripts/cron-audit.sh` (텍스트 출력 파싱) 3. **예측 정확도 추적** — `scripts/prediction-tracker.sh` 4. **세션 간 지식 전달** — AGENTS.md Session Startup 강화 5. **작업 후 자동 학습** — AGENTS.md에 규칙 추가 ### Hermes Agent → OpenClaw 매핑 | Hermes 기능 | OpenClaw 구현 | |---|---| | 스킬 자동 생성 | auto-skill.sh + HEARTBEAT 루틴 |",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7663349002599715,
+      "maxScore": 0.39702857136726377,
+      "firstRecalledAt": "2026-04-11T07:07:09.437Z",
+      "lastRecalledAt": "2026-04-12T05:11:00.443Z",
+      "queryHashes": [
+        "29bc90976c4d",
+        "72842de1dac5"
+      ],
+      "recallDays": [
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "heartbeat-ok",
+        "user.md",
+        "memory.md",
+        "memory/failure-patterns.md",
+        "scripts/cron-audit.sh",
+        "scripts/prediction-tracker.sh",
+        "agents.md",
+        "agents.md에"
+      ]
+    },
+    "memory:memory/2026-04-04.md:31:62": {
+      "key": "memory:memory/2026-04-04.md:31:62",
+      "path": "memory/2026-04-04.md",
+      "startLine": 31,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "| 스킬 자동 생성 | auto-skill.sh + HEARTBEAT 루틴 | | 스킬 자기 개선 | HEARTBEAT 8번 항목 | | 사용자 모델링 | USER.md + HEARTBEAT 7번 항목 | | 세션 간 기억 | memory-core + MEMORY.md + knowledge-base.md | | 지식 자동 저장 | HEARTBEAT 1~4번 항목 | ## 🔧 시스템 변경 - 비활성화된 플러그인 삭제 (memory-lancedb, perplexity, amazon-bedrock) - memory 슬롯: memory-core로 변경 ## 📋 크론잡 권한 수정 - AI Marketer 데일리 점검: exec 권한 추가 - 타로 심리상담 데일리 점검: exec 권한 추가 # 2026-04-04 Daily Notes ## 🧠 학습 루프 구현 (옵션 A) ### 구현 내용 Hermes Agent의 자기 학습 개념을 OpenClaw에 적용 **1. 학습 상태 추적** — `memory/learning-state.json` - 스킬 생성/개선 횟수, 패턴 감지, 사용자 모델 업데이트 추적 **2. 자동 스킬 생성** — `scripts/auto-skill.sh` - 반복 작업 패턴 감지 시 자동으로 스킬 스캐폴드 생성 - 이미 존재하면 개선 모드로 전환 - 최대 50개 제한, 한국어 이름에 `ko-` prefix -",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7780194759368896,
+      "maxScore": 0.3902048587799072,
+      "firstRecalledAt": "2026-04-11T07:07:09.437Z",
+      "lastRecalledAt": "2026-04-12T05:11:00.443Z",
+      "queryHashes": [
+        "29bc90976c4d",
+        "72842de1dac5"
+      ],
+      "recallDays": [
+        "2026-04-11",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "auto-skill.sh",
+        "user.md",
+        "memory-core",
+        "memory.md",
+        "knowledge-base.md",
+        "memory-lancedb",
+        "amazon-bedrock",
+        "memory-core로"
+      ]
+    },
+    "memory:memory/2026-04-11.md:27:55": {
+      "key": "memory:memory/2026-04-11.md:27:55",
+      "path": "memory/2026-04-11.md",
+      "startLine": 27,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "- 🧠 **실시간 작업** → MEMORY.md + memory/ (빠르고 안정적) - 📖 **정리/보관/시각화** → Obsidian (하루 종료 시 HEARTBEAT에서 동기화) ### Obsidian에 생성된 노트 (7개) 1. Daily/2026-04-04.md, 2026-04-05.md, 2026-04-11.md 2. Projects/OpenClaw.md, LexGuard.md 3. Insights/2026-04 Tech 트렌드.md 4. Knowledge/시스템 설정.md, 사용자 정보.md, 중요 결정 기록.md, 실패 패턴.md ## 🧠 학습 루프 재활성화 (16:05~18:28) ### 배경 - 4월 4일에 구현했던 학습 루프가 HEARTBEAT.md 수정으로 비활성화됨 - 스크립트 파일들은 남아있었으나 실행 루프가 빠져있었음 - 기수님이 \"토큰 소모 걱정 말라\" — Z.AI Coding Plan 1년 구독 ### 재활성화 내용 - HEARTBEAT.md에 학습 루프 루틴 복원 - 기존 스크립트 정상 확인 (auto-skill.sh, cron-audit.sh, prediction-tracker.sh) ### 자가 진화 엔진 신규 구현 (evolve.sh) - 기존: 데이터 수집만 하고 피드백 루프 약함 - 개선: 수집한 지식이 에이전트 동작을 개선하는 6단계 진화 프로세스 #### 진화 엔진 6단계 1",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3769554734230041,
+      "maxScore": 0.3769554734230041,
+      "firstRecalledAt": "2026-04-12T05:11:00.443Z",
+      "lastRecalledAt": "2026-04-12T05:11:00.443Z",
+      "queryHashes": [
+        "72842de1dac5"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "정리/보관/시각화",
+        "daily/2026-04-04.md",
+        "projects/openclaw.md",
+        "lexguard.md",
+        "insights/2026-04",
+        "트렌드.md",
+        "knowledge/시스템"
+      ]
+    },
+    "memory:memory/2026-04-11.md:49:77": {
+      "key": "memory:memory/2026-04-11.md:49:77",
+      "path": "memory/2026-04-11.md",
+      "startLine": 49,
+      "endLine": 77,
+      "source": "memory",
+      "snippet": "- 개선: 수집한 지식이 에이전트 동작을 개선하는 6단계 진화 프로세스 #### 진화 엔진 6단계 1. 🔄 실패 패턴 → 예방 규칙 자동 생성 2. ✅ 성공 패턴 → 모범 사례 추출 3. 👤 사용자 모델 → 커뮤니케이션 스타일 학습 4. 🧠 메모리 최적화 → MEMORY.md 크기/품질 관리 5. 🎯 스킬 생태계 → 미사용 스킬 감지, 개선 6. 🧬 진화 점수 → 종합 성장 지표 (0~100) #### 실행 모드 - `evolve.sh realtime` — 실패 패턴만 빠르게 확인 - `evolve.sh daily` — 실패/성공/사용자/메모리 분석 + 진화 점수 - `evolve.sh weekly` — 전체 분석 + 스킬 생태계 + 진화 로그 기록 ### 최초 실행 결과 - 진화 점수: **17/100** (🥚 시작 단계) - 6개 실패 패턴, 4개 반복 방지 규칙 활성 - 최근 4일간 740개 성공 작업 감지 - 사용자 모델 완성도: 0% (USER.md 미작성) ## 📋 설정 변경 요약 - AGENTS.md: Obsidian 지식 베이스 섹션 추가 (역할 분리 명시) - HEARTBEAT.md: 진화 엔진 daily/weekly 실행 루틴 추가 - TOOLS.md: Obsidian vault 경로 + CLI 정보 기록 - MEMORY.md: 학습 루프 영구 보존 + evolve.sh 추가 - scripts/e",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6803976446390152,
+      "maxScore": 0.3627376288175583,
+      "firstRecalledAt": "2026-04-12T05:11:00.443Z",
+      "lastRecalledAt": "2026-04-14T22:32:54.299Z",
+      "queryHashes": [
+        "72842de1dac5",
+        "e875c82786e6"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "크기/품질",
+        "evolve.sh",
+        "실패/성공/사용자/메모리",
+        "17/100",
+        "user.md",
+        "agents.md",
+        "heartbeat.md"
+      ]
+    },
+    "memory:memory/2026-04-04.md:80:105": {
+      "key": "memory:memory/2026-04-04.md:80:105",
+      "path": "memory/2026-04-04.md",
+      "startLine": 80,
+      "endLine": 105,
+      "source": "memory",
+      "snippet": "| 스킬 자동 생성 | auto-skill.sh + HEARTBEAT 루틴 | | 스킬 자기 개선 | HEARTBEAT 8번 항목 | | 사용자 모델링 | USER.md + HEARTBEAT 7번 항목 | | 세션 간 기억 | memory-core + MEMORY.md + knowledge-base.md | | 지식 자동 저장 | HEARTBEAT 1~4번 항목 | ## 🔧 시스템 변경 - 비활성화된 플러그인 삭제 (memory-lancedb, perplexity, amazon-bedrock) - memory 슬롯: memory-core로 변경 ## 📋 크론잡 권한 수정 - AI Marketer 데일리 점검: exec 권한 추가 - 타로 심리상담 데일리 점검: exec 권한 추가 ## 🔒 점검 및 안정화 - 학습 루프 전체 점검 완료 - 토큰 과다 소모 방지: HEARTBEAT를 3단계 실행 빈도로 분리 - 스킬 범람 방지: 최대 50개 제한 - 스크립트 실행 권한 (chmod +x) 부여 - 한국어 스킬 이름에 `ko-` prefix 추가 - cron-audit.sh: --json 대신 텍스트 파싱으로 변경 ## 🌤️ 날씨 - 오전: 비 (14°C), 오후: 비 멈춤 - 내일(일): 낮 17°C 맑음, 밤 11°C로 급강하 — 겉옷 필요",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3518824279308319,
+      "maxScore": 0.3518824279308319,
+      "firstRecalledAt": "2026-04-12T05:11:00.443Z",
+      "lastRecalledAt": "2026-04-12T05:11:00.443Z",
+      "queryHashes": [
+        "72842de1dac5"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "auto-skill.sh",
+        "user.md",
+        "memory-core",
+        "memory.md",
+        "knowledge-base.md",
+        "memory-lancedb",
+        "amazon-bedrock",
+        "memory-core로"
+      ]
+    },
+    "memory:memory/2026-04-12.md:20:42": {
+      "key": "memory:memory/2026-04-12.md:20:42",
+      "path": "memory/2026-04-12.md",
+      "startLine": 20,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "- API 키: `~/.config/moltbook/credentials.json`에서 발견 - Agent ID: db43989d-80d8-4294-8911-c70e65981cb8 - Agent name: Nata - ✅ **소유자 인증 완료** (16:34) — API 키 정상 작동 확인, is_claimed: true ### Moltbook 계정 정보 - Agent: Nata (https://moltbook.com/u/Nata) - 소유자 이메일: kiminbean@gmail.com - credentials: ~/.config/moltbook/credentials.json - API 키: 정상 작동 (소유자 인증 후 복구) - Karma: 102, 팔로워: 17, 글: 66, 댓글: 75 - 마지막 활동: 2026-02-22 ### Moltbook 알림 정리 (16:35~16:49) - 읽지 않은 알림 100개 → 전부 읽음 처리 완료 - 알림 내역: - 댓글 90개 (comment 59, reply 18, post_comment 13) - 새 팔로워 9명: PDMN, hope_valueism, claudetomato, 50ninety, circuit_sage, cybercentry, SoraChan, moltscreener, UrMo2d_agent - DM 요청 1건: @gig_0racle (humanp",
+      "recallCount": 178,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 67.21440944287383,
+      "maxScore": 0.5868824107456985,
+      "firstRecalledAt": "2026-04-12T20:10:32.859Z",
+      "lastRecalledAt": "2026-04-14T23:49:47.512Z",
+      "queryHashes": [
+        "4223111103a5",
+        "4a2e3517b102",
+        "7ead469377c2",
+        "6e162b7282a2",
+        "f68fd27ec165",
+        "fe1367ed17f0",
+        "7fa289a806a9",
+        "b345fd79911c",
+        "9286bb95877c",
+        "fdd871e77220",
+        "04087079a730",
+        "e3eec2de64f0",
+        "5a64eb66aa9c",
+        "ca0934f48087",
+        "48a04387c5f9",
+        "cf09b6edc8d0",
+        "c5f189839735",
+        "ff73face966b",
+        "2ca400805ef9",
+        "7a4c7324a88e",
+        "99d3d857e02e",
+        "14de4dd6e80f",
+        "de4c854138f3",
+        "71a786e64d0a",
+        "2d25fb6d49f3",
+        "41a73ef0a4df",
+        "badbecd08e56",
+        "22c470822c98",
+        "d03f1b15bf06",
+        "0c87af3fd25f",
+        "53635903f5a9",
+        "72aebdc22bb5"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-14",
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "config/moltbook/credentials.json",
+        "is-claimed",
+        "moltbook.com/u/nata",
+        "gmail.com",
+        "post-comment",
+        "hope-valueism",
+        "circuit-sage",
+        "urmo2d-agent"
+      ]
+    },
+    "memory:memory/2026-04-12.md:1:26": {
+      "key": "memory:memory/2026-04-12.md:1:26",
+      "path": "memory/2026-04-12.md",
+      "startLine": 1,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "# 2026-04-12 (일요일) ## 대화 내용 ### 날씨 확인 (14:56) - 서울 날씨: ☀️ 맑음, 20°C, 체감 20°C, 습도 37%, 바람 3m/s - 날씨 스킬(`weather/SKILL.md`) 사용, wttr.in + `?M` 플래그로 m/s 변환 ### Thinking Level 고정 (15:00~15:02) - 사용자 요청: Runtime thinking을 medium으로 영구 고정 - `openclaw.json`에 `agents.defaults.thinkingDefault: \"medium\"` 추가 - AGENTS.md 업데이트 후 복원 절차에 thinking medium 확인 단계 추가 (1b) - 업데이트되어도 medium 유지되도록 설정 완료 ### Moltbook 계정 복구 (15:36~16:30) - **문제**: Moltbook 대시보드 접근 불가, X 계정 연동 에러, 모든 이메일로 \"No account found\" - **원인**: Moltbook이 보안 강화 업데이트로 기존 API 키 전부 무효화, 소유자 인증(이메일+X) 필수화 - **이메일 초안**: support@moltbook.com에 영문 이메일 작성 (X 계정 연동 오류) - **API 호출 성공**: `POST /api/v1/agents/me/setup-owner-email` → kiminbean@gmail.com으로 설",
+      "recallCount": 96,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 37.04431256070392,
+      "maxScore": 0.553755377184493,
+      "firstRecalledAt": "2026-04-13T00:30:26.383Z",
+      "lastRecalledAt": "2026-04-14T23:37:59.021Z",
+      "queryHashes": [
+        "2c7809717361",
+        "6426206df53b",
+        "a8e9b8676b35",
+        "8020c1983d91",
+        "e6f74eef0101",
+        "d8529cf020fe",
+        "984035063305",
+        "69927f5bf095",
+        "2d25fb6d49f3",
+        "88b5f394643f",
+        "45236623b605",
+        "d7abf28a81ac",
+        "99d3d857e02e",
+        "0e237252914f",
+        "5ed2164b56c9",
+        "3f26d67c9585",
+        "c67ed23367e5",
+        "02c265859cb5",
+        "27a0985e5789",
+        "41a73ef0a4df",
+        "4fdc766a934e",
+        "22c470822c98",
+        "ba6b3058a635",
+        "bddd59dcd08b",
+        "ef94ed49b393",
+        "4a2e3517b102",
+        "7fa289a806a9",
+        "b345fd79911c",
+        "5a64eb66aa9c",
+        "c5f189839735",
+        "7a4c7324a88e",
+        "14de4dd6e80f"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-14",
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "3m/s",
+        "weather/skill.md",
+        "wttr.in",
+        "m/s",
+        "openclaw.json",
+        "agents.defaults.thinkingdefault",
+        "agents.md",
+        "moltbook.com에"
+      ]
+    },
+    "memory:memory/2026-04-05.md:19:42": {
+      "key": "memory:memory/2026-04-05.md:19:42",
+      "path": "memory/2026-04-05.md",
+      "startLine": 19,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "- ⚠️ 법령 기반 일반 참고자료이며 구체적 세무 처리는 세무사/세무서 문의 필요 ## exec 권한 완전 활성화 (11:00) - `tools.exec.security`를 `\"full\"`로 변경 - `autoApprove`에 `rm`, `npm`, `brew`, `trash`, `git` 등 추가 - 위험 명령어(`rm -rfi` 등)는 차단 - Moltbook 인기글 다이제스트 크론잡 2개 정리 (중복 제거, delivery 수정) - MoltGram 자동 작업 타임아웃 문제 → delivery에 to 추가 - `execApprovals`를 `enabled: true`로 변경했으나 실제로는 `tools.exec.security: \"full\"`이 효과적 - `channels.telegram.execApprovals`은 OpenClaw의 `/approve` 명령어용 메커니즘 ## 메모리 검색 변경 (10:59) - `memorySearch.provider`를 `\"local\"` → `\"openai\"`로 변경 - doctor에서 `node-llama-cpp` 누락 경고 → OpenAI 임베딩으로 전환 - `openclaw memory status --deep` 정상 확인 (text-embedding-3-small, 768 dims, 4/16 files) ## LexGuard MCP 버그수정 & Playwright 브라우저 자동화",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.5036906975199975,
+      "maxScore": 0.5573262178613319,
+      "firstRecalledAt": "2026-04-13T01:01:12.205Z",
+      "lastRecalledAt": "2026-04-14T23:37:59.021Z",
+      "queryHashes": [
+        "ea9105661a36",
+        "99d3d857e02e",
+        "22c470822c98"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "embedding",
+        "openai",
+        "세무사/세무서",
+        "tools.exec.security",
+        "channels.telegram.execapprovals",
+        "memorysearch.provider",
+        "node-llama-cpp",
+        "text-embedding-3-small"
+      ]
+    },
+    "memory:memory/2026-04-05.md:66:89": {
+      "key": "memory:memory/2026-04-05.md:66:89",
+      "path": "memory/2026-04-05.md",
+      "startLine": 66,
+      "endLine": 89,
+      "source": "memory",
+      "snippet": "- 이 세션에서 allowlist miss 명령어 30+회 연속 시도 → 에러 로그 누적 악화 - SIGTERM → Gateway 재시작으로 복구 ## exec 권한 영구 수정 + 크론잡 정리 (14:11~14:30) ### 문제 재발 - Gateway 재시작 후 `tools.exec` 섹션이 `openclaw.json`에 없어서 기본값(allowlist)으로 복귀 - 크론잡 서브에이전트가 exec denied → \"It seems exec is restricted\" 메시지가 기수님에게 전달 ### 재발 방지 대책 1. **`openclaw.json`에 `tools.exec.security: \"full\"` 영구 추가** — 설정 파일에 직접 기록하여 재시작 후에도 유지 2. **연속 에러 크론잡 비활성화**: - Moltbook 인기글 다이제스트 (94926823): consecutiveErrors=5, delivery 설정 에러 → 비활성화 - MoltGram 자동 작업 (72641011): consecutiveErrors=1, 타임아웃 → 비활성화 3. **Gateway 재시작 후 반드시 확인**: `tools.exec` 섹션이 설정 파일에 있는지 ### 교훈 - `config.patch`로 설정 변경하면 설정 파일에 반영되지만, 수동 파일 편집이나 Gateway 재시작 시 덮어씌워질 수 있음 - 중요 설정은 `",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.523052559167226,
+      "maxScore": 0.5660270072811132,
+      "firstRecalledAt": "2026-04-13T01:01:12.205Z",
+      "lastRecalledAt": "2026-04-14T23:37:59.021Z",
+      "queryHashes": [
+        "ea9105661a36",
+        "99d3d857e02e",
+        "22c470822c98"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "gateway",
+        "tools.exec",
+        "openclaw.json",
+        "tools.exec.security",
+        "config.patch",
+        "세션에서",
+        "allowlist",
+        "miss"
+      ]
+    },
+    "memory:memory/2026-04-13.md:1:24": {
+      "key": "memory:memory/2026-04-13.md:1:24",
+      "path": "memory/2026-04-13.md",
+      "startLine": 1,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "# 2026-04-13 (월) 작업 로그 ## 대화 요약 ### 1. 크론잭 관리 (18:09) - 전체 24개 크론잭 목록 확인. 모두 활성, 에러 0. - 이전에 수정한 Gateway Watchdog(timeout 180초)와 MoltGram 홍보(delivery 채널) 정상 복구 확인. ### 2. GeekNews \"월 $20 스택으로 $10K+ MRR\" 조사 (22:00) - 원문 URL을 찾지 못함 (GeekNews JS 렌더링, HN/Reddit 검색 불가) - 기존 요약 + 인프라 지식 기반으로 상세 분석 제공 - 핵심: Go + SQLite + 단일 VPS로 인프라 비용 극소화 - 기수님 프로젝트(AI Marketer, 타로, voice-to-textnote)에 적용 가능한 인사이트 정리 ### 3. Mac mini node 접근 권한 팝업 (22:24, 22:45) - node 프로세스가 Desktop/Music/Photos에 접근 시도 - 원인: openclaw-node (PID 68519) + next dev MoltGram (PID 2366) - macOS TCC가 node 전체에 대해 일괄 권한 요청 (실제 접근 시도 아님) - **결론: 음악/사진/데스크톱 접근할 이유 없음. 모두 \"허용 안 함\" 권장** ### 4. HyperAgents 실제 도움 여부 평가 (22:50) - 기수님 질문: \"Hyp",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9467006981372834,
+      "maxScore": 0.3155835747718811,
+      "firstRecalledAt": "2026-04-14T18:08:20.041Z",
+      "lastRecalledAt": "2026-04-14T23:37:59.021Z",
+      "queryHashes": [
+        "22c470822c98"
+      ],
+      "recallDays": [
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "gateway",
+        "hn/reddit",
+        "voice-to-textnote",
+        "desktop/music/photos에",
+        "openclaw-node",
+        "음악/사진/데스크톱",
+        "작업",
+        "로그"
+      ]
+    },
+    "memory:memory/2026-04-13.md:58:66": {
+      "key": "memory:memory/2026-04-13.md:58:66",
+      "path": "memory/2026-04-13.md",
+      "startLine": 58,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "- 진화 점수는 객관적 지표로만 의미 있음 - macOS TCC 권한 팝업은 node 전체에 대한 일괄 요청, 허용 안 함해도 무방 ## 수정된 파일 - `scripts/self-modify.sh` — 전면 재작성 (v2) - `scripts/metacognitive.sh` — 전면 재작성 (v2) - `scripts/evolve.sh` — 전면 재작성 (v2) - 크론잡 `7e932a00` — 페이로드 v2로 업데이트",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3078276813030243,
+      "maxScore": 0.3078276813030243,
+      "firstRecalledAt": "2026-04-14T22:32:54.299Z",
+      "lastRecalledAt": "2026-04-14T22:32:54.299Z",
+      "queryHashes": [
+        "e875c82786e6"
+      ],
+      "recallDays": [
+        "2026-04-15"
+      ],
+      "conceptTags": [
+        "scripts/self-modify.sh",
+        "scripts/metacognitive.sh",
+        "scripts/evolve.sh",
+        "진화",
+        "점수는",
+        "객관적",
+        "지표로만",
+        "의미"
+      ]
+    }
+  }
+}

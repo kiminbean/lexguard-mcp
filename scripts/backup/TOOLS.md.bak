@@ -19,13 +19,6 @@ Things like:
 - 참고: iCloud vault라 search-content 등 일부 명령어가 느릴 수 있음
 - 명령어: create, open, print, list, move, delete, search, daily, frontmatter
 
-### web_fetch_js (SPA 렌더링 웹 스크래퍼)
-- 경로: `scripts/web_fetch_js` (래퍼) → `scripts/web-fetch-js/web_fetch_js.mjs`
-- 용도: JS 렌더링이 필요한 SPA 페이지 크롤링 (web_fetch 도구 보완)
-- 사용: `./scripts/web_fetch_js <url> [--wait 2000] [--timeout 30000] [--format markdown|text] [--selector body] [--max-chars 50000]`
-- 의존: Playwright (scripts/web-fetch-js/node_modules)
-- 예시: `./scripts/web_fetch_js https://clawhub.ai --wait 3000 --max-chars 5000`
-
 ## Examples
 
 ```markdown

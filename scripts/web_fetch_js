@@ -1,0 +1,7 @@
+#!/bin/bash
+# web_fetch_js — SPA/JS 렌더링 웹 페이지 스크래퍼 래퍼
+# 사용법: web_fetch_js <url> [옵션]
+# 옵션: --wait, --timeout, --format, --selector, --max-chars, --no-headless
+
+SCRIPT_DIR="$(cd "$(dirname "$0")/web-fetch-js" && pwd)"
+exec node "$SCRIPT_DIR/web_fetch_js.mjs" "$@"

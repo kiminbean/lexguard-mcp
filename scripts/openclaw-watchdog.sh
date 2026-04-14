@@ -1,92 +1,146 @@
 #!/bin/bash
-# openclaw-watchdog.sh - Gateway 및 Telegram 상태 점검 스크립트
+# openclaw-watchdog.sh v2 — Multi-layer recovery watchdog for OpenClaw Gateway
+#
+# Defense layers (checked in order):
+#   L0 checks: launchd registration -> process -> TCP port
+#   L1 recovery: launchctl kickstart -k (SIGTERM + restart)
+#   L2 recovery: launchctl bootout + bootstrap (full re-registration)
+#   L3 recovery: force kill lingering PIDs + bootstrap (nuclear)
+#
+# Safety:
+#   - flock single instance (prevents duplicate runs from crontab + launchd)
+#   - NEVER exits 1 on recoverable state (avoids external-watchdog throttle)
+#   - `set -u` but NOT `set -e` so individual check failures don't abort recovery
+#   - Logs to ~/.openclaw/logs/watchdog.log (not repo memory/) to avoid bloat
 
-set -euo pipefail
+set -u
 
-TODAY=$(date '+%Y-%m-%d %H:%M:%S')
-LOG_FILE="$HOME/Projects/openclaw/memory/watchdog-$TODAY.log"
+LOG_FILE="$HOME/.openclaw/logs/watchdog.log"
+LOCK_FILE="/tmp/openclaw-watchdog.lock"
+GATEWAY_LABEL="ai.openclaw.gateway"
+GATEWAY_PLIST="$HOME/Library/LaunchAgents/${GATEWAY_LABEL}.plist"
+GATEWAY_PORT="${OPENCLAW_GATEWAY_PORT:-18789}"
+UID_NUM="$(id -u)"
 
-echo "🔍 Gateway 및 Telegram 상태 점검 - $TODAY" | tee -a "$LOG_FILE"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | tee -a "$LOG_FILE"
+mkdir -p "$(dirname "$LOG_FILE")"
 
-# 1. Gateway 상태 확인
-echo "📡 Gateway 상태 확인 중..." | tee -a "$LOG_FILE"
-GATEWAY_STATUS=$(openclaw gateway status 2>&1)
-if [[ $? -eq 0 ]]; then
-    echo "✅ Gateway: 정상" | tee -a "$LOG_FILE"
-    echo "$GATEWAY_STATUS" | grep -E "(Service:|Gateway:|Runtime:)" | tee -a "$LOG_FILE"
-else
-    echo "❌ Gateway: 오류" | tee -a "$LOG_FILE"
-    echo "$GATEWAY_STATUS" | tee -a "$LOG_FILE"
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"; }
+
+# Log rotation (20MB)
+if [ -f "$LOG_FILE" ]; then
+    size=$(stat -f%z "$LOG_FILE" 2>/dev/null || echo 0)
+    [ "$size" -gt 20971520 ] && mv "$LOG_FILE" "${LOG_FILE}.prev"
 fi
 
-# 2. 크론잡 상태 확인
-echo "" | tee -a "$LOG_FILE"
-echo "⏰ 크론잡 상태 확인 중..." | tee -a "$LOG_FILE"
-CRON_STATUS=$(openclaw cron list 2>&1)
-if [[ $? -eq 0 ]]; then
-    echo "✅ 크론잡: 정상" | tee -a "$LOG_FILE"
-    # Gateway Watchdog 상세 확인
-    echo "$CRON_STATUS" | grep -A5 "Gateway Watchdog" | tee -a "$LOG_FILE"
-else
-    echo "❌ 크론잡: 오류" | tee -a "$LOG_FILE"
-    echo "$CRON_STATUS" | tee -a "$LOG_FILE"
+# Single-instance guard (macOS: no flock; use PID file)
+if [ -f "$LOCK_FILE" ]; then
+    existing_pid=$(cat "$LOCK_FILE" 2>/dev/null || echo "")
+    if [ -n "$existing_pid" ] && kill -0 "$existing_pid" 2>/dev/null; then
+        log "another watchdog instance running (pid=$existing_pid) — skip"
+        exit 0
+    fi
 fi
+echo $$ > "$LOCK_FILE"
+trap 'rm -f "$LOCK_FILE"' EXIT INT TERM
 
-# 3. 노드(Telegram) 상태 확인
-echo "" | tee -a "$LOG_FILE"
-echo "📱 노드(Telegram) 상태 확인 중..." | tee -a "$LOG_FILE"
-NODE_STATUS=$(openclaw nodes status 2>&1)
-if [[ $? -eq 0 ]]; then
-    echo "✅ 노드 시스템: 정상" | tee -a "$LOG_FILE"
-    # 연결된 노드 수 확인
-    CONNECTED_NODES=$(echo "$NODE_STATUS" | grep -o "Connected: [0-9]*" | awk -F: '{print $2}' || echo "0")
-    PAIRED_NODES=$(echo "$NODE_STATUS" | grep -o "Paired: [0-9]*" | awk -F: '{print $2}' || echo "0")
-    echo "연결된 노드: $CONNECTED_NODES, 페어링된 노드: $PAIRED_NODES" | tee -a "$LOG_FILE"
-    
-    # 노드별 상태 출력
-    echo "$NODE_STATUS" | tail -n +2 | sed '$d' | tee -a "$LOG_FILE"
-else
-    echo "❌ 노드: 오류" | tee -a "$LOG_FILE"
-    echo "$NODE_STATUS" | tee -a "$LOG_FILE"
-fi
+# ── Checks ─────────────────────────────────────────────────
+check_launchd() {
+    launchctl list 2>/dev/null | awk '{print $3}' | grep -Fxq "$GATEWAY_LABEL"
+}
+check_process() {
+    pgrep -f "openclaw.*gateway|node .*openclaw/dist/index.js.*gateway" >/dev/null 2>&1
+}
+check_port() {
+    lsof -nP -iTCP:"$GATEWAY_PORT" -sTCP:LISTEN >/dev/null 2>&1
+}
 
-# 4. 시스템 리소스 확인
-echo "" | tee -a "$LOG_FILE"
-echo "💾 시스템 리소스 확인 중..." | tee -a "$LOG_FILE"
-MEMORY_INFO=$(top -l 1 -n 0 | grep "PhysMem")
-if [[ $? -eq 0 ]]; then
-    echo "✅ 시스템 메모리: 정상" | tee -a "$LOG_FILE"
-    echo "메모리 정보: $MEMORY_INFO" | tee -a "$LOG_FILE"
-else
-    echo "⚠️ 시스템 메모리: 확인 불가" | tee -a "$LOG_FILE"
-fi
+# ── Recovery ───────────────────────────────────────────────
+recover_kickstart() {
+    log "L1: launchctl kickstart -k"
+    launchctl kickstart -k "gui/${UID_NUM}/${GATEWAY_LABEL}" >>"$LOG_FILE" 2>&1 || true
+}
+recover_bootstrap() {
+    log "L2: bootout + bootstrap"
+    launchctl bootout "gui/${UID_NUM}/${GATEWAY_LABEL}" >>"$LOG_FILE" 2>&1 || true
+    sleep 1
+    launchctl bootstrap "gui/${UID_NUM}" "$GATEWAY_PLIST" >>"$LOG_FILE" 2>&1 || true
+    launchctl enable "gui/${UID_NUM}/${GATEWAY_LABEL}" >>"$LOG_FILE" 2>&1 || true
+    launchctl kickstart "gui/${UID_NUM}/${GATEWAY_LABEL}" >>"$LOG_FILE" 2>&1 || true
+}
+recover_nuclear() {
+    log "L3: nuclear (pkill -9 + bootstrap)"
+    pkill -9 -f "openclaw.*gateway" 2>/dev/null || true
+    sleep 2
+    recover_bootstrap
+}
 
-# 5. 최종 결과
-echo "" | tee -a "$LOG_FILE"
-echo "📊 점검 결과 요약 - $TODAY" | tee -a "$LOG_FILE"
+wait_for_port() {
+    local timeout="${1:-10}"; local t=0
+    while [ "$t" -lt "$timeout" ]; do
+        check_port && return 0
+        sleep 1; t=$((t + 1))
+    done
+    return 1
+}
 
-# 상태 판별
-ERROR_COUNT=0
-if echo "$GATEWAY_STATUS" | grep -q "❌\|error\|오류"; then
-    echo "❌ Gateway 오류 감지" | tee -a "$LOG_FILE"
-    ((ERROR_COUNT++))
-fi
+# ── Main tick ──────────────────────────────────────────────
+log "=== tick ==="
 
-if echo "$CRON_STATUS" | grep -q "❌\|error\|오류"; then
-    echo "❌ 크론잡 오류 감지" | tee -a "$LOG_FILE"
-    ((ERROR_COUNT++))
-fi
-
-if [[ $CONNECTED_NODES -eq 0 ]]; then
-    echo "⚠️ 연결된 노드 없음" | tee -a "$LOG_FILE"
-    ((ERROR_COUNT++))
-fi
-
-if [[ $ERROR_COUNT -eq 0 ]]; then
-    echo "✅ 모든 서비스 정상" | tee -a "$LOG_FILE"
+if [ ! -f "$GATEWAY_PLIST" ]; then
+    log "FATAL: plist missing at $GATEWAY_PLIST"
     exit 0
-else
-    echo "❌ 총 $ERROR_COUNT개 문제 감지" | tee -a "$LOG_FILE"
-    exit 1
 fi
+
+registered="no"; process="no"; port="no"
+check_launchd && registered="yes"
+check_process && process="yes"
+check_port && port="yes"
+log "state: launchd=$registered process=$process port=$port"
+
+# Healthy path
+if [ "$port" = "yes" ] && [ "$registered" = "yes" ]; then
+    log "healthy"
+    exit 0
+fi
+
+# Not registered → bootstrap
+if [ "$registered" = "no" ]; then
+    log "not registered — recovering"
+    if [ "$process" = "yes" ]; then
+        recover_nuclear
+    else
+        recover_bootstrap
+    fi
+    if wait_for_port 15; then
+        log "RECOVERED (bootstrap)"
+    else
+        log "WARN: port still dead after bootstrap"
+    fi
+    exit 0
+fi
+
+# Registered but dead → kickstart → bootstrap → nuclear
+if [ "$registered" = "yes" ] && [ "$port" = "no" ]; then
+    log "registered but port dead — kickstart"
+    recover_kickstart
+    if wait_for_port 10; then
+        log "RECOVERED (kickstart)"
+        exit 0
+    fi
+    log "kickstart failed — bootstrap"
+    recover_bootstrap
+    if wait_for_port 15; then
+        log "RECOVERED (bootstrap)"
+        exit 0
+    fi
+    log "bootstrap failed — nuclear"
+    recover_nuclear
+    if wait_for_port 15; then
+        log "RECOVERED (nuclear)"
+    else
+        log "FATAL: all recovery layers failed"
+    fi
+fi
+
+log "tick complete"
+exit 0

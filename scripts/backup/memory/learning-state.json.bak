@@ -4,17 +4,17 @@
   "skillsCreated": 0,
   "skillsImproved": 0,
   "patternsDetected": [],
-  "userModelUpdates": 54,
+  "userModelUpdates": 52,
   "knowledgeEntries": 0,
   "recentTasks": [],
   "failureAnalysis": {
     "totalFailures": 6,
     "repeatRules": 4,
-    "lastAnalyzed": "2026-04-14T22:32:38Z"
+    "lastAnalyzed": "2026-04-13T13:55:45Z"
   },
-  "userModelScore": 83,
-  "evolutionScore": 85,
-  "lastEvolution": "2026-04-14T22:32:38Z",
+  "userModelScore": 0,
+  "evolutionScore": 37,
+  "lastEvolution": "2026-04-13T13:55:45Z",
   "scriptHashes": {
     "hyperagents-restore.sh": {
       "hash": "043fdbc90ea8",
@@ -53,7 +53,7 @@
       "size": 10491
     }
   },
-  "lastMetaAnalysis": "2026-04-14T22:32:41Z",
+  "lastMetaAnalysis": "2026-04-13T13:56:52Z",
   "evolutionScoreHistory": [
     {
       "date": "2026-04-12",
@@ -114,27 +114,19 @@
     {
       "date": "2026-04-13",
       "score": 37
-    },
-    {
-      "date": "2026-04-14",
-      "score": 78
-    },
-    {
-      "date": "2026-04-15",
-      "score": 85
     }
   ],
   "metacognitiveProposals": [
     {
       "id": "cron-slow",
       "priority": "medium",
-      "metric": "평균 122초",
-      "description": "크론잭 평균 실행시간 122초. 리소스 낭비 가능성.",
+      "metric": "평균 121초",
+      "description": "크론잭 평균 실행시간 121초. 리소스 낭비 가능성.",
       "action": "lightContext 활용, payload 단순화, timeout 최적화",
-      "evidence": "avg duration = 121593ms"
+      "evidence": "avg duration = 121453ms"
     }
   ],
-  "lastProposalGeneration": "2026-04-14T22:32:41Z",
+  "lastProposalGeneration": "2026-04-13T13:56:52Z",
   "preModificationScore": 48,
   "preModificationTimestamp": "2026-04-12T05:04:06Z",
   "pendingModification": {
@@ -150,7 +142,7 @@
     "verdict": "IMPROVED",
     "timestamp": "2026-04-12T05:04:06Z"
   },
-  "metaAnalysisCount": 10,
+  "metaAnalysisCount": 8,
   "selfModificationCount": 3,
   "conversationQuality": {
     "completionRate": 32.1,
@@ -162,31 +154,31 @@
   },
   "metrics": {
     "cron": {
-      "total": 21,
-      "active": 21,
+      "total": 24,
+      "active": 24,
       "erroring": 0,
       "critical": 0,
-      "successRate": 95.2,
-      "avgDurationMs": 121593
+      "successRate": 95.8,
+      "avgDurationMs": 121453
     },
     "failures": {
       "recentCount": 0,
       "categories": {}
     },
     "conversation": {
-      "completed": 49,
-      "failed": 19,
-      "userRequests": 29,
-      "proactive": 9,
-      "completionRate": 72.1,
-      "proactiveRatio": 31.0,
+      "completed": 69,
+      "failed": 31,
+      "userRequests": 37,
+      "proactive": 25,
+      "completionRate": 69.0,
+      "proactiveRatio": 67.6,
       "daysAnalyzed": 7
     },
     "memory": {
-      "sizeBytes": 4585,
-      "sizeKB": 4.5,
+      "sizeBytes": 4380,
+      "sizeKB": 4.3,
       "lines": 73,
-      "dailyNotes": 13
+      "dailyNotes": 10
     }
   }
 }
