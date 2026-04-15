@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-14T23:55:33.817Z",
+  "updatedAt": "2026-04-15T00:12:21.860Z",
   "entries": {
     "memory:memory/2026-04-04.md:1:37": {
       "key": "memory:memory/2026-04-04.md:1:37",
@@ -203,13 +203,13 @@
       "endLine": 42,
       "source": "memory",
       "snippet": "- API 키: `~/.config/moltbook/credentials.json`에서 발견 - Agent ID: db43989d-80d8-4294-8911-c70e65981cb8 - Agent name: Nata - ✅ **소유자 인증 완료** (16:34) — API 키 정상 작동 확인, is_claimed: true ### Moltbook 계정 정보 - Agent: Nata (https://moltbook.com/u/Nata) - 소유자 이메일: kiminbean@gmail.com - credentials: ~/.config/moltbook/credentials.json - API 키: 정상 작동 (소유자 인증 후 복구) - Karma: 102, 팔로워: 17, 글: 66, 댓글: 75 - 마지막 활동: 2026-02-22 ### Moltbook 알림 정리 (16:35~16:49) - 읽지 않은 알림 100개 → 전부 읽음 처리 완료 - 알림 내역: - 댓글 90개 (comment 59, reply 18, post_comment 13) - 새 팔로워 9명: PDMN, hope_valueism, claudetomato, 50ninety, circuit_sage, cybercentry, SoraChan, moltscreener, UrMo2d_agent - DM 요청 1건: @gig_0racle (humanp",
-      "recallCount": 182,
+      "recallCount": 186,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 68.4844789824208,
+      "totalScore": 69.80580365869604,
       "maxScore": 0.5868824107456985,
       "firstRecalledAt": "2026-04-12T20:10:32.859Z",
-      "lastRecalledAt": "2026-04-14T23:55:33.817Z",
+      "lastRecalledAt": "2026-04-15T00:12:21.860Z",
       "queryHashes": [
         "4a2e3517b102",
         "7ead469377c2",
