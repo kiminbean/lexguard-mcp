@@ -154,60 +154,51 @@ call_llm() {
     local system_prompt="$2"
 
     local provider endpoint key model
-    # 1차: OpenAI
-    provider="openai"
-    endpoint=$(python3 -c "
-import json
-try:
-    with open('$CONFIG_JSON') as f: c = json.load(f)
-    print(c['models']['providers']['openai']['baseUrl'])
-except: pass
-")
-    key=$(python3 -c "
-import json
-try:
-    with open('$CONFIG_JSON') as f: c = json.load(f)
-    print(c['models']['providers']['openai']['apiKey'].strip())
-except: pass
-")
-    model=$(python3 -c "
-import json
-try:
-    with open('$CONFIG_JSON') as f: c = json.load(f)
-    models = c['models']['providers']['openai'].get('models', [])
-    if isinstance(models, list) and models: print(models[0])
-    elif isinstance(models, dict): print(next(iter(models)))
-    else: print('gpt-4o-mini')
-except: print('gpt-4o-mini')
-")
+    # env override: PROPOSE_PROVIDER, PROPOSE_MODEL
+    local override_provider="${PROPOSE_PROVIDER:-}"
+    local override_model="${PROPOSE_MODEL:-glm-5.1}"
 
-    if [ -z "$key" ] || [ -z "$endpoint" ]; then
-        # 2차: zai (GLM)
-        provider="zai"
-        endpoint=$(python3 -c "
+    # 1차: zai (GLM-5.1 기본 — 무료 + reasoning + 128K 출력)
+    provider="zai"
+    endpoint=$(python3 -c "
 import json
 try:
     with open('$CONFIG_JSON') as f: c = json.load(f)
     print(c['models']['providers']['zai']['baseUrl'])
 except: pass
 ")
-        key=$(python3 -c "
+    key=$(python3 -c "
 import json
 try:
     with open('$CONFIG_JSON') as f: c = json.load(f)
     print(c['models']['providers']['zai']['apiKey'].strip())
 except: pass
 ")
-        model=$(python3 -c "
+    model="$override_model"
+
+    # override_provider=openai 이거나 zai 키/엔드포인트 없으면 OpenAI fallback
+    if [ "$override_provider" = "openai" ] || [ -z "$key" ] || [ -z "$endpoint" ]; then
+        provider="openai"
+        endpoint=$(python3 -c "
 import json
 try:
     with open('$CONFIG_JSON') as f: c = json.load(f)
-    models = c['models']['providers']['zai'].get('models', [])
-    if isinstance(models, list) and models: print(models[0])
-    elif isinstance(models, dict): print(next(iter(models)))
-    else: print('glm-4-flash')
-except: print('glm-4-flash')
+    print(c['models']['providers']['openai']['baseUrl'])
+except: pass
 ")
+        key=$(python3 -c "
+import json
+try:
+    with open('$CONFIG_JSON') as f: c = json.load(f)
+    print(c['models']['providers']['openai']['apiKey'].strip())
+except: pass
+")
+        # OpenAI fallback 기본 모델: gpt-4o (코드 수정 품질 우선)
+        if [ "$override_model" = "glm-5.1" ]; then
+            model="gpt-4o"
+        else
+            model="$override_model"
+        fi
     fi
 
     if [ -z "$key" ]; then
@@ -224,14 +215,18 @@ except: print('glm-4-flash')
     payload=$(PROMPT_FILE="$prompt_file" SYSTEM="$system_prompt" MODEL="$model" python3 << 'PYEOF'
 import json, os
 with open(os.environ['PROMPT_FILE']) as f: user = f.read()
+model = os.environ['MODEL']
+# 추론 모델(GLM-5.1 등)은 reasoning_content에 많은 토큰 사용 → 여유 필요
+# 일반 모델은 8K로 충분
+max_tokens = 16384 if 'glm' in model.lower() else 8192
 payload = {
-    "model": os.environ['MODEL'],
+    "model": model,
     "messages": [
         {"role": "system", "content": os.environ['SYSTEM']},
         {"role": "user", "content": user},
     ],
     "temperature": 0.3,
-    "max_tokens": 2048,
+    "max_tokens": max_tokens,
 }
 print(json.dumps(payload))
 PYEOF
@@ -256,10 +251,33 @@ PYEOF
     log_event "llm-call-success" "\"httpCode\":200"
 
     RESP="$response_file" python3 -c "
-import json, os, sys
+import json, os, sys, re
 with open(os.environ['RESP']) as f: r = json.load(f)
 try:
-    content = r['choices'][0]['message']['content']
+    msg = r['choices'][0]['message']
+    content = msg.get('content', '') or ''
+    finish = r['choices'][0].get('finish_reason', '')
+    # 추론 모델 케이스: content가 비었지만 reasoning_content에 DIFF가 있는 경우
+    if not content.strip():
+        rc = msg.get('reasoning_content', '') or ''
+        if rc:
+            # reasoning_content에서 DIFF 블록이나 코드펜스 diff 추출 시도
+            m = re.search(r'---DIFF-START---(.*?)---DIFF-END---', rc, re.DOTALL)
+            if m:
+                content = rc  # 이미 DIFF-START/END 마커가 있으면 그대로 전달
+            else:
+                # 마커가 없으면 마지막 diff 코드펜스 블록을 찾아 마커로 감싸기
+                diffs = re.findall(r'\`\`\`diff\n(.*?)\`\`\`', rc, re.DOTALL)
+                if diffs:
+                    content = f'---DIFF-START---\n{diffs[-1].rstrip()}\n---DIFF-END---\n---NOTES-START---\n(reasoning_content에서 추출)\n---NOTES-END---'
+                else:
+                    # diff 코드펜스도 없으면 reasoning 전체 출력 (파싱 실패 → stderr로)
+                    print(f'추론 모델 응답이지만 DIFF를 찾지 못함. finish={finish}', file=sys.stderr)
+                    print(rc[-2000:], file=sys.stderr)
+                    sys.exit(1)
+    if finish == 'length' and not content.strip():
+        print(f'❌ max_tokens 초과로 응답 잘림 (finish_reason=length)', file=sys.stderr)
+        sys.exit(1)
     print(content)
 except Exception as e:
     print(f'응답 파싱 실패: {e}', file=sys.stderr)
@@ -272,13 +290,19 @@ except Exception as e:
 SYSTEM_PROMPT="당신은 HyperAgents 자기진화 루프의 돌연변이 제안자입니다. 사용자가 제공한 운영 상태와 대상 bash 스크립트를 분석해 unified diff 1개와 근거를 생성하세요.
 
 규칙:
-1. 반드시 unified diff 형식 (patch -p1로 적용 가능). 파일 경로는 a/scripts/<FILENAME>, b/scripts/<FILENAME>.
+1. 반드시 unified diff 형식 (git apply --recount로 적용 가능). 파일 경로는 a/scripts/<FILENAME>, b/scripts/<FILENAME>.
 2. 변경 최소화: 하나의 명확한 개선만 제안 (새 함수 추가 < 기존 로직 조정).
 3. 안전: bash -n 통과해야 함. 외부 명령 사용 시 set -euo pipefail 존중.
 4. 한국어 주석 허용. 작동하지 않을 것 같으면 제안 금지.
-5. 출력 형식:
+5. **컨텍스트 정확성 (매우 중요)**:
+   - hunk 헤더 앞뒤로 최소 3줄의 컨텍스트를 **실제 파일에서 복사한 그대로** 포함하세요.
+   - 빈 줄, 공백, 주석 등 어떤 라인도 생략/압축하지 마세요. 중간 라인 건너뛰기 금지.
+   - 수정 대상 함수 내부에 여러 줄이 있다면 모두 context 또는 - 라인으로 유지하세요.
+   - 라인 번호(\`@@ -N,M +N,M @@\`)가 부정확해도 git apply --recount가 보정하지만, **context 라인 내용이 파일과 1바이트라도 다르면 실패합니다.**
+6. 코드펜스 금지: DIFF-START/END 마커 사이에 \`\`\`diff 등 markdown fence를 절대 포함하지 마세요. raw diff만.
+7. 출력 형식:
    ---DIFF-START---
-   (unified diff 내용)
+   (unified diff 내용, markdown fence 없이 raw)
    ---DIFF-END---
    ---NOTES-START---
    (한국어 근거 설명 + 위험요소 + 검증 방법)
@@ -329,6 +353,25 @@ if [ -z "$DIFF_CONTENT" ]; then
     exit 1
 fi
 
+# 후처리: LLM이 종종 ```diff ... ``` 코드펜스를 DIFF 블록 안에 넣는 문제 제거
+# (patch 명령은 non-diff 라인에서 실패하므로 반드시 제거해야 함)
+DIFF_CONTENT=$(printf '%s\n' "$DIFF_CONTENT" | python3 -c "
+import sys
+lines = sys.stdin.read().splitlines()
+# 앞/뒤 공백 라인 제거
+while lines and not lines[0].strip(): lines.pop(0)
+while lines and not lines[-1].strip(): lines.pop()
+# 맨 앞 \`\`\`(diff|patch)? 제거
+if lines and lines[0].strip().startswith('\`\`\`'):
+    lines.pop(0)
+# 맨 뒤 \`\`\` 제거
+if lines and lines[-1].strip() == '\`\`\`':
+    lines.pop()
+# 중간에 섞인 코드펜스도 제거 (diff 라인이 아닌 것만)
+cleaned = [l for l in lines if not (l.strip() == '\`\`\`' or l.strip().startswith('\`\`\`diff') or l.strip().startswith('\`\`\`patch'))]
+print('\n'.join(cleaned))
+")
+
 # 제안 ID
 PROPOSAL_ID="mutation-${TARGET%.sh}-$TS_COMPACT"
 
@@ -360,10 +403,14 @@ ${NOTES_CONTENT:-"(LLM이 근거 미생성)"}
 
 EOF
 
-# 사전 검증: patch --dry-run
-VALIDATION="✅ 적용 가능 (patch --dry-run 통과)"
-if ! (cd "$WORKSPACE" && patch -p1 --dry-run < "$DIFF_FILE" >/dev/null 2>&1); then
-    VALIDATION="⚠️ patch --dry-run 실패 — 사람이 검토 필요"
+# 사전 검증: git apply --recount (LLM hunk 카운트 오차 보정) → patch fallback
+VALIDATION=""
+if (cd "$WORKSPACE" && git apply --recount --check "$DIFF_FILE" 2>/dev/null); then
+    VALIDATION="✅ 적용 가능 (git apply --check 통과)"
+elif (cd "$WORKSPACE" && patch -p1 --dry-run < "$DIFF_FILE" >/dev/null 2>&1); then
+    VALIDATION="✅ 적용 가능 (patch --dry-run 통과)"
+else
+    VALIDATION="⚠️ 적용 불가 — 사람이 검토 필요"
     log_event "validation-failed" "\"file\":\"$DIFF_FILE\""
 fi
 

@@ -115,8 +115,15 @@ apply_proposal() {
     local bak=$(backup_script "$target") || { echo "  ❌ 백업 실패"; return 1; }
     echo "  💾 백업: $(basename "$bak")"
 
-    if ! patch -p1 -d "$SCRIPTS_DIR" < "$diff_file" >/dev/null 2>&1; then
-        echo "  ❌ 패치 실패 → 롤백"
+    # git apply --recount 우선 (LLM hunk count 오차 보정), 실패 시 patch fallback
+    local applied=false
+    if (cd "$WORKSPACE" && git apply --recount "$diff_file" 2>/dev/null); then
+        applied=true
+    elif patch -p1 -d "$SCRIPTS_DIR" < "$diff_file" >/dev/null 2>&1; then
+        applied=true
+    fi
+    if [ "$applied" != true ]; then
+        echo "  ❌ 패치 실패 (git apply + patch 둘 다) → 롤백"
         rollback "$target"
         return 1
     fi

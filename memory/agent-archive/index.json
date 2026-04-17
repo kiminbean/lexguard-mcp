@@ -6,8 +6,14 @@
       "parent": null,
       "timestamp": "2026-04-17T21:11:33Z",
       "score": 65
+    },
+    {
+      "id": "0002",
+      "parent": "0001",
+      "timestamp": "2026-04-17T21:52:50Z",
+      "score": 74
     }
   ],
-  "latestId": "0001",
-  "totalNodes": 1
+  "latestId": "0002",
+  "totalNodes": 2
 }

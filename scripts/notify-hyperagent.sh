@@ -74,19 +74,36 @@ send_telegram() {
     escaped=$(json_escape "$message")
     local payload="{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":$escaped,\"parse_mode\":\"HTML\"}"
 
+    local max_retries=3
+    local attempt=1
     local http_code
-    http_code=$(curl -sS -o /tmp/telegram-notify-response.json -w "%{http_code}" \
-        -X POST "https://api.telegram.org/bot${token}/sendMessage" \
-        -H "Content-Type: application/json" \
-        -d "$payload" 2>/dev/null || echo "000")
 
-    if [ "$http_code" = "200" ]; then
-        log_event "delivered" "\"httpCode\":$http_code"
-        return 0
-    else
-        log_event "failed" "\"httpCode\":$http_code"
+    while [ $attempt -le $max_retries ]; do
+        http_code=$(curl -sS -o /tmp/telegram-notify-response.json -w "%{http_code}" \
+            -X POST "https://api.telegram.org/bot${token}/sendMessage" \
+            -H "Content-Type: application/json" \
+            -d "$payload" 2>/dev/null || echo "000")
+
+        if [ "$http_code" = "200" ]; then
+            log_event "delivered" "\"httpCode\":$http_code,\"attempt\":$attempt"
+            return 0
+        fi
+
+        # 429 (Too Many Requests) 또는 5xx 서버 오류 시 재시도
+        if [[ "$http_code" =~ ^(429|5[0-9][0-9])$ ]] && [ $attempt -lt $max_retries ]; then
+            local wait_sec=$((attempt * attempt))
+            log_event "retry" "\"httpCode\":$http_code,\"attempt\":$attempt,\"wait\":${wait_sec}"
+            sleep "$wait_sec"
+            attempt=$((attempt + 1))
+            continue
+        fi
+
+        # 재시도 불가 오류(4xx) 또는 최대 재시도 초과
+        log_event "failed" "\"httpCode\":$http_code,\"attempt\":$attempt"
         return 1
-    fi
+    done
+
+    return 1
 }
 
 # ─── 메인: state에서 결과 추출 → 메시지 조립 ───

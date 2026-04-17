@@ -16,5 +16,7 @@
     "self-modify.sh": "af5fd16afba7b1c7884ef97435ca237c7b99a8bb3be49fd59f1b2fe3623f18df"
   },
   "benchmark": {},
-  "children": []
+  "children": [
+    "0002"
+  ]
 }

@@ -14,7 +14,7 @@
   },
   "userModelScore": 83,
   "evolutionScore": 74,
-  "lastEvolution": "2026-04-17T21:28:48Z",
+  "lastEvolution": "2026-04-17T21:52:50Z",
   "scriptHashes": {
     "evolve.sh": {
       "hash": "bffc1a8246b7",
@@ -39,10 +39,6 @@
   },
   "lastMetaAnalysis": "2026-04-17T21:28:33Z",
   "evolutionScoreHistory": [
-    {
-      "date": "2026-04-12",
-      "score": 30
-    },
     {
       "date": "2026-04-12",
       "score": 30
@@ -240,6 +236,16 @@
       "net": 0,
       "benchmark": 100.0,
       "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 74,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
     }
   ],
   "metacognitiveProposals": [
@@ -270,7 +276,7 @@
     "timestamp": "2026-04-12T05:04:06Z"
   },
   "metaAnalysisCount": 22,
-  "selfModificationCount": 3,
+  "selfModificationCount": 4,
   "conversationQuality": {
     "completionRate": 32.1,
     "proactiveRate": 76.5,
@@ -345,5 +351,14 @@
     }
   },
   "schemaVersion": 4,
-  "evolutionStatus": "📈 성장 중"
+  "evolutionStatus": "📈 성장 중",
+  "lastModification": {
+    "target": "notify-hyperagent.sh",
+    "proposal": "mutation-notify-hyperagent-20260418_065147.md",
+    "timestamp": "2026-04-18T06:50:00Z",
+    "scoreBefore": 74,
+    "scoreAfter": 74,
+    "newNodeId": "0002"
+  },
+  "activeNodeId": "0002"
 }
