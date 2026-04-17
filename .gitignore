@@ -60,3 +60,18 @@ start_server.ps1
 docs/
 
 .vercel
+
+# Next.js (build artifacts, dev cache may contain secrets)
+.next/
+next-env.d.ts
+
+# Backup configs with plaintext secrets
+scripts/backup/openclaw.json.*
+scripts/backup/self-modify/
+memory/proposals/*.md.bak
+memory/proposals/*.diff.bak
+
+# HyperAgent runtime state (can contain sensitive paths/tokens)
+memory/learning-state.json
+memory/metacognitive-log.md
+memory/evolution-log.md
