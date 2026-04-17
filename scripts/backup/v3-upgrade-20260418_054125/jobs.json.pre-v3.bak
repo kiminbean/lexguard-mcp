@@ -1,0 +1,804 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "34bcb2fb-92b1-4b7b-803d-999513e50f59",
+      "agentId": "main",
+      "name": "Reddit 데일리 핫이슈",
+      "enabled": true,
+      "createdAtMs": 1769904971779,
+      "updatedAtMs": 1776383470900,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 8 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Reddit에서 오늘의 핫이슈를 수집해서 정리해줘.\n\n1. 전체 핫이슈 Top 5: web_fetch로 https://www.reddit.com/r/all/hot.json?limit=10 에서 가져오기. 제목, 서브레딧, upvote 수, URL 포함.\n\n2. AI 관련 핫이슈 Top 5: web_fetch로 https://www.reddit.com/r/artificial+MachineLearning+ChatGPT+LocalLLaMA+singularity/hot.json?limit=10 에서 가져오기. 제목, 서브레딧, upvote 수, URL 포함.\n\n형식 (반드시 한국어로 작성):\n🔥 Reddit 데일리 핫이슈 (날짜)\n\n📌 전체 Top 5\n1. [제목 한국어 번역] (r/서브레딧, ⬆️ upvotes)\n   원문: [영어 원제목]\n   링크\n...\n\n🤖 AI Top 5\n1. [제목 한국어 번역] (r/서브레딧, ⬆️ upvotes)\n   원문: [영어 원제목]\n   링크\n...\n\n⚠️ 모든 제목과 설명을 한국어로 번역해서 작성. 원문은 참고용으로 작게 표시.\n\nJSON 파싱이 안 되면 web_fetch(markdown)로 가져와서 정리해도 됨.\n\n**추가 작업 (지식 축적):**\n수집한 글에서 의미 있는 인사이트를 /Users/ibkim/clawd/memory/knowledge-base.md에 추가해줘.\n- AI 기술 동향, 오픈소스, 산업 트렌드 중심\n- 커뮤니티 반응이 큰 주제는 '커뮤니티 인사이트'에 기록\n- 날짜/출처 표기, 중복 방지\n\n**중요: 텔레그램 전송은 하지 말 것. 리포트 내용을 summary로 출력하면 자동 전달됨.**",
+        "model": "zai/glm-5"
+      },
+      "state": {
+        "nextRunAtMs": 1776469800000,
+        "lastRunAtMs": 1776383400015,
+        "lastStatus": "ok",
+        "lastDurationMs": 70885,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      }
+    },
+    {
+      "id": "6ba26820-f3bc-4745-94a9-efc916003419",
+      "agentId": "main",
+      "name": "X(Twitter) 데일리 핫이슈",
+      "enabled": true,
+      "createdAtMs": 1769905184825,
+      "updatedAtMs": 1776382819864,
+      "schedule": {
+        "kind": "cron",
+        "expr": "40 8 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "X(Twitter) 트렌딩:\\n\\nweb_search \"Twitter trending topics today\". 토픽 5개 요약. 한국어.",
+        "timeoutSeconds": 300,
+        "model": "zai/glm-5"
+      },
+      "state": {
+        "lastRunAtMs": 1776382800015,
+        "lastStatus": "ok",
+        "lastDurationMs": 19849,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "nextRunAtMs": 1776469200000,
+        "lastDelivered": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      }
+    },
+    {
+      "id": "e89474ff-379a-4565-99a4-0ec38d26983b",
+      "agentId": "main",
+      "name": "GitHub 트렌딩 데일리",
+      "enabled": true,
+      "createdAtMs": 1770788196201,
+      "updatedAtMs": 1776385814196,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 9 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "GitHub 트렌딩:\\n\\nweb_search \"GitHub trending repositories today\" (limit 3). 간단 요약. 한국어.",
+        "timeoutSeconds": 120,
+        "model": "zai/glm-5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1776385800014,
+        "lastStatus": "ok",
+        "lastDurationMs": 14182,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "nextRunAtMs": 1776472200000,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "eee1c1ea-5e49-4735-984a-dc237eea9a4e",
+      "agentId": "main",
+      "name": "HuggingFace 트렌딩 위클리",
+      "enabled": true,
+      "createdAtMs": 1770789235175,
+      "updatedAtMs": 1776393084726,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 11 * * 2,5",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HuggingFace 트렌딩:\\n\\ncurl -s -H \"Authorization: Bearer $HUGGINGFACE_API_KEY\" \"https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=5\".\\n\\n모델 5개 요약. 한국어.",
+        "timeoutSeconds": 600,
+        "model": "zai/glm-5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776738600000,
+        "lastRunAtMs": 1776393000028,
+        "lastStatus": "ok",
+        "lastDurationMs": 84698,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "64074131-2a62-496e-b69d-5c43c465d39e",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "ROS2 데일리 강의",
+      "enabled": true,
+      "createdAtMs": 1771354103264,
+      "updatedAtMs": 1776427261109,
+      "schedule": {
+        "expr": "0 21 * * *",
+        "kind": "cron",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "기수님을 위한 ROS2 데일리 강의를 진행하세요.\n\n## 환경\n- **OS**: Ubuntu 24.04\n- **ROS2 배포판**: Jazzy Jalisco\n\n## 현재 진도 확인\n/Users/ibkim/Projects/openclaw/memory/ros2-progress.md 파일을 읽어서 현재 진도를 확인하세요.\n파일이 없으면 Day 1부터 시작.\n\n## 강의 구성\n1. **이론** (10-15분 분량)\n   - 핵심 개념 설명\n   - 코드 예시\n   - 다이어그램 (가능한 경우)\n\n2. **실습 과제**\n   - 따라할 수 있는 코드\n   - 연습 문제\n\n3. **다음 시간 예고**\n\n## 커리큘럼 (총 30일)\n### 1주차: 기초\n- Day 1: ROS2 Jazzy란 무엇인가? - 개요와 Ubuntu 24.04 설치\n- Day 2: 노드(Node)와 통신 모델\n- Day 3: 토픽(Topic) - 단방향 통신\n- Day 4: 서비스(Service) - 양방향 통신\n- Day 5: 액션(Action) - 장기 작업\n- Day 6: 파라미터(Parameter)\n- Day 7: 주간 복습 & 실습\n\n### 2주차: 실전 프로그래밍\n- Day 8: Python으로 노드 작성하기 (rclpy)\n- Day 9: C++로 노드 작성하기 (rclcpp)\n- Day 10: 토픽 Publisher/Subscriber 실습\n- Day 11: 서비스 Server/Client 실습\n- Day 12: 액션 Server/Client 실습\n- Day 13: 런치 파일(Launch File)\n- Day 14: 주간 복습 & 미니 프로젝트\n\n### 3주차: 로봇 시스템\n- Day 15: URDF - 로봇 모델링\n- Day 16: TF2 - 좌표 변환\n- Day 17: Gazebo 시뮬레이션\n- Day 18: RViz2 시각화\n- Day 19: 내비게이션 스택 개요 (Nav2)\n- Day 20: SLAM 개요\n- Day 21: 주간 복습 & 시뮬레이션 실습\n\n### 4주차: 심화 & 프로젝트\n- Day 22: ros2_control - 로봇 제어\n- Day 23: 이미지 처리 (cv_bridge)\n- Day 24: 센서 데이터 처리\n- Day 25: 멀티 로봇 시스템\n- Day 26: 실제 로봇 연동\n- Day 27: 디버깅 & 트러블슈팅\n- Day 28: 모범 사례 & 패턴\n- Day 29: 최종 프로젝트 (1)\n- Day 30: 최종 프로젝트 (2) & 수료\n\n## 텔레그램 형식\n🤖 ROS2 Jazzy 강의 - Day N/30\n━━━━━━━━━━━━━━━━━━\n\n📚 [주제]\n\n📖 이론\n(내용)\n\n💻 코드 예시\n```python\n(코드)\n```\n\n📝 오늘의 과제\n(과제)\n\n🎯 다음 시간: [주제]\n\n## 진도 저장\n강의 후 /Users/ibkim/Projects/openclaw/memory/ros2-progress.md 파일에 진도를 업데이트하세요.",
+        "model": "google-gemini-cli/gemini-3-pro-preview",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1776427200040,
+        "lastStatus": "ok",
+        "lastDurationMs": 61069,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1776513600000,
+        "lastRunStatus": "ok",
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered"
+      }
+    },
+    {
+      "id": "853b8a73-481d-4264-970a-aa3a595337d9",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "이메일 정기 확인 (3시간)",
+      "enabled": true,
+      "createdAtMs": 1771362131560,
+      "updatedAtMs": 1776434453747,
+      "schedule": {
+        "expr": "0 8,11,14,17,20,23 * * *",
+        "kind": "cron",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Gmail에서 중요한 읽지 않은 메일을 확인하고 텔레그램으로 보고하세요.\n\n## 확인 항목\n1. 에어비앤비 예약/알림 (체크인, 후기 요청 등)\n2. 보안 관련 (새 로그인, 결제 알림 등)\n3. 승인/결제 필요 메일\n4. 중요 개인 메일\n\n## 검색 명령어\ngog gmail search 'is:unread category:primary' --max 15 --account kiminbean@gmail.com\n\n## 보고 형식\n📧 이메일 확인 (날짜 시간)\n━━━━━━━━━━━━━━━━━━\n\n🔔 중요 메일\n- (목록)\n\n🏠 에어비앤비\n- (예약 현황)\n\n🔐 보안\n- (알림)\n\n💡 조치 필요\n- (항목)\n\n없으면 '새 중요 메일 없음' 보고",
+        "model": "google-gemini-cli/gemini-3-pro-preview",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "channel": "telegram",
+        "mode": "announce",
+        "to": "8137155160"
+      },
+      "state": {
+        "lastRunAtMs": 1776434400016,
+        "lastStatus": "ok",
+        "lastDurationMs": 53731,
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1776466800000,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "0f7671a1-b35f-4b1f-b4c8-7ff36167f528",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "달력 오늘 일정 (매일 아침)",
+      "enabled": true,
+      "createdAtMs": 1771362131575,
+      "updatedAtMs": 1776378635177,
+      "schedule": {
+        "expr": "30 7 * * *",
+        "kind": "cron",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "오늘 일정과 다가오는 예약을 확인하고 텔레그램으로 보고하세요.\n\n## 확인 항목\n1. 오늘 Google Calendar 일정\n2. 에어비앤비 체크인/체크아웃\n3. 다가오는 예약 (3일 이내)\n\n## 검색 명령어\n- gog calendar calendars --account kiminbean@gmail.com\n- gog gmail search 'from:airbnb subject:체크인 OR 체크아웃' --max 5 --account kiminbean@gmail.com\n\n## 보고 형식\n📅 오늘의 일정 (날짜)\n━━━━━━━━━━━━━━━━━━\n\n📆 Google Calendar\n- (일정 목록)\n\n🏠 에어비앤비\n- 오늘 체크인: (있으면)\n- 오늘 체크아웃: (있으면)\n\n🔜 다가오는 예약 (3일 이내)\n- (목록)\n\n일정이 없으면 '오늘 일정 없음' 보고",
+        "model": "zai/glm-5",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776465000000,
+        "lastRunAtMs": 1776378600009,
+        "lastStatus": "ok",
+        "lastDurationMs": 35168,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "ac956e51-fb83-45d9-98f0-19e0c17fcbac",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "하트비트: 시스템 상태 확인 (30분)",
+      "enabled": true,
+      "createdAtMs": 1771377763248,
+      "updatedAtMs": 1776452567983,
+      "schedule": {
+        "expr": "0 */2 * * *",
+        "kind": "cron",
+        "tz": "Asia/Seoul",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "OpenClaw 하트비트 시스템 상태 확인.\n\n## 확인 항목\n\n### 1. 게이트웨이 상태\nopenclaw gateway status\n- 실행 여부\n- 포트 상태\n- RPC 응답\n\n### 2. 크론잡 에러\nopenclaw cron list\n- **연속 에러 2회 이상(consecutiveErrors >= 2) 작업만 보고**\n- 1회 에러는 무시 (일시적 오류일 수 있음)\n- 비활성화된 작업\n- **예외: 다음 작업들은 수정/점검 중으로 무시**\n  - id=7ac36dd0-6ec8-49c5-a742-db4526b8fee3 (Moltbook $MOLTGRAM 홍보)\n  - id=84ba969e-a794-44f8-9352-2ab390952bd2 (MoltGram Moltbook 홍보 바이럴)\n  - id=72641011-175c-42f2-833f-196376a59899 (MoltGram 자동 작업)\n  - id=8380635b-9e19-4c01-a3c5-11bcec970444 (OpenClaw 자동 업데이트 - announce delivery 실패는 무시)\n  - id=6ba26820-f3bc-4745-94a9-efc916003419 (X(Twitter) 데일리 - Brave API Rate Limit)\n  - id=e89474ff-379a-4565-99a4-0ec38d26983b (GitHub 트렌딩 - Brave API Rate Limit)\n  - id=4a680cc9-8a26-4ed6-bc24-fad16213fa66 (bylunai.com 보안 - Brave API Rate Limit)\n  - id=b122823c-fa8c-4c32-aede-c92084bc9f1c (Brave API 모니터 - Brave API Rate Limit)\n\n### 3. 채널 상태\nopenclaw channels status\n- Telegram: enabled, running\n- 다른 채널 상태\n\n## 보고 형식 (이상 있을 때만)\n💓 하트비트 경고\n━━━━━━━━━━━━━━━━━━\n[항목] 문제 내용\n\n## 중요\n- **모두 정상이면 아무것도 보내지 말 것**\n- **consecutiveErrors가 1인 작업은 경보 대상 아님**\n- **예외 목록의 작업 에러는 무시**\n- 이상 있을 때만 알림",
+        "model": "zai/glm-5",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776459742549,
+        "lastRunAtMs": 1776452542563,
+        "lastStatus": "ok",
+        "lastDurationMs": 25420,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "4a680cc9-8a26-4ed6-bc24-fad16213fa66",
+      "agentId": "main",
+      "name": "bylunai.com 보안 점검 (매일)",
+      "enabled": true,
+      "createdAtMs": 1772053146728,
+      "updatedAtMs": 1776380439980,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "bylunai.com 보안:\\n\\ncurl -sI https://bylunai.com | head -5.\\n\\n문제 없으면 ✅ 정상.",
+        "timeoutSeconds": 180,
+        "model": "zai/glm-5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160"
+      },
+      "state": {
+        "lastRunAtMs": 1776380430129,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 9851,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1776466800000,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "d9700a04-ec30-4d86-a845-c5478c93d6aa",
+      "name": "북촌 BESS 채용 모니터링",
+      "enabled": true,
+      "createdAtMs": 1772686771667,
+      "updatedAtMs": 1776384065651,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "한국동서발전 북촌 BESS 발전소 채용 공고를 검색해서 새로운 공고가 있는지 확인하고 결과를 요약해줘. 검색어: '한국동서발전 북촌 BESS 채용 2026', '한국동서발전 신입사원 채용'",
+        "timeoutSeconds": 600,
+        "model": "zai/glm-5"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160"
+      },
+      "state": {
+        "nextRunAtMs": 1776470400000,
+        "lastRunAtMs": 1776384000015,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 65636,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "cba11daf-af9d-41d6-9362-07e466b0f8ad",
+      "agentId": "main",
+      "name": "타로 심리상담 사이트 데일리 점검 및 개선",
+      "enabled": true,
+      "createdAtMs": 1774696648972,
+      "updatedAtMs": 1776402274103,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 * * *"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## 타로 심리상담 웹사이트 데일리 점검 및 개선\n\n프로젝트 경로: /Users/ibkim/Projects/persona-tarot-psychologist\n\n### 1단계: 오류 검사\n```bash\ncd /Users/ibkim/Projects/persona-tarot-psychologist\nnpm run lint 2>&1\nnpm run build 2>&1\nnpm run test:run 2>&1\n```\n오류가 있으면 **직접 수정**하세요. 테스트 실패도 직접 수정.\n\n### 2단계: 코드 리뷰 및 개선\nsrc/ 디렉토리 검토 후 **직접 수정**:\n- 버그, 보안 취약점, 성능 문제\n- TypeScript 에러나 경고\n- 접근성(a11y) 문제\n- 코드 품질 개선\n기존 기능을 깨뜨리지 않는 선에서만 작업.\n\n### 3단계: 새로운 기능 조사 및 추가\n타로/심리상담 웹사이트로서 추가하면 좋을 기능이 있으면 구현.\n- 사용자 경험 개선\n- UI/UX 개선\n- 새로운 타로 기능\n- 성능 최적화\n기존 기능을 깨뜨리지 않는 선에서만 작업.\n\n### 4단계: 배포\n모든 변경사항이 완료되면:\n```bash\ncd /Users/ibkim/Projects/persona-tarot-psychologist\ngit add -A\ngit commit -m \"데일리 점검 및 개선: $(date +%Y-%m-%d)\"\ngit push origin main\nnpx vercel --prod\n```\n\n### 중요: 이슈 자동 해결\n발견된 모든 이슈는 **직접 해결**하세요. 기다리지 말고 수정→커밋→배포까지 완료.\n\n### 결과 보고\n어떤 오류를 찾았고, 어떤 개선을 했는지, 어떤 새로운 기능을 추가했는지 간결하게 요약.\n아무 변경이 없었다면 \"오류 없음, 개선사항 없음\"으로 보고.",
+        "timeoutSeconds": 600,
+        "toolsAllow": [
+          "exec",
+          "read",
+          "write",
+          "edit",
+          "web_search",
+          "web_fetch"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776488400000,
+        "lastRunAtMs": 1776402086394,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 187709,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "26500703-bb82-41d2-beeb-537972cc94f7",
+      "agentId": "main",
+      "name": "AI Marketer 데일리 점검·개선·보안감사",
+      "enabled": true,
+      "createdAtMs": 1774697227361,
+      "updatedAtMs": 1776391595765,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## AI Marketer 데일리 점검·개선·보안감사\n\n프로젝트 경로: /Users/ibkim/Projects/ai-marketer\n프론트엔드 경로: /Users/ibkim/Projects/ai-marketer/web\n\n### 1단계: 오류 검사\n```bash\ncd /Users/ibkim/Projects/ai-marketer/web\nnpm run lint 2>&1\nnpm run build 2>&1\nnpm run test 2>&1\n```\n오류가 있으면 **직접 수정**하세요. 테스트 실패도 직접 수정.\n\n### 2단계: 보안 감사\n다음 항목을 점검하고 **직접 수정**:\n- 의존성 취약점: `npm audit` 실행 후 `npm audit fix` 또는 수동 업데이트\n- 환경변수 노출 여부\n- SQL 인젝션, XSS 취약점\n- 인증/인가 문제\n- CORS, rate limiting 설정\n\n### 3단계: 코드 리뷰 및 개선\nweb/src/ 검토 후 **직접 수정**:\n- 버그, 성능 문제\n- TypeScript 에러\n- 접근성(a11y) 개선\n- 기존 기능을 깨뜨리지 않는 선에서만 작업\n\n### 4단계: 배포\n변경사항이 있으면:\n```bash\ncd /Users/ibkim/Projects/ai-marketer/web\ngit add -A\ngit commit -m \"데일리 점검·개선·보안감사: $(date +%Y-%m-%d)\"\ngit push origin main\nnpx vercel --prod\n```\n\n### 중요: 이슈 자동 해결\n발견된 모든 이슈는 **직접 해결**하세요. 기다리지 말고 수정→커밋→배포까지 완료.\n\n### 결과 보고\n찾은 오류/취약점, 수정 내용, 새로운 기능을 간결히 요약.\n변경 없으면 \"오류 없음, 개선사항 없음, 보안 이상 없음\" 보고.",
+        "timeoutSeconds": 900,
+        "toolsAllow": [
+          "exec",
+          "read",
+          "write",
+          "edit",
+          "web_search",
+          "web_fetch"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776477600000,
+        "lastRunAtMs": 1776391289919,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 305846,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "17bd5db1-6ecf-449f-9997-dd9378ea016a",
+      "name": "Gateway Watchdog (15분마다)",
+      "enabled": true,
+      "createdAtMs": 1775088718175,
+      "updatedAtMs": 1776457703031,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 900000,
+        "anchorMs": 1775088718175
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Gateway 및 Telegram 상태를 점검하세요. 다음 스크립트를 실행하고 결과를 확인하세요: /Users/ibkim/Projects/openclaw/scripts/openclaw-watchdog.sh. 문제가 있으면 /Users/ibkim/Projects/openclaw/scripts/openclaw-post-upgrade.sh 를 실행해서 복구하세요. 결과를 간략히 보고하세요.",
+        "timeoutSeconds": 180,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776458551353,
+        "lastRunAtMs": 1776457651353,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 51678,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "94926823-12ec-4739-b210-6826e9b3989e",
+      "agentId": "main",
+      "sessionKey": "agent:main:cron:25a00832-d62b-4a61-8b83-acd763c4022d",
+      "name": "Moltbook 인기글 다이제스트",
+      "enabled": true,
+      "createdAtMs": 1775265012596,
+      "updatedAtMs": 1776452764894,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 21600000,
+        "anchorMs": 1775265012596
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Fetch the top 3 hot posts from Moltbook API, format them in Telegram style with 🦞 emoji showing title, author, and upvote count for each post.",
+        "model": "zai/glm-5.1"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "lastRunAtMs": 1776452718509,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 46385,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1776474318509,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "16b1700f-072b-432a-92b4-21fc8f5fc7b0",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "macOS uptime 모니터링 (49일 TCP 버그)",
+      "description": "업타임 40일 초과 시 경고 알림. Apple 패치 후 제거 예정.",
+      "enabled": false,
+      "createdAtMs": 1775655016246,
+      "updatedAtMs": 1776181776781,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "[uptime-monitor] Mac mini 업타임을 확인하세요. 40일 초과 시 재부팅을 권고하는 메시지를 사용자에게 보내세요. 명령어: uptime"
+      },
+      "failureAlert": {
+        "mode": "announce",
+        "after": 2,
+        "cooldownMs": 86400000
+      },
+      "state": {
+        "lastRunAtMs": 1776038504334,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27876,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "7e932a00-e857-47d9-94d1-23dd0ede2357",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "HyperAgents 진화 루프 (매일)",
+      "description": "evolve.sh + metacognitive.sh + self-modify.sh 자동 실행. HyperAgents 핵심 루프.",
+      "enabled": true,
+      "createdAtMs": 1775970718779,
+      "updatedAtMs": 1776373241486,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "HyperAgents 진화 루프 v2를 실행하세요.\n\n## 1단계: 진화 엔진\n```bash\ncd /Users/ibkim/Projects/openclaw\nbash scripts/evolve.sh daily 2>&1\n```\n\n## 2단계: 메타인지 분석\n```bash\nbash scripts/metacognitive.sh 2>&1\n```\n\n## 3단계: 자기수정 (제안 있을 때만)\nmetacognitive.sh에서 생성된 제안을 검토하세요.\n- high priority 제안이 있으면 구체적 diff를 만들어 memory/proposals/ 에 저장\n- 그 후 bash scripts/self-modify.sh --apply <제안파일> 로 적용\n- 없으면 스킵\n\n## 4단계: 결과 보고\n- 진화 점수 및 구성\n- 메타인지 제안 (있으면)\n- 자기수정 결과 (있으면)\n간략히 보고.",
+        "model": "zai/glm-5",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1776459600000,
+        "lastRunAtMs": 1776373200014,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 41472,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "e6bbc483-9ca0-4c71-a7fe-26d066c1ff1a",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "HyperAgents 주간 진화 (일요일)",
+      "description": "evolve.sh weekly + 스킬 감사 + 메모리 정리. 주간 HyperAgents.",
+      "enabled": true,
+      "createdAtMs": 1775970739489,
+      "updatedAtMs": 1775970739489,
+      "schedule": {
+        "expr": "0 7 * * 0",
+        "kind": "cron",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "lightContext": true,
+        "message": "HyperAgents 주간 진화 루프를 실행하세요.\n\n## 1단계: 주간 진화 엔진\n```bash\ncd /Users/ibkim/Projects/openclaw\nbash scripts/evolve.sh weekly 2>&1\n```\n\n## 2단계: 크론잡 성과 감사\n```bash\nbash scripts/cron-audit.sh 2>&1\n```\n\n## 3단계: 메타인지 분석\n```bash\nbash scripts/metacognitive.sh 2>&1\n```\n\n## 4단계: 자기수정\n```bash\nbash scripts/self-modify.sh 2>&1\n```\n\n## 5단계: MEMORY.md 검토 및 정리\n/Users/ibkim/Projects/openclaw/MEMORY.md를 읽고, 오래되거나 불필요한 항목이 있으면 정리.\n\n## 6단계: 결과 보고\n- 진화 점수 (이번 주 변화)\n- 새로 생성/개선된 스킬\n- 크론잡 성과 요약\n- 자기수정 결과\n간략히 요약.",
+        "model": "zai/glm-5",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1776549600000
+      }
+    },
+    {
+      "id": "b89b7b56-8ab7-4d09-ac8d-7acd690a27fb",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "Obsidian 일일 동기화",
+      "description": "memory/ 일일 노트를 바탕으로 Obsidian Daily/Insights/Projects/Knowledge 동기화",
+      "enabled": true,
+      "createdAtMs": 1775999797088,
+      "updatedAtMs": 1776431935894,
+      "schedule": {
+        "kind": "cron",
+        "expr": "18 22 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Obsidian 일일 동기화를 실행하세요.\n\n## 1단계: 오늘 일일 노트 읽기\n/Users/ibkim/Projects/openclaw/memory/2026-04-12.md (오늘 날짜로) 파일을 읽습니다.\n파일이 없으면 '오늘 기록 없음'으로 보고하고 종료.\n\n## 2단계: Obsidian Daily 노트 작성\nVault 경로: /Users/ibkim/Library/Mobile Documents/iCloud~md~obsidian/Documents/my_vault\n\nwrite 도구로 Daily/YYYY-MM-DD.md 생성:\n- 오늘 한 작업 요약\n- 중요 결정/인사이트\n- 간결하게, 불릿 포인트로\n\n## 3단계: Insights 확인\n오늘 노트에서 중요한 인사이트가 있으면 Insights/에 추가.\n기존 파일과 중복되지 않게 확인.\n\n## 4단계: Projects 업데이트\n오늘 프로젝트 관련 진행이 있으면 Projects/ 해당 파일 업데이트.\n\n## 5단계: Knowledge 업데이트\n시스템 설정 변경, 새 도구 설정 등이 있으면 Knowledge/ 업데이트.\n\n## 주의\n- write 도구로 직접 파일 생성/수정 (obsidian-cli 사용하지 말 것, iCloud라 느림)\n- 기존 파일 내용을 덮어쓰지 말고, append하거나 적절히 병합\n- 날짜는 현재 날짜로 동적 생성\n- 정상 완료되면 간략히 요약 보고",
+        "model": "zai/glm-5",
+        "timeoutSeconds": 300,
+        "lightContext": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776518280000,
+        "lastRunAtMs": 1776431880012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 55882,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "d7a79807-bbcb-495a-b50e-93f6fef0f208",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "Voice-to-TextNote 데일리 점검·개선·보안감사",
+      "description": "voice-to-textnote 레포 pull, 오류 검사, 보안 감사, 성능 개선, 자동 커밋/push",
+      "enabled": true,
+      "createdAtMs": 1776019734354,
+      "updatedAtMs": 1776440317869,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 15 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## Voice-to-TextNote 데일리 점검·개선·보안감사\n\n프로젝트 경로: /Users/ibkim/Projects/voice-to-textnote\n\n### 0단계: 최신 코드 풀\n```bash\ncd /Users/ibkim/Projects/voice-to-textnote\ngit pull origin main 2>&1\n```\n\n### 0.5단계: ffmpeg 보안 확인\n```bash\nffmpeg -version 2>&1 | head-1\nbrew outdated ffmpeg 2>&1\n```\n구버전이면 `brew upgrade ffmpeg 2>&1`.\n보고에 버전 정보 포함.\n\n### 1단계: 오류 검사\n```bash\ncd /Users/ibkim/Projects/voice-to-textnote\npython3 -m py_compile backend/app/main.py 2>&1 || true\npip check 2>&1 || true\ncd backend && python3 -m pytest tests/ --tb=short -q 2>&1 || echo \"테스트 환경 미구성\"\n```\n오류가 있으면 **직접 수정**하세요.\n\n### 2단계: 보안 감사\n다음 항목을 점검하고 **직접 수정**:\n- 하드코딩된 시크릿/API 키 (backend/ 전체 검색)\n- SQL 인젝션 취약점\n- CORS 설정 과도하게 열려있는지\n- Rate limiting 설정 확인\n- 파일 업로드 검증 로직\n- 인증/인가 보안 (JWT 설정 등)\n- 의존성 취약점\n\n### 3단계: 코드 리뷰 및 성능 개선\nbackend/ 검토 후 **직접 수정**:\n- 버그, 성능 문제\n- FastAPI 모범 사례 준수\n- 비동기 처리 최적화\n- 에러 핸들링 개선\n- 타입 힌트 보완\n- 기존 기능을 깨뜨리지 않는 선에서만 작업\n\n### 4단계: Claude Code 협업 — 코드 최적화 & 기능 개선\n1~3단계 점검이 끝나면, Claude Code를 실행해서 코드 최적화와 기능 개선을 진행하세요.\n\n```bash\ncd /Users/ibkim/Projects/voice-to-textnote && claude --permission-mode bypassPermissions --print '## Voice-to-TextNote 코드 최적화 및 기능 개선\n\n이 프로젝트는 FastAPI 기반 음성→텍스트→노트 변환 서비스다. backend/ 디렉토리를 분석해서 다음 작업을 수행해라.\n\n### 필수 작업\n1. **코드 최적화**\n   - 비동기 처리 병목 지점 찾기 및 개선\n   - 불필요한 동기 블로킹 제거\n   - 메모리 사용량 최적화 (대용량 오디오 파일 처리 시)\n   - 데이터베이스 쿼리 최적화 (N+1 문제 등)\n\n2. **기능 개선**\n   - 에러 핸들링 강화 (사용자 친화적 에러 메시지)\n   - API 응답 구조 일관성 개선\n   - 로깅 강화 (구조화된 로그, 요청 추적)\n   - 입력 검증 개선 (Pydantic 모델 강화)\n\n3. **테스트 커버리지 개선**\n   - 핵심 API 엔드포인트 테스트 추가\n   - 엣지 케이스 테스트 (빈 파일, 잘못된 형식 등)\n   - 기존 테스트가 깨지지 않게 유지\n\n### 주의사항\n- 기존 API 호환성 유지 (엔드포인트, 요청/응답 형식 변경 금지)\n- 환경변수나 시크릿 하드코딩 금지\n- 변경 후 반드시 lint + build 통과 확인\n- 각 변경사항의 이유를 커밋 메시지에 명확히 기록'\n```\n\nClaude Code 실행이 완료되면 결과를 확인하고, 변경사항이 있으면 다음 단계로 진행.\n\n### 5단계: 커밋 & 푸시\n변경사항이 있으면:\n```bash\ncd /Users/ibkim/Projects/voice-to-textnote\ngit add -A\ngit commit -m \"데일리 점검·최적화·기능개선: $(date +%Y-%m-%d)\"\ngit push origin main 2>&1\n```\n변경 없으면 스킵.\n\n### 중요\n- 발견된 모든 이슈는 직접 해결하세요.\n- Claude Code 실행 실패 시 1~3단계 결과만 보고하고 Claude Code 에러 내용 포함.\n- Claude Code 타임아웃: 5분. 초과 시 중단하고 결과 보고.\n\n### 결과 보고\n- 1~3단계: 오류/보안/성능 점검 결과\n- 4단계: Claude Code가 수행한 최적화 및 기능 개선 내역\n- ffmpeg 버전\n- 커밋 내역\n간결히 요약. 변경 없으면 \"오류 없음, 개선사항 없음, 보안 이상 없음\" 보고.",
+        "timeoutSeconds": 900,
+        "toolsAllow": [
+          "exec",
+          "read",
+          "write",
+          "edit",
+          "web_search",
+          "web_fetch"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776493800000,
+        "lastRunAtMs": 1776407400013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 228631,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "0e06b3e0-450c-4709-a802-8b23dff837d5",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "MoltGram 스마트 홍보 (하루 3회)",
+      "description": "중복 방지 + 맥락 댓글 + 히스토리 관리. auto-mod 회피.",
+      "enabled": true,
+      "createdAtMs": 1776261223267,
+      "updatedAtMs": 1776427343128,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10,16,21 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## MoltGram 스마트 홍보 (Auto-mod 회피)\n\n### 0단계: 계정 상태 확인\n/Users/ibkim/Projects/openclaw/memory/moltbook-history.json 파일을 읽어서 accountStatus와 suspensionUntil을 확인.\n- suspensionUntil이 미래 시간이면: \"계정 정지 중 (해제: {시간})\" 보고 후 종료\n- 정지 중이면 아무 작업도 하지 말 것\n\n### 1단계: 히스토리 로드\n/Users/ibkim/Projects/openclaw/memory/moltbook-history.json 읽기.\n- commentedPosts: 이미 댓글 단 글 ID 목록\n- comments: 이전에 작성한 댓글 텍스트 목록 (중복 방지용)\n- 최근 24시간 댓글이 3개 이상이면 오늘 스킵\n\n### 2단계: 인기글 가져오기\ncurl -s 'https://www.moltbook.com/api/v1/posts?sort=hot&limit=10' -H 'Authorization: Bearer moltbook_sk_EcJAY4g4_QZ9AKRlm6_r7VZSknRNLoqK'\n\n### 3단계: 타겟 글 선택\n- commentedPosts에 없는 글 중에서 선택\n- 이미 댓글 단 글은 절대 중복 금지\n- 없으면 \"새로운 타겟 글 없음\" 보고 후 종료\n\n### 4단계: 맥락 댓글 작성 (핵심)\n**절대 하지 말 것:**\n- \"MoltGram 추천합니다!\" 같은 패턴화된 문구\n- 이전 comments 배열에 있는 텍스트와 유사한 내용\n- 홍보 느낌이 강한 직접적 광고\n\n**해야 할 것:**\n- 글의 제목/내용과 관련된 자연스러운 댓글\n- MoltGram을 자연스럽게 언급 (강제 아님)\n- 영어로 작성\n- 매번 다른 톤/스타일 (질문형, 공감형, 정보 제공형, 리뷰형 등 교대)\n- 길이도 매번 다르게 (1문장 ~ 3문장)\n\n예시 스타일 (참고만, 그대로 복사 금지):\n- \"This is interesting! I've been exploring similar ideas with MoltGram's tools\"\n- \"Has anyone tried $MOLTGRAM for this kind of analysis?\"\n- \"Great post. reminds me of some discussions in the MoltGram community\"\n- 질문형: \"Would MoltGram work for this use case?\"\n- 공감형: \"Relatable content. MoltGram has been helpful for similar stuff\"\n\n### 5단계: 댓글 등록\ncurl로 직접 실행 ('Here is the curl command' 출력 금지):\ncurl -s -X POST 'https://www.moltbook.com/api/v1/posts/{postId}/comments' \\\n  -H 'Authorization: Bearer moltbook_sk_EcJAY4g4_QZ9AKRlm6_r7VZSknRNLoqK' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"content\": \"작성한 댓글\"}'\n\n### 6단계: 결과 처리\n- 성공: 히스토리 파일 업데이트 (commentedPosts에 postId 추가, comments에 텍스트 추가, lastCommentAt 업데이트)\n- 실패 (정지/에러): accountStatus를 'suspended'로 변경, suspensionUntil을 현재+5시간으로 설정\n- 히스토리 파일은 최근 30개만 유지 (오래된 건 정리)\n\n### 7단계: 보고\n간략히 보고:\n✅ \"[글제목]에 댓글 작성\" 또는\n⏸️ \"정지 중\" 또는\n⏭️ \"오늘 할당량 초과\" 또는\n❌ \"에러: {내용}\"",
+        "model": "zai/glm-5",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776474000000,
+        "lastRunAtMs": 1776427261109,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 82019,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "1398b2d0-c98e-4bee-b079-27346132ab19",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:8137155160",
+      "name": "OpenClaw 자동 업데이트 (매일)",
+      "description": "GitHub openclaw/openclaw에서 최신 버전 확인 후 업데이트 + 복원 절차",
+      "enabled": true,
+      "createdAtMs": 1776455972394,
+      "updatedAtMs": 1776457803288,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 5 * * *",
+        "tz": "Asia/Seoul"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## OpenClaw 데일리 업데이트 (v2 — 자기 세션 자살 방지)\n\n### 0단계: 직전 업그레이드 탐지\n```bash\nbash /Users/ibkim/Projects/openclaw/scripts/openclaw-self-update.sh 2>&1\n```\n\n위 래퍼는 자체적으로 idempotency lock + 15분 중복 방지 + 게이트웨이 복구 대기 + 텔레그램 직접 알림을 수행한다. **이 래퍼의 stdout 마지막 JSON 줄**을 파싱해서 아래 규칙대로만 보고하라.\n\n### 1단계: 결과 해석\n\n래퍼 출력이 다음 중 하나로 끝난다:\n\n- `{\"status\":\"upgraded\",\"from\":\"X\",\"to\":\"Y\",\"durationMs\":N,\"gatewayUp\":true|false}`\n  → 보고: \"✅ OpenClaw {X} → {Y} 업데이트 완료 ({N/1000}초, gateway={up|down})\"\n  → 텔레그램은 래퍼가 이미 직접 전송했으니 **너는 중복 전송하지 말 것**. 간단한 확인 메시지만.\n\n- `{\"status\":\"already-latest\",\"version\":\"X\"}`\n  → 보고: \"OpenClaw 최신 버전 유지 중 (v{X})\"\n\n- `{\"status\":\"skipped-recent\",\"ranAt\":\"T\",\"from\":\"X\",\"to\":\"Y\"}`\n  → 보고: \"방금({T}) 자동 업그레이드 완료됨: {X} → {Y}. 중복 실행 방지로 건너뜀.\"\n  → **이것이 핵심**: 이전 크론 시도가 업그레이드하고 세션이 죽었을 때, 재시도가 이 상태를 만난다.\n\n- `{\"status\":\"locked\",\"pid\":N}` → \"다른 업데이트 진행 중 (pid={N}). 다음 주기에 재시도.\"\n\n- `{\"status\":\"failed\", ...}` → \"❌ 업데이트 실패. 상세는 ~/.openclaw/logs/self-update-events.jsonl 및 auto-update.log 확인.\"\n\n### 2단계: 복원 점검 (upgraded 상태에서만)\n업그레이드 성공 시 (`status:upgraded`):\n- openclaw.json 설정 확인: tools.exec.security=full, agents.defaults.thinkingDefault=medium\n- 게이트웨이 헬스체크: `bash /Users/ibkim/Projects/openclaw/scripts/gateway-health.sh` 실행, 주요 지표 한 줄 요약.\n\nalready-latest / skipped-recent / locked 상태에서는 복원 점검 생략.\n\n### 3단계: 최종 텔레그램 보고\n위 규칙에 따른 **단일 메시지**만 반환. JSON 문자열은 절대 그대로 출력하지 말 것.",
+        "timeoutSeconds": 600,
+        "lightContext": true,
+        "toolsAllow": [
+          "exec",
+          "read",
+          "write",
+          "edit"
+        ]
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "8137155160",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1776542400000,
+        "lastRunAtMs": 1776457791380,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 11908,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}

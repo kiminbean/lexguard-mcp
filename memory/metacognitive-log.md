@@ -48,3 +48,38 @@ _에이전트가 자신의 성능과 개선 방향을 평가한 기록_
 - **제안**: 🔴0 🟡1 🟢0
   - [medium] cron-slow: lightContext 활용, payload 단순화, timeout 최적화
 - **상태**: 대기 (AI 세션에서 검토 후 적용)
+
+## [2026-04-18] 메타인지 v3
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림
+
+## [2026-04-18] 메타인지 v3
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림
+
+## [2026-04-18] 메타인지 v3
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림
+
+## [2026-04-18] 메타인지 v3
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림
+
+## [2026-04-18] 메타인지 v4
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개 · 벤치 100%
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림
+
+## [2026-04-18] 메타인지 v4
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개 · 벤치 100%
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림
+
+## [2026-04-18] 메타인지 v4
+- **지표**: 성공률 100% · 전달률 84% · 임계 0개 · 벤치 100%
+- **제안**: 🔴0 🟡1 🟢0
+  - [medium] external-signal-stale: 실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림

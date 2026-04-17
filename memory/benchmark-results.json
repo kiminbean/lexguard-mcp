@@ -1,0 +1,564 @@
+[
+  {
+    "timestamp": "2026-04-17T21:15:52Z",
+    "stage": "1",
+    "totalDurationMs": 585,
+    "summary": {
+      "total": 10,
+      "passed": 9,
+      "failed": 1,
+      "passRate": 90.0
+    },
+    "tasks": [
+      {
+        "stage": 1,
+        "name": "syntax-evolve.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-metacognitive.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-self-modify.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-cron-audit.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-notify-hyperagent.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-archive.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-select-parent.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-benchmark.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "state-valid",
+        "result": "passed",
+        "durationMs": 32,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "archive-valid",
+        "result": "failed",
+        "durationMs": 44,
+        "error": "  File \"<string>\", line 4\nSyntaxError: 'return' outside function\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-17T21:16:09Z",
+    "stage": "2",
+    "totalDurationMs": 13756,
+    "summary": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "passRate": 100.0
+    },
+    "tasks": [
+      {
+        "stage": 1,
+        "name": "syntax-evolve.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-metacognitive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-self-modify.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-cron-audit.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-notify-hyperagent.sh",
+        "result": "passed",
+        "durationMs": 17,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-archive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-select-parent.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-benchmark.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "state-valid",
+        "result": "passed",
+        "durationMs": 33,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "archive-valid",
+        "result": "passed",
+        "durationMs": 32,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "metacognitive-run",
+        "result": "passed",
+        "durationMs": 8025,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "evolve-daily-run",
+        "result": "passed",
+        "durationMs": 42,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "cron-audit-run",
+        "result": "passed",
+        "durationMs": 4893,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "archive-cycle",
+        "result": "passed",
+        "durationMs": 37,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "select-parent-output",
+        "result": "passed",
+        "durationMs": 40,
+        "error": "\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-17T21:16:27Z",
+    "stage": "all",
+    "totalDurationMs": 11364,
+    "summary": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0,
+      "passRate": 100.0
+    },
+    "tasks": [
+      {
+        "stage": 1,
+        "name": "syntax-evolve.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-metacognitive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-self-modify.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-cron-audit.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-notify-hyperagent.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-archive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-select-parent.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-benchmark.sh",
+        "result": "passed",
+        "durationMs": 17,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "state-valid",
+        "result": "passed",
+        "durationMs": 32,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "archive-valid",
+        "result": "passed",
+        "durationMs": 33,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "metacognitive-run",
+        "result": "passed",
+        "durationMs": 4881,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "evolve-daily-run",
+        "result": "passed",
+        "durationMs": 42,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "cron-audit-run",
+        "result": "passed",
+        "durationMs": 5079,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "archive-cycle",
+        "result": "passed",
+        "durationMs": 40,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "select-parent-output",
+        "result": "passed",
+        "durationMs": 38,
+        "error": "\n"
+      },
+      {
+        "stage": 3,
+        "name": "determinism",
+        "result": "passed",
+        "durationMs": 160,
+        "error": "\n"
+      },
+      {
+        "stage": 3,
+        "name": "parent-selection-distribution",
+        "result": "passed",
+        "durationMs": 226,
+        "error": "\n"
+      },
+      {
+        "stage": 3,
+        "name": "performance-evolve-under-5s",
+        "result": "passed",
+        "durationMs": 74,
+        "error": "\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-17T21:28:11Z",
+    "stage": "1",
+    "totalDurationMs": 560,
+    "summary": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "passRate": 100.0
+    },
+    "tasks": [
+      {
+        "stage": 1,
+        "name": "syntax-evolve.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-metacognitive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-self-modify.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-cron-audit.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-notify-hyperagent.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-archive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-select-parent.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-benchmark.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "state-valid",
+        "result": "passed",
+        "durationMs": 33,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "archive-valid",
+        "result": "passed",
+        "durationMs": 32,
+        "error": "\n"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-04-17T21:28:32Z",
+    "stage": "all",
+    "totalDurationMs": 15849,
+    "summary": {
+      "total": 18,
+      "passed": 18,
+      "failed": 0,
+      "passRate": 100.0
+    },
+    "tasks": [
+      {
+        "stage": 1,
+        "name": "syntax-evolve.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-metacognitive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-self-modify.sh",
+        "result": "passed",
+        "durationMs": 18,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-cron-audit.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-notify-hyperagent.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-archive.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-select-parent.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "syntax-benchmark.sh",
+        "result": "passed",
+        "durationMs": 19,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "state-valid",
+        "result": "passed",
+        "durationMs": 33,
+        "error": "\n"
+      },
+      {
+        "stage": 1,
+        "name": "archive-valid",
+        "result": "passed",
+        "durationMs": 32,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "metacognitive-run",
+        "result": "passed",
+        "durationMs": 7398,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "evolve-daily-run",
+        "result": "passed",
+        "durationMs": 49,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "cron-audit-run",
+        "result": "passed",
+        "durationMs": 7030,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "archive-cycle",
+        "result": "passed",
+        "durationMs": 39,
+        "error": "\n"
+      },
+      {
+        "stage": 2,
+        "name": "select-parent-output",
+        "result": "passed",
+        "durationMs": 41,
+        "error": "\n"
+      },
+      {
+        "stage": 3,
+        "name": "determinism",
+        "result": "passed",
+        "durationMs": 160,
+        "error": "\n"
+      },
+      {
+        "stage": 3,
+        "name": "parent-selection-distribution",
+        "result": "passed",
+        "durationMs": 223,
+        "error": "\n"
+      },
+      {
+        "stage": 3,
+        "name": "performance-evolve-under-5s",
+        "result": "passed",
+        "durationMs": 75,
+        "error": "\n"
+      }
+    ]
+  }
+]

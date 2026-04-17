@@ -1,0 +1,391 @@
+#!/bin/bash
+# evolve.sh — OpenClaw 자가 진화 엔진 (v2 — HyperAgents 기반)
+#
+# 변경점 (v2):
+# - 진화 점수 → 객관적 지표 기반 (크론잭 성공률, 에러율, 완료율)
+# - 허수 제거 (스크립트 개수, 백업 개수 등 의미없는 지표 삭제)
+# - 실패/성공 패턴 분석 유지 (실용적 가치 있음)
+#
+# 사용: evolve.sh [daily|weekly|realtime]
+
+set -euo pipefail
+
+MODE="${1:-daily}"
+WORKSPACE="$HOME/Projects/openclaw"
+MEMORY="$WORKSPACE/memory"
+LEARNING_STATE="$MEMORY/learning-state.json"
+EVOLUTION_LOG="$MEMORY/evolution-log.md"
+
+TODAY=$(date '+%Y-%m-%d')
+TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+
+mkdir -p "$MEMORY"
+
+# ─── 진화 로그 초기화 ───
+init_log() {
+    if [ ! -f "$EVOLUTION_LOG" ]; then
+        cat > "$EVOLUTION_LOG" << 'EOF'
+# 진화 로그
+
+_에이전트가 자가 개선한 기록입니다._
+
+---
+EOF
+    fi
+}
+
+log_evolution() {
+    local type="$1" desc="$2" impact="$3"
+    # 같은 날짜 + 같은 타입이 이미 있으면 skip (중복 방지)
+    if grep -q "## \[$TODAY\] $type" "$EVOLUTION_LOG" 2>/dev/null; then
+        echo "  ℹ️ [$TODAY] $type — 이미 기록됨, skip"
+        return 0
+    fi
+    echo "" >> "$EVOLUTION_LOG"
+    echo "## [$TODAY] $type" >> "$EVOLUTION_LOG"
+    echo "- **설명**: $desc" >> "$EVOLUTION_LOG"
+    echo "- **영향**: $impact" >> "$EVOLUTION_LOG"
+    echo "- **모드**: $MODE" >> "$EVOLUTION_LOG"
+}
+
+# ─── 1. 실패 패턴 → 예방 규칙 자동 생성 ───
+evolve_from_failures() {
+    echo "🔄 실패 패턴 분석..."
+    
+    python3 << PYEOF
+import json, re, os
+
+failure_file = "$MEMORY/failure-patterns.md"
+state_file = "$LEARNING_STATE"
+
+with open(failure_file) as f:
+    content = f.read()
+
+# 실패 카운트
+critical = len(re.findall(r'### \d{4}-\d{2}-\d{2}:', content))
+
+# "반복 주의사항" 섹션에서 규칙 추출
+rules_section = content.split('### 반복 주의사항')[1].split('---')[0] if '### 반복 주의사항' in content else ''
+rules = re.findall(r'^\d+\.\s*\*\*(.+?)\*\*[:：]?\s*(.+)', rules_section, re.MULTILINE)
+
+# 학습 상태 업데이트
+state = {}
+if os.path.exists(state_file):
+    with open(state_file) as f:
+        state = json.load(f)
+
+state['failureAnalysis'] = {
+    'totalFailures': critical,
+    'repeatRules': len(rules),
+    'lastAnalyzed': '$TIMESTAMP'
+}
+
+if rules:
+    print(f"  📋 {len(rules)}개 반복 방지 규칙 활성")
+    print(f"  🔴 총 {critical}개 실패 패턴 기록됨")
+
+with open(state_file, 'w') as f:
+    json.dump(state, f, indent=2, ensure_ascii=False)
+PYEOF
+}
+
+# ─── 2. 성공 패턴 → 모범 사례 추출 ───
+evolve_from_successes() {
+    echo "✅ 성공 패턴 분석..."
+    
+    python3 << PYEOF
+import os, re, glob
+from collections import Counter
+
+memory_dir = "$MEMORY"
+daily_files = sorted(glob.glob(os.path.join(memory_dir, "202*.md")))
+recent_files = daily_files[-7:] if len(daily_files) > 7 else daily_files
+
+successes = []
+for f in recent_files:
+    with open(f) as fh:
+        content = fh.read()
+    for line in content.split('\n'):
+        if re.search(r'[✅✔️]', line):
+            successes.append(line.strip())
+
+if successes:
+    print(f"  📊 최근 {len(recent_files)}일간 {len(successes)}개 성공 작업 감지")
+    
+    keywords = []
+    for s in successes:
+        words = re.findall(r'[\w가-힣]{2,}', s)
+        keywords.extend(words)
+    
+    top = Counter(keywords).most_common(5)
+    print(f"  🔑 주요 활동: {[w for w, c in top]}")
+else:
+    print("  ⚪ 최근 성공 패턴 없음")
+PYEOF
+}
+
+# ─── 3. 사용자 모델 업데이트 ───
+evolve_user_model() {
+    echo "👤 사용자 모델 업데이트..."
+    
+    python3 << PYEOF
+import os, json
+
+user_file = "$WORKSPACE/USER.md"
+state_file = "$LEARNING_STATE"
+
+if not os.path.exists(user_file):
+    print("  ⚪ USER.md 없음")
+    exit(0)
+
+with open(user_file) as f:
+    content = f.read()
+
+sections = ['이름', '시간대', '관심사', '프로젝트', '커뮤니케이션', '선호도']
+filled = sum(1 for s in sections if s.lower() in content.lower() or any(c in content for c in s))
+score = int(filled / len(sections) * 100)
+
+print(f"  📊 사용자 모델 완성도: {score}% ({filled}/{len(sections)})")
+
+state = {}
+if os.path.exists(state_file):
+    with open(state_file) as f:
+        state = json.load(f)
+state['userModelScore'] = score
+state['userModelUpdates'] = state.get('userModelUpdates', 0) + 1
+with open(state_file, 'w') as f:
+    json.dump(state, f, indent=2, ensure_ascii=False)
+PYEOF
+}
+
+# ─── 4. 메모리 최적화 ───
+evolve_memory() {
+    echo "🧠 메모리 최적화..."
+    
+    python3 << PYEOF
+import os, re, glob
+
+memory_file = "$WORKSPACE/MEMORY.md"
+memory_dir = "$MEMORY"
+
+with open(memory_file) as f:
+    mem_content = f.read()
+    mem_lines = len(mem_content.split('\n'))
+    mem_size = len(mem_content)
+
+daily_files = glob.glob(os.path.join(memory_dir, "202*.md"))
+daily_count = len([f for f in daily_files if not f.endswith('.log') and not f.endswith('.json')])
+
+print(f"  📏 MEMORY.md: {mem_lines}줄, {mem_size // 1024}KB | 일일노트: {daily_count}개")
+
+if mem_size > 15000:
+    print(f"  ⚠️ MEMORY.md이 {(mem_size // 1024)}KB — 정리 권장")
+else:
+    print(f"  ✅ 적정 크기")
+PYEOF
+}
+
+# ─── 5. 스킬 생태계 분석 ───
+evolve_skills() {
+    echo "🎯 스킬 생태계 분석..."
+    
+    python3 << PYEOF
+import os, glob, time
+
+skills_dir = os.path.expanduser("~/.openclaw/skills")
+scripts_dir = "$WORKSPACE/scripts"
+
+installed = glob.glob(os.path.join(skills_dir, "*/SKILL.md"))
+print(f"  📦 설치된 스킬: {len(installed)}개")
+
+auto_skills = []
+for s in installed:
+    with open(s) as f:
+        content = f.read()
+    if 'Auto-generated' in content:
+        auto_skills.append(os.path.basename(os.path.dirname(s)))
+
+print(f"  🤖 자동 생성 스킬: {len(auto_skills)}개")
+
+stale = []
+for s in installed:
+    mtime = os.path.getmtime(s)
+    age_days = (time.time() - mtime) / 86400
+    if age_days > 30:
+        name = os.path.basename(os.path.dirname(s))
+        stale.append(f"{name} ({int(age_days)}일)")
+
+if stale:
+    print(f"  ⚠️ 장기 미사용 ({len(stale)}개):")
+    for s in stale[:5]:
+        print(f"    • {s}")
+
+scripts = ['auto-skill.sh', 'cron-audit.sh', 'prediction-tracker.sh', 'evolve.sh', 'metacognitive.sh', 'self-modify.sh']
+for script in scripts:
+    path = os.path.join(scripts_dir, script)
+    if os.path.exists(path):
+        print(f"  ✅ {script}")
+    else:
+        print(f"  ❌ {script} 누락!")
+PYEOF
+}
+
+# ─── 6. 진화 점수 (v2: 객관적 지표 기반) ───
+calculate_evolution_score() {
+    echo ""
+    echo "🧬 진화 점수 (v2 — 객관적 지표)"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    
+    python3 << PYEOF
+import json, os, subprocess
+
+state_file = "$LEARNING_STATE"
+state = {}
+if os.path.exists(state_file):
+    with open(state_file) as f:
+        state = json.load(f)
+
+# ─── 이전 점수 (v1) → v2 마이그레이션 ───
+prev_score = state.get('evolutionScore', 0)
+
+# ─── 객관적 지표 수집 ───
+metrics = state.get('metrics', {})
+
+cron = metrics.get('cron', {})
+conv = metrics.get('conversation', {})
+failures = metrics.get('failures', {})
+mem = metrics.get('memory', {})
+
+# ─── 점수 계산 (0~100) ───
+# 모든 지표는 측정 가능한 객관적 수치
+
+score = 0
+details = []
+
+# 1. 크론잭 성공률 (0~30점) — 가장 중요
+cron_success = cron.get('successRate', 0)
+cron_points = int(cron_success * 0.3)  # 100% = 30점
+score += cron_points
+details.append(f"크론잭 성공률: {cron_success:.0f}% → {cron_points}점")
+
+# 2. 임계 에러 없음 (0~20점)
+critical = cron.get('critical', 0)
+if critical == 0:
+    score += 20
+    details.append(f"임계 에러: 없음 → 20점")
+elif critical == 1:
+    score += 10
+    details.append(f"임계 에러: 1개 → 10점")
+else:
+    details.append(f"임계 에러: {critical}개 → 0점")
+
+# 3. 대화 완료율 (0~20점)
+completion = conv.get('completionRate', 0)
+conv_points = int(completion * 0.2)  # 100% = 20점
+score += conv_points
+details.append(f"대화 완료율: {completion:.0f}% → {conv_points}점")
+
+# 4. 실패 패턴 학습 (0~15점)
+failure_analysis = state.get('failureAnalysis', {})
+repeat_rules = failure_analysis.get('repeatRules', 0)
+# 반복 방지 규칙이 많을수록 학습이 잘 됨 (최대 5개 기준)
+learning_points = min(repeat_rules * 3, 15)
+score += learning_points
+details.append(f"학습 규칙: {repeat_rules}개 → {learning_points}점")
+
+# 5. 사용자 모델 완성도 (0~10점)
+user_score = state.get('userModelScore', 0)
+user_points = int(user_score * 0.1)  # 100% = 10점
+score += user_points
+details.append(f"사용자 모델: {user_score}% → {user_points}점")
+
+# 6. 메모리 관리 (0~5점)
+mem_kb = mem.get('sizeKB', 0)
+if mem_kb <= 15:
+    score += 5
+    details.append(f"메모리: {mem_kb}KB (적정) → 5점")
+elif mem_kb <= 25:
+    score += 3
+    details.append(f"메모리: {mem_kb}KB (약간 큼) → 3점")
+else:
+    details.append(f"메모리: {mem_kb}KB (비대) → 0점")
+
+# ─── 캡 (100점 상한) ───
+score = min(score, 100)
+
+# ─── 점수 히스토리 ───
+history = state.get('evolutionScoreHistory', [])
+history.append({'date': '$TODAY', 'score': score})
+history = history[-30:]
+state['evolutionScoreHistory'] = history
+
+# ─── 트렌드 ───
+trend = "➡️ 안정"
+if len(history) >= 3:
+    recent_avg = sum(h['score'] for h in history[-3:]) / 3
+    older_avg = sum(h['score'] for h in history[-6:-3]) / 3 if len(history) >= 6 else recent_avg
+    delta = recent_avg - older_avg
+    if delta > 5:
+        trend = "📈 상승"
+    elif delta < -5:
+        trend = "📉 하락"
+
+print(f"  점수 구성:")
+for d in details:
+    print(f"    {d}")
+print()
+print(f"  🧬 종합 점수: {score}/100 ({trend})")
+
+if score >= 80:
+    print(f"  🌟 상태: 고도화됨")
+elif score >= 60:
+    print(f"  📈 상태: 건강하게 성장 중")
+elif score >= 40:
+    print(f"  🌱 상태: 성장 중 — 개선 여지 있음")
+else:
+    print(f"  ⚠️ 상태: 개선 필요 — 임계 에러/낮은 성공률 확인")
+
+state['evolutionScore'] = score
+state['lastEvolution'] = '$TIMESTAMP'
+
+with open(state_file, 'w') as f:
+    json.dump(state, f, indent=2, ensure_ascii=False)
+PYEOF
+}
+
+# ─── 메인 실행 ───
+init_log
+
+case "$MODE" in
+    realtime)
+        evolve_from_failures
+        ;;
+    daily)
+        echo "🧬 진화 엔진 v2 — 일일 모드 ($TODAY)"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        evolve_from_failures
+        evolve_from_successes
+        evolve_user_model
+        evolve_memory
+        evolve_skills
+        calculate_evolution_score
+        ;;
+    weekly)
+        echo "🧬 진화 엔진 v2 — 주간 모드 ($TODAY)"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        evolve_from_failures
+        evolve_from_successes
+        evolve_user_model
+        evolve_memory
+        evolve_skills
+        calculate_evolution_score
+        log_evolution "주간 진화 검사" "전체 진화 엔진 v2 실행" "객관적 지표 기반"
+        ;;
+    *)
+        echo "Usage: evolve.sh [realtime|daily|weekly]"
+        exit 1
+        ;;
+esac
+
+echo ""
+echo "✅ 진화 엔진 완료"

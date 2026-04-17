@@ -1,13 +1,7 @@
 #!/bin/bash
-# self-modify.sh — HyperAgents 자기수정 v4 (DGM archive 통합)
+# self-modify.sh — HyperAgents 자기수정 v3
 #
-# 변경점 (v4, 2026-04-18 DGM-H):
-# - 적용 성공 시 archive.sh add-node 호출 (parent: 현재 activeNodeId, score: score_after)
-# - state['activeNodeId'] 추적 (archive 노드 lineage 관리)
-# - score_after 즉시 재계산 후 lastModification.scoreAfter 기록
-# - proposal_id 기반 reason으로 archive 추적성 강화
-#
-# 변경점 (v3 기준, 유지):
+# 변경점 (v3):
 # - --auto 모드: AUTO_DIFFABLE=true 제안에 대해 안전 템플릿으로 .diff 생성 시도
 # - 적용 후 검증: bash -n → 스크립트 -h/--help 실행 → 실패 시 자동 롤백
 # - 제안 lifecycle: pending → applied 마킹 자동화
@@ -25,7 +19,6 @@ PROPOSALS_DIR="$MEMORY/proposals"
 STATE_FILE="$MEMORY/learning-state.json"
 META_LOG="$MEMORY/metacognitive-log.md"
 EVOLUTION_LOG="$MEMORY/evolution-log.md"
-ARCHIVE_INDEX="$MEMORY/agent-archive/index.json"
 
 TODAY=$(date '+%Y-%m-%d')
 TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
@@ -130,60 +123,18 @@ apply_proposal() {
     echo "  ✅ 적용: $target (score before=$score_before)"
     record_applied "$proposal_file"
 
-    # v4: 적용 후 score 재계산 → DGM archive 노드 추가
-    bash "$SCRIPTS_DIR/evolve.sh" daily >/dev/null 2>&1 || true
-    local score_after=$(current_score)
-
-    local active_node=""
-    if [ -f "$STATE_FILE" ]; then
-        active_node=$(python3 -c "
-import json
-with open('$STATE_FILE') as f: s = json.load(f)
-print(s.get('activeNodeId', ''))
-" 2>/dev/null || echo "")
-    fi
-    if [ -z "$active_node" ] && [ -f "$ARCHIVE_INDEX" ]; then
-        active_node=$(python3 -c "
-import json
-with open('$ARCHIVE_INDEX') as f: idx = json.load(f)
-nodes = idx.get('nodes', [])
-print(nodes[-1]['id'] if nodes else '')
-" 2>/dev/null || echo "")
-    fi
-
-    local proposal_id=$(basename "$proposal_file" .md)
-    local new_node=""
-    if [ -n "$active_node" ]; then
-        new_node=$(bash "$SCRIPTS_DIR/archive.sh" add-node \
-            --score "$score_after" \
-            --parent "$active_node" \
-            --reason "applied:$proposal_id" 2>/dev/null | grep -oE 'node [0-9]{4}' | awk '{print $2}' | head -1)
-    else
-        new_node=$(bash "$SCRIPTS_DIR/archive.sh" add-node \
-            --score "$score_after" \
-            --reason "applied:$proposal_id (genesis)" 2>/dev/null | grep -oE 'node [0-9]{4}' | awk '{print $2}' | head -1)
-    fi
-
-    if [ -n "$new_node" ]; then
-        echo "  🧬 아카이브: node $new_node (parent=${active_node:--}, score=$score_after)"
-    fi
-
     {
         echo ""
         echo "## [$TODAY] 자기수정 적용"
         echo "- **대상**: $target"
         echo "- **제안**: $(basename "$proposal_file")"
         echo "- **score before**: $score_before"
-        echo "- **score after**: $score_after"
         echo "- **백업**: $(basename "$bak")"
-        [ -n "$new_node" ] && echo "- **archive node**: $new_node"
     } >> "$EVOLUTION_LOG"
 
-    NEW_NODE_ID="$new_node" SCORE_AFTER="$score_after" python3 -c "
+    python3 -c "
 import json, os
 sf = '$STATE_FILE'
-new_node = os.environ.get('NEW_NODE_ID', '')
-score_after = int(os.environ.get('SCORE_AFTER', '0') or '0')
 if os.path.exists(sf):
     with open(sf) as f: s = json.load(f)
     s['selfModificationCount'] = s.get('selfModificationCount', 0) + 1
@@ -192,11 +143,7 @@ if os.path.exists(sf):
         'proposal': '$(basename "$proposal_file")',
         'timestamp': '$TIMESTAMP',
         'scoreBefore': $score_before,
-        'scoreAfter': score_after,
-        'newNodeId': new_node,
     }
-    if new_node:
-        s['activeNodeId'] = new_node
     with open(sf, 'w') as f:
         json.dump(s, f, indent=2, ensure_ascii=False)
 "
@@ -204,7 +151,7 @@ if os.path.exists(sf):
 }
 
 list_proposals() {
-    echo "📋 제안 현황 v4..."
+    echo "📋 제안 현황 v3..."
     python3 << PYEOF
 import json, os, glob, re
 
@@ -287,7 +234,7 @@ cleanup_backups() {
     fi
 }
 
-echo "🔄 HyperAgents 자기수정 v4 ($TODAY)"
+echo "🔄 HyperAgents 자기수정 v3 ($TODAY)"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 case "${1:-}" in
@@ -319,4 +266,4 @@ case "${1:-}" in
 esac
 
 echo ""
-echo "✅ 자기수정 v4 완료"
+echo "✅ 자기수정 v3 완료"

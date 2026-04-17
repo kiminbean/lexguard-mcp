@@ -13,68 +13,32 @@
     "lastAnalyzed": "2026-04-16T22:32:47Z"
   },
   "userModelScore": 83,
-  "evolutionScore": 89,
-  "lastEvolution": "2026-04-16T21:00:09Z",
+  "evolutionScore": 74,
+  "lastEvolution": "2026-04-17T21:28:48Z",
   "scriptHashes": {
-    "hyperagents-restore.sh": {
-      "hash": "043fdbc90ea8",
-      "size": 4529
-    },
-    "self-modify.sh": {
-      "hash": "f6640939466c",
-      "size": 12693
-    },
-    "openclaw-watchdog.sh": {
-      "hash": "cb912c2370d3",
-      "size": 3328
-    },
     "evolve.sh": {
-      "hash": "23d3308e2b90",
-      "size": 14244
-    },
-    "auto-skill.sh": {
-      "hash": "9a054141eeb6",
-      "size": 5609
-    },
-    "prediction-tracker.sh": {
-      "hash": "22deac272b75",
-      "size": 1757
-    },
-    "cron-audit.sh": {
-      "hash": "7737ff4d4265",
-      "size": 3962
+      "hash": "bffc1a8246b7",
+      "size": 8095
     },
     "metacognitive.sh": {
-      "hash": "130d3b6a419b",
-      "size": 11149
+      "hash": "76e7e1a09bea",
+      "size": 20737
     },
-    "settings-guard.sh": {
-      "hash": "5f7b5032f045",
-      "size": 10491
+    "self-modify.sh": {
+      "hash": "20905e81cf17",
+      "size": 10050
+    },
+    "cron-audit.sh": {
+      "hash": "9d785939ffc0",
+      "size": 6226
+    },
+    "notify-hyperagent.sh": {
+      "hash": "bbdfac178321",
+      "size": 5229
     }
   },
-  "lastMetaAnalysis": "2026-04-16T22:32:47Z",
+  "lastMetaAnalysis": "2026-04-17T21:28:33Z",
   "evolutionScoreHistory": [
-    {
-      "date": "2026-04-12",
-      "score": 30
-    },
-    {
-      "date": "2026-04-12",
-      "score": 30
-    },
-    {
-      "date": "2026-04-12",
-      "score": 30
-    },
-    {
-      "date": "2026-04-12",
-      "score": 30
-    },
-    {
-      "date": "2026-04-12",
-      "score": 30
-    },
     {
       "date": "2026-04-12",
       "score": 30
@@ -134,19 +98,162 @@
     {
       "date": "2026-04-17",
       "score": 89
+    },
+    {
+      "date": "2026-04-18",
+      "score": 65,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 65,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 70,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 70,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 70,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 70,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 70,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 70,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "schemaVersion": 3
+    },
+    {
+      "date": "2026-04-18",
+      "score": 71,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 76,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 74,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 74,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 74,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 74,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
+    },
+    {
+      "date": "2026-04-18",
+      "score": 74,
+      "delivery": 84.2,
+      "success": 100.0,
+      "attrition": 0.0,
+      "net": 0,
+      "benchmark": 100.0,
+      "schemaVersion": 4
     }
   ],
   "metacognitiveProposals": [
     {
-      "id": "cron-slow",
+      "id": "external-signal-stale",
       "priority": "medium",
-      "metric": "평균 123초",
-      "description": "크론잭 평균 실행시간 123초. 리소스 낭비 가능성.",
-      "action": "lightContext 활용, payload 단순화, timeout 최적화",
-      "evidence": "avg duration = 123249ms"
+      "metric": "마지막 실패 기록 16일 전",
+      "description": "failure-patterns.md가 16일 정체. 입력 데이터 고갈 또는 실패 기록 습관 상실.",
+      "action": "실패 발생 시 failure-patterns.md에 기록 훅 추가. heartbeat에 알림",
+      "evidence": "lastFailureDate = 2026-04-02",
+      "autoDiffable": false
     }
   ],
-  "lastProposalGeneration": "2026-04-16T22:32:47Z",
+  "lastProposalGeneration": "2026-04-17T21:28:33Z",
   "preModificationScore": 48,
   "preModificationTimestamp": "2026-04-12T05:04:06Z",
   "pendingModification": {
@@ -162,7 +269,7 @@
     "verdict": "IMPROVED",
     "timestamp": "2026-04-12T05:04:06Z"
   },
-  "metaAnalysisCount": 15,
+  "metaAnalysisCount": 22,
   "selfModificationCount": 3,
   "conversationQuality": {
     "completionRate": 32.1,
@@ -174,31 +281,69 @@
   },
   "metrics": {
     "cron": {
-      "total": 19,
-      "active": 19,
-      "erroring": 3,
+      "total": 20,
+      "active": 20,
+      "erroring": 0,
       "critical": 0,
-      "successRate": 78.9,
-      "avgDurationMs": 123249
+      "successRate": 100.0,
+      "deliveryRate": 84.2,
+      "avgDurationMs": 76608,
+      "recoveryEvents": 0,
+      "regressionEvents": 0,
+      "errorSnapshot": {
+        "17bd5db1-6ecf-449f-9997-dd9378ea016a": 0,
+        "0f7671a1-b35f-4b1f-b4c8-7ff36167f528": 0,
+        "4a680cc9-8a26-4ed6-bc24-fad16213fa66": 0,
+        "853b8a73-481d-4264-970a-aa3a595337d9": 0,
+        "ac956e51-fb83-45d9-98f0-19e0c17fcbac": 0,
+        "6ba26820-f3bc-4745-94a9-efc916003419": 0,
+        "34bcb2fb-92b1-4b7b-803d-999513e50f59": 0,
+        "d9700a04-ec30-4d86-a845-c5478c93d6aa": 0,
+        "e89474ff-379a-4565-99a4-0ec38d26983b": 0,
+        "0e06b3e0-450c-4709-a802-8b23dff837d5": 0,
+        "94926823-12ec-4739-b210-6826e9b3989e": 0,
+        "26500703-bb82-41d2-beeb-537972cc94f7": 0,
+        "cba11daf-af9d-41d6-9362-07e466b0f8ad": 0,
+        "d7a79807-bbcb-495a-b50e-93f6fef0f208": 0,
+        "64074131-2a62-496e-b69d-5c43c465d39e": 0,
+        "b89b7b56-8ab7-4d09-ac8d-7acd690a27fb": 0,
+        "1398b2d0-c98e-4bee-b079-27346132ab19": 0,
+        "7e932a00-e857-47d9-94d1-23dd0ede2357": 0,
+        "e6bbc483-9ca0-4c71-a7fe-26d066c1ff1a": 0,
+        "eee1c1ea-5e49-4735-984a-dc237eea9a4e": 0
+      }
     },
-    "failures": {
-      "recentCount": 0,
-      "categories": {}
+    "externalSignal": {
+      "newFailures7d": 0,
+      "lastFailureDate": "2026-04-02"
     },
-    "conversation": {
-      "completed": 16,
-      "failed": 2,
-      "userRequests": 0,
-      "proactive": 0,
-      "completionRate": 88.9,
-      "proactiveRatio": 0,
-      "daysAnalyzed": 7
+    "proposals": {
+      "pending": 2,
+      "applied": 0,
+      "archivedThisRun": 0,
+      "attritionRate": 0.0,
+      "ttlDays": 14
+    },
+    "stability": {
+      "churnThisRun": 1,
+      "tracked": 5
     },
     "memory": {
       "sizeBytes": 4585,
-      "sizeKB": 4.5,
-      "lines": 73,
-      "dailyNotes": 36
+      "sizeKB": 4.5
+    },
+    "benchmark": {
+      "passRate": 100.0,
+      "lastRun": "2026-04-17T21:28:11Z",
+      "totalRuns14d": 4,
+      "latestFailures": []
+    },
+    "archive": {
+      "totalNodes": 1,
+      "activeNodeId": "",
+      "latestScore": 65
     }
-  }
+  },
+  "schemaVersion": 4,
+  "evolutionStatus": "📈 성장 중"
 }

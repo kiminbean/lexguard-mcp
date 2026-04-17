@@ -1,0 +1,20 @@
+{
+  "id": "0001",
+  "parent": null,
+  "timestamp": "2026-04-17T21:11:33Z",
+  "score": 65,
+  "reason": "v3 baseline (Placebo Loop fixes)",
+  "snapshotCount": 8,
+  "scriptHashes": {
+    "archive.sh": "4cd4ca6e1128a40efb7bed058475c651ab95cd2c4c7289570a912312336df7ed",
+    "auto-skill.sh": "9a054141eeb6b400ac97a015592ce1bac36654eee2c74b50c601803f9222ddbd",
+    "cron-audit.sh": "9d785939ffc0d1426652152caee19d0e422299590c544c4ebccd0534bf6c3a7e",
+    "evolve.sh": "b7ef3236f70ee5d16cfb4edade7e3851afdb4b62cdc83f4c969c5ec633e1bbda",
+    "metacognitive.sh": "d3cf6fbde6c4e644e29be01cd733596befaa48fba493a25861d2c51e52c4d326",
+    "notify-hyperagent.sh": "bbdfac178321ed13b8fc9ab07a63901ec01fbfa9c1da7a80e24a620392a2cbef",
+    "prediction-tracker.sh": "22deac272b755b7b865b83d81c53a404d736c59453bbf296f9daa5a311fec429",
+    "self-modify.sh": "af5fd16afba7b1c7884ef97435ca237c7b99a8bb3be49fd59f1b2fe3623f18df"
+  },
+  "benchmark": {},
+  "children": []
+}

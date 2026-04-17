@@ -1,0 +1,291 @@
+#!/bin/bash
+# self-modify.sh — HyperAgents 기반 자기수정 제안 생성기
+# 
+# 변경점 (v2 — HyperAgents 적용):
+# - bash 하드코딩 수정 → 제안(diff)만 생성, 실제 적용은 AI 세션에서
+# - Meta Agent 역할: 전체 코드 분석 후 구체적 수정안 생성
+# - 버전 관리 + 롤백 안전망 유지
+#
+# 사용: self-modify.sh [--dry-run] [--apply <proposal-file>]
+
+set -euo pipefail
+
+WORKSPACE="$HOME/Projects/openclaw"
+MEMORY="$WORKSPACE/memory"
+SCRIPTS_DIR="$WORKSPACE/scripts"
+BACKUP_DIR="$WORKSPACE/scripts/backup/self-modify"
+PROPOSALS_DIR="$WORKSPACE/memory/proposals"
+STATE_FILE="$MEMORY/learning-state.json"
+META_LOG="$MEMORY/metacognitive-log.md"
+
+TODAY=$(date '+%Y-%m-%d')
+TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+
+# 수정 허용 대상
+ALLOWED_TARGETS=(
+    "evolve.sh"
+    "metacognitive.sh"
+    "auto-skill.sh"
+    "cron-audit.sh"
+    "prediction-tracker.sh"
+    "self-modify.sh"
+)
+
+mkdir -p "$BACKUP_DIR" "$PROPOSALS_DIR"
+
+# ─── 1. 백업 ───
+backup_script() {
+    local script="$1"
+    local script_path="$SCRIPTS_DIR/$script"
+    
+    if [ ! -f "$script_path" ]; then
+        echo "  ❌ $script 없음 — 스킵"
+        return 1
+    fi
+
+    local backup_path="$BACKUP_DIR/${script}.$(date '+%Y%m%d_%H%M%S').bak"
+    cp "$script_path" "$backup_path"
+    echo "  💾 백업: $backup_path"
+    return 0
+}
+
+# ─── 2. 실제 적용 (AI 세션에서만 호출) ───
+apply_proposal() {
+    local proposal_file="$1"
+    
+    if [ ! -f "$proposal_file" ]; then
+        echo "  ❌ 제안 파일 없음: $proposal_file"
+        return 1
+    fi
+    
+    # 제안 파일에서 대상 스크립트 추출
+    local target=$(grep '^TARGET:' "$proposal_file" | cut -d' ' -f2)
+    
+    if [[ ! " ${ALLOWED_TARGETS[@]} " =~ " ${target} " ]]; then
+        echo "  🚫 $target — 수정 허용 대상 아님"
+        return 1
+    fi
+    
+    local script_path="$SCRIPTS_DIR/$target"
+    
+    # 백업
+    backup_script "$target" || return 1
+    
+    # diff 적용
+    local diff_file="${proposal_file%.md}.diff"
+    if [ -f "$diff_file" ]; then
+        patch -p1 -d "$SCRIPTS_DIR" < "$diff_file" 2>&1
+        if [ $? -ne 0 ]; then
+            echo "  ❌ 패치 실패 — 롤백"
+            local latest_backup=$(ls -t "$BACKUP_DIR/${target}."*.bak 2>/dev/null | head -1)
+            if [ -n "$latest_backup" ]; then
+                cp "$latest_backup" "$script_path"
+                echo "  ✅ 롤백 완료"
+            fi
+            return 1
+        fi
+    fi
+    
+    # 문법 검사
+    if ! bash -n "$script_path" 2>/dev/null; then
+        echo "  ❌ 문법 오류 — 롤백"
+        local latest_backup=$(ls -t "$BACKUP_DIR/${target}."*.bak 2>/dev/null | head -1)
+        if [ -n "$latest_backup" ]; then
+            cp "$latest_backup" "$script_path"
+            echo "  ✅ 롤백 완료"
+        fi
+        return 1
+    fi
+    
+    echo "  ✅ 적용 완료: $target"
+    
+    # 이력 기록
+    echo "" >> "$MEMORY/evolution-log.md"
+    echo "## [$TODAY] 제안 적용" >> "$MEMORY/evolution-log.md"
+    echo "- **제안**: $(basename "$proposal_file")" >> "$MEMORY/evolution-log.md"
+    echo "- **대상**: $target" >> "$MEMORY/evolution-log.md"
+    echo "- **상태**: 적용됨" >> "$MEMORY/evolution-log.md"
+    
+    # 상태 업데이트
+    python3 -c "
+import json, os
+state_file = '$STATE_FILE'
+if os.path.exists(state_file):
+    with open(state_file) as f:
+        state = json.load(f)
+    state['selfModificationCount'] = state.get('selfModificationCount', 0) + 1
+    state['lastModificationVerdict'] = {
+        'target': '$target',
+        'proposal': '$(basename "$proposal_file")',
+        'verdict': 'APPLIED',
+        'timestamp': '$TIMESTAMP'
+    }
+    with open(state_file, 'w') as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
+"
+    return 0
+}
+
+# ─── 3. 제안 생성 (metacognitive JSON → proposal 파일 브릿지) ───
+generate_proposals() {
+    echo "📋 자기수정 제안 생성..."
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+    # metacognitive.sh에서 생성된 제안을 읽고 proposal 파일로 동기화
+    python3 << 'PYEOF'
+import json, os, glob
+
+state_file = os.path.expanduser('~/Projects/openclaw/memory/learning-state.json')
+proposals_dir = os.path.expanduser('~/Projects/openclaw/memory/proposals')
+os.makedirs(proposals_dir, exist_ok=True)
+
+state = {}
+if os.path.exists(state_file):
+    with open(state_file) as f:
+        state = json.load(f)
+
+proposals = state.get('metacognitiveProposals', [])
+
+# 제안 ID → 대상 스크립트 매핑
+target_map = {
+    'cron-critical-errors': 'cron-audit.sh',
+    'cron-warning': 'cron-audit.sh',
+    'cron-success-rate-low': 'cron-audit.sh',
+    'cron-slow': 'cron-audit.sh',
+    'pattern-timeout-repeat': 'evolve.sh',
+    'pattern-api-repeat': 'evolve.sh',
+    'conversation-completion-low': 'metacognitive.sh',
+    'memory-bloat': 'evolve.sh',
+    'proactive-low': 'evolve.sh',
+}
+
+# JSON 제안 중 아직 .md 파일이 없는 것을 생성 (metacognitive.sh가 못 만든 경우 보완)
+synced = 0
+for p in proposals:
+    pid = p.get('id', 'unknown')
+    proposal_path = os.path.join(proposals_dir, f"{pid}.md")
+    if not os.path.exists(proposal_path):
+        target = target_map.get(pid, 'evolve.sh')
+        with open(proposal_path, 'w') as pf:
+            pf.write(f"TARGET: {target}\n")
+            pf.write(f"PRIORITY: {p.get('priority', 'low')}\n")
+            pf.write(f"METRIC: {p.get('metric', 'N/A')}\n")
+            pf.write(f"DESCRIPTION: {p.get('description', '')}\n")
+            pf.write(f"ACTION: {p.get('action', '')}\n")
+            pf.write(f"EVIDENCE: {p.get('evidence', '')}\n")
+            pf.write(f"DATE: {p.get('date', 'unknown')}\n")
+            pf.write(f"STATUS: pending\n")
+        synced += 1
+
+if synced > 0:
+    print(f"  🔄 {synced}개 JSON 제안 → proposal 파일 동기화 완료")
+
+# 기존 proposal 파일 목록 표시
+md_files = sorted(glob.glob(os.path.join(proposals_dir, '*.md')))
+diff_files = sorted(glob.glob(os.path.join(proposals_dir, '*.diff')))
+
+pending_proposals = []
+applied_proposals = []
+ready_proposals = []  # .diff가 있어서 --apply 가능
+
+for md in md_files:
+    basename = os.path.splitext(os.path.basename(md))[0]
+    with open(md) as f:
+        content = f.read()
+    status = 'pending'
+    priority = 'low'
+    target = 'unknown'
+    for line in content.split('\n'):
+        if line.startswith('STATUS:'):
+            status = line.split(':', 1)[1].strip()
+        if line.startswith('PRIORITY:'):
+            priority = line.split(':', 1)[1].strip()
+        if line.startswith('TARGET:'):
+            target = line.split(':', 1)[1].strip()
+
+    diff_path = os.path.join(proposals_dir, f"{basename}.diff")
+    has_diff = os.path.exists(diff_path)
+
+    entry = {'id': basename, 'priority': priority, 'target': target, 'has_diff': has_diff, 'status': status, 'path': md}
+    if status == 'applied':
+        applied_proposals.append(entry)
+    elif has_diff:
+        ready_proposals.append(entry)
+    else:
+        pending_proposals.append(entry)
+
+# 출력
+if not md_files:
+    print("  ℹ️ 제안 파일 없음 — metacognitive.sh를 먼저 실행하세요")
+    print("")
+    print("  💡 파이프라인:")
+    print("     1. scripts/metacognitive.sh → 지표 분석 + 제안 생성")
+    print("     2. scripts/self-modify.sh → 제안 파일 확인")
+    print("     3. AI 세션에서 제안 파일을 읽고 .diff 생성")
+    print("     4. scripts/self-modify.sh --apply memory/proposals/<id>.md")
+else:
+    if ready_proposals:
+        ready_proposals.sort(key=lambda x: {'high': 0, 'medium': 1, 'low': 2}.get(x['priority'], 3))
+        print(f"  🟢 적용 가능 ({len(ready_proposals)}개 — .diff 준비됨):")
+        for p in ready_proposals:
+            icon = {'high': '🔴', 'medium': '🟡', 'low': '🟢'}.get(p['priority'], '⚪')
+            print(f"    {icon} {p['id']} → {p['target']}")
+            print(f"       self-modify.sh --apply {p['path']}")
+        print("")
+
+    if pending_proposals:
+        pending_proposals.sort(key=lambda x: {'high': 0, 'medium': 1, 'low': 2}.get(x['priority'], 3))
+        print(f"  🟡 diff 대기 ({len(pending_proposals)}개 — AI 세션에서 .diff 생성 필요):")
+        for p in pending_proposals:
+            icon = {'high': '🔴', 'medium': '🟡', 'low': '🟢'}.get(p['priority'], '⚪')
+            print(f"    {icon} {p['id']} → {p['target']}")
+        print("")
+
+    if applied_proposals:
+        print(f"  ✅ 적용 완료 ({len(applied_proposals)}개)")
+        print("")
+
+    if not ready_proposals and pending_proposals:
+        print("  💡 다음 단계: AI 세션에서 제안 파일을 읽고 .diff를 생성하세요")
+        print(f"     제안 파일 위치: memory/proposals/")
+PYEOF
+}
+
+# ─── 4. 이력 정리 ───
+cleanup_old_backups() {
+    BACKUP_COUNT=$(ls "$BACKUP_DIR/"*.bak 2>/dev/null | wc -l)
+    if [ "$BACKUP_COUNT" -gt 30 ]; then
+        echo "  🧹 오래된 백업 정리..."
+        ls -t "$BACKUP_DIR/"*.bak | tail -n +31 | xargs rm -f
+        echo "  ✅ 정리 완료"
+    fi
+}
+
+# ─── 메인 ───
+echo "🔄 HyperAgents 자기수정 ($TODAY)"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+case "${1:-}" in
+    --apply)
+        if [ -z "${2:-}" ]; then
+            echo "사용법: self-modify.sh --apply <제안파일>"
+            exit 1
+        fi
+        apply_proposal "$2"
+        ;;
+    --dry-run)
+        echo "  🔍 [DRY RUN] 제안만 생성 (적용하지 않음)"
+        generate_proposals
+        ;;
+    "")
+        generate_proposals
+        cleanup_old_backups
+        ;;
+    *)
+        echo "사용법: self-modify.sh [--dry-run] [--apply <제안파일>]"
+        exit 1
+        ;;
+esac
+
+echo ""
+echo "✅ 자기수정 완료"

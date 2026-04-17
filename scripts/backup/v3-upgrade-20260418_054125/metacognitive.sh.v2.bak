@@ -1,0 +1,428 @@
+#!/bin/bash
+# metacognitive.sh — HyperAgents 기반 메타인지 엔진 (v2)
+#
+# 변경점 (v2 — HyperAgents 적용):
+# - 기계적 규칙 → 실제 대화 로그/실패 패턴 분석 기반 제안
+# - 진화 점수 대신 객관적 지표(크론잡 성공률, 에러율) 사용
+# - 논문의 Meta Agent: "실행 결과를 보고 구체적 수정안 생성"
+#
+# 사용: metacognitive.sh [--apply]
+
+set -euo pipefail
+
+WORKSPACE="$HOME/Projects/openclaw"
+MEMORY="$WORKSPACE/memory"
+STATE_FILE="$MEMORY/learning-state.json"
+META_LOG="$MEMORY/metacognitive-log.md"
+SCRIPTS_DIR="$WORKSPACE/scripts"
+FAILURES_FILE="$MEMORY/failure-patterns.md"
+
+TODAY=$(date '+%Y-%m-%d')
+TIMESTAMP=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+
+mkdir -p "$MEMORY"
+
+# ─── 로그 초기화 ───
+if [ ! -f "$META_LOG" ]; then
+    cat > "$META_LOG" << 'EOF'
+# 메타인지 로그
+
+_에이전트가 자신의 성능과 개선 방향을 평가한 기록_
+
+---
+EOF
+fi
+
+# ─── 1. 객관적 지표 수집 ───
+collect_objective_metrics() {
+    echo "📊 객관적 지표 수집..."
+
+    python3 << PYEOF
+import json, os, glob, re, subprocess
+from datetime import datetime, timedelta
+from collections import Counter
+
+state_file = "$STATE_FILE"
+memory_dir = "$MEMORY"
+meta_log = "$META_LOG"
+today = "$TODAY"
+timestamp = "$TIMESTAMP"
+
+state = {}
+if os.path.exists(state_file):
+    with open(state_file) as f:
+        state = json.load(f)
+
+metrics = {}
+
+# ─── 1.1. 크론작 성능 (객관적) ───
+try:
+    result = subprocess.run(
+        ['openclaw', 'cron', 'list', '--json'],
+        capture_output=True, text=True, timeout=30
+    )
+    if result.returncode == 0:
+        cron_data = json.loads(result.stdout)
+        jobs = cron_data.get('jobs', [])
+        
+        total_jobs = len(jobs)
+        active_jobs = len([j for j in jobs if j.get('enabled', True)])
+        erroring_jobs = len([j for j in jobs if j.get('state', {}).get('consecutiveErrors', 0) > 0])
+        critical_errors = len([j for j in jobs if j.get('state', {}).get('consecutiveErrors', 0) >= 3])
+        
+        # 평균 실행 시간
+        durations = [j.get('state', {}).get('lastDurationMs', 0) for j in jobs if j.get('state', {}).get('lastDurationMs')]
+        avg_duration = sum(durations) / len(durations) if durations else 0
+        
+        # 성공률
+        success_count = len([j for j in jobs if j.get('state', {}).get('lastRunStatus') == 'ok'])
+        success_rate = (success_count / total_jobs * 100) if total_jobs > 0 else 0
+        
+        metrics['cron'] = {
+            'total': total_jobs,
+            'active': active_jobs,
+            'erroring': erroring_jobs,
+            'critical': critical_errors,
+            'successRate': round(success_rate, 1),
+            'avgDurationMs': round(avg_duration),
+        }
+        
+        print(f"  📡 크론잡: {total_jobs}개 (활성 {active_jobs})")
+        print(f"     성공률: {success_rate:.0f}% | 에러: {erroring_jobs}개 | 임계: {critical_errors}개")
+        print(f"     평균 실행시간: {avg_duration/1000:.0f}초")
+        
+        # 문제 있는 크론잭 상세
+        if erroring_jobs > 0:
+            print(f"  ⚠️ 에러 크론잡:")
+            for j in jobs:
+                errs = j.get('state', {}).get('consecutiveErrors', 0)
+                if errs > 0:
+                    name = j.get('name', '?')
+                    err_reason = j.get('state', {}).get('lastErrorReason', '?')
+                    print(f"     • {name}: {errs}회 연속 ({err_reason})")
+except Exception as e:
+    print(f"  ⚠️ 크론잭 수집 실패: {e}")
+    metrics['cron'] = {'total': 0, 'active': 0, 'erroring': 0, 'critical': 0, 'successRate': 0, 'avgDurationMs': 0}
+
+# ─── 1.2. 실패 패턴 분석 (실제 로그 기반) ───
+if os.path.exists("$FAILURES_FILE"):
+    with open("$FAILURES_FILE") as f:
+        failures_content = f.read()
+    
+    # 최근 7일 실패 패턴
+    seven_days_ago = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
+    all_failures = re.findall(
+        r'(### (\d{4}-\d{2}-\d{2}):.*?)(?=### \d{4}-|\Z)',
+        failures_content, re.DOTALL
+    )
+    # 날짜 필터 (최근 7일)
+    recent_failures = [(m[0], m[1]) for m in all_failures if m[1] >= seven_days_ago]
+    
+    # 실패 카테고리 분류
+    failure_categories = Counter()
+    for f_text, f_date in recent_failures:
+        if 'timeout' in f_text.lower():
+            failure_categories['timeout'] += 1
+        elif 'api' in f_text.lower() or 'rate limit' in f_text.lower():
+            failure_categories['api'] += 1
+        elif 'permission' in f_text.lower() or 'denied' in f_text.lower():
+            failure_categories['permission'] += 1
+        elif 'syntax' in f_text.lower() or 'parse' in f_text.lower():
+            failure_categories['syntax'] += 1
+        elif 'network' in f_text.lower() or 'connection' in f_text.lower():
+            failure_categories['network'] += 1
+        else:
+            failure_categories['other'] += 1
+    
+    metrics['failures'] = {
+        'recentCount': len(recent_failures),
+        'categories': dict(failure_categories)
+    }
+    
+    print(f"  📋 실패 패턴 (최근 7일): {len(recent_failures)}개")
+    if failure_categories:
+        for cat, count in failure_categories.most_common():
+            print(f"     • {cat}: {count}건")
+
+# ─── 1.3. 대화 품질 (실제 로그 기반) ───
+daily_files = sorted(glob.glob(os.path.join(memory_dir, "202*.md")))
+recent_files = daily_files[-7:] if len(daily_files) >= 7 else daily_files
+
+task_patterns = {
+    'completed': r'✅|완료|성공|해결',
+    'failed': r'❌|실패|에러|롤백',
+    'user_request': r'요청|질문|확인|해줘|부탁',
+    'proactive': r'자동|감지|프로액티브|사전 점검',
+}
+
+pattern_counts = {k: 0 for k in task_patterns}
+for f_path in recent_files:
+    try:
+        with open(f_path) as f:
+            content = f.read()
+        for key, pattern in task_patterns.items():
+            pattern_counts[key] += len(re.findall(pattern, content))
+    except:
+        continue
+
+completion_rate = (pattern_counts['completed'] / (pattern_counts['completed'] + pattern_counts['failed']) * 100) if (pattern_counts['completed'] + pattern_counts['failed']) > 0 else 0
+proactive_ratio = (pattern_counts['proactive'] / pattern_counts['user_request'] * 100) if pattern_counts['user_request'] > 0 else 0
+
+metrics['conversation'] = {
+    'completed': pattern_counts['completed'],
+    'failed': pattern_counts['failed'],
+    'userRequests': pattern_counts['user_request'],
+    'proactive': pattern_counts['proactive'],
+    'completionRate': round(completion_rate, 1),
+    'proactiveRatio': round(proactive_ratio, 1),
+    'daysAnalyzed': len(recent_files),
+}
+
+print(f"  💬 대화 품질 (최근 {len(recent_files)}일):")
+print(f"     완료: {pattern_counts['completed']} | 실패: {pattern_counts['failed']}")
+print(f"     완료율: {completion_rate:.0f}% | 자율행동비율: {proactive_ratio:.0f}%")
+
+# ─── 1.4. 메모리 상태 ───
+memory_file = os.path.join("$WORKSPACE", "MEMORY.md")
+mem_size = os.path.getsize(memory_file) if os.path.exists(memory_file) else 0
+mem_lines = 0
+if os.path.exists(memory_file):
+    with open(memory_file) as f:
+        mem_lines = len(f.readlines())
+
+metrics['memory'] = {
+    'sizeBytes': mem_size,
+    'sizeKB': round(mem_size / 1024, 1),
+    'lines': mem_lines,
+    'dailyNotes': len(daily_files),
+}
+
+print(f"  🧠 메모리: {mem_lines}줄 ({mem_size//1024}KB) | 일일노트: {len(daily_files)}개")
+
+# 상태 저장
+state['metrics'] = metrics
+state['lastMetaAnalysis'] = timestamp
+state['metaAnalysisCount'] = state.get('metaAnalysisCount', 0) + 1
+
+with open(state_file, 'w') as f:
+    json.dump(state, f, indent=2, ensure_ascii=False)
+
+PYEOF
+}
+
+# ─── 2. 구체적 제안 생성 (객관적 지표 기반) ───
+generate_proposals() {
+    echo ""
+    echo "💡 개선 제안 생성 (객관적 지표 기반)..."
+
+    python3 << PYEOF
+import json, os
+
+state_file = "$STATE_FILE"
+meta_log = "$META_LOG"
+today = "$TODAY"
+timestamp = "$TIMESTAMP"
+
+with open(state_file) as f:
+    state = json.load(f)
+
+metrics = state.get('metrics', {})
+proposals = []
+
+# ─── 규칙 1: 크론잭 임계 에러 ───
+cron = metrics.get('cron', {})
+critical = cron.get('critical', 0)
+if critical >= 2:
+    proposals.append({
+        'id': 'cron-critical-errors',
+        'priority': 'high',
+        'metric': f'크론잭 임계 에러 {critical}개',
+        'description': f'{critical}개 크론잭이 3회 이상 연속 에러. 즉시 조치 필요.',
+        'action': '에러 크론잭 원인 분석 후 수정 또는 비활성화',
+        'evidence': 'consecutiveErrors >= 3 in cron list'
+    })
+elif critical == 1:
+    proposals.append({
+        'id': 'cron-warning',
+        'priority': 'medium',
+        'metric': f'크론잭 에러 1개',
+        'description': '1개 크론잭이 연속 에러 상태',
+        'action': '원인 확인 후 다음 실행 관찰',
+        'evidence': 'consecutiveErrors >= 3 in cron list'
+    })
+
+# ─── 규칙 2: 크론잭 성공률 저하 ───
+success_rate = cron.get('successRate', 100)
+if success_rate < 70:
+    proposals.append({
+        'id': 'cron-success-rate-low',
+        'priority': 'high',
+        'metric': f'성공률 {success_rate:.0f}%',
+        'description': f'크론잭 전체 성공률이 {success_rate:.0f}%로 낮음',
+        'action': '실패하는 크론잭의 timeout/payload 재설계',
+        'evidence': f'cron success rate = {success_rate}%'
+    })
+
+# ─── 규칙 3: 평균 실행시간 과다 ───
+avg_duration = cron.get('avgDurationMs', 0)
+if avg_duration > 120000:  # 2분 초과
+    proposals.append({
+        'id': 'cron-slow',
+        'priority': 'medium',
+        'metric': f'평균 {avg_duration/1000:.0f}초',
+        'description': f'크론잭 평균 실행시간 {avg_duration/1000:.0f}초. 리소스 낭비 가능성.',
+        'action': 'lightContext 활용, payload 단순화, timeout 최적화',
+        'evidence': f'avg duration = {avg_duration}ms'
+    })
+
+# ─── 규칙 4: 특정 실패 카테고리 반복 ───
+failures = metrics.get('failures', {})
+categories = failures.get('categories', {})
+if categories.get('timeout', 0) >= 3:
+    proposals.append({
+        'id': 'pattern-timeout-repeat',
+        'priority': 'high',
+        'metric': f'timeout {categories["timeout"]}건',
+        'description': f'최근 7일간 timeout 에러가 {categories["timeout"]}건 반복',
+        'action': 'timeout 값 50% 증가 또는 작업 단순화',
+        'evidence': f'failure categories: {categories}'
+    })
+if categories.get('api', 0) >= 3:
+    proposals.append({
+        'id': 'pattern-api-repeat',
+        'priority': 'medium',
+        'metric': f'API 에러 {categories["api"]}건',
+        'description': f'최근 7일간 API 관련 에러가 {categories["api"]}건 반복',
+        'action': 'API rate limit 대응 로직 추가 또는 fallback 구현',
+        'evidence': f'failure categories: {categories}'
+    })
+
+# ─── 규칙 5: 대화 완료율 저하 ───
+conv = metrics.get('conversation', {})
+completion_rate = conv.get('completionRate', 100)
+if completion_rate < 40:
+    proposals.append({
+        'id': 'conversation-completion-low',
+        'priority': 'medium',
+        'metric': f'완료율 {completion_rate:.0f}%',
+        'description': f'작업 완료율이 {completion_rate:.0f}%로 낮음. 복잡한 작업에서 실패 많음.',
+        'action': '복잡한 작업을 하위 작업으로 분할, 실패 시 자동 재시도',
+        'evidence': f'completion rate = {completion_rate}% over {conv.get("daysAnalyzed", 0)} days'
+    })
+
+# ─── 규칙 6: 메모리 비대 ───
+mem = metrics.get('memory', {})
+if mem.get('sizeKB', 0) > 20:
+    proposals.append({
+        'id': 'memory-bloat',
+        'priority': 'low',
+        'metric': f'{mem["sizeKB"]}KB',
+        'description': f'MEMORY.md가 {mem["sizeKB"]}KB. 검색 성능 저하 가능성.',
+        'action': '오래된 항목을 Obsidian Knowledge/로 아카이브',
+        'evidence': f'MEMORY.md = {mem["lines"]} lines, {mem["sizeKB"]}KB'
+    })
+
+# ─── 규칙 7: 자율 행동 비율 과소 ───
+proactive_ratio = conv.get('proactiveRatio', 0)
+if proactive_ratio < 20 and conv.get('userRequests', 0) > 10:
+    proposals.append({
+        'id': 'proactive-low',
+        'priority': 'low',
+        'metric': f'자율행동 {proactive_ratio:.0f}%',
+        'description': '프로액티브 행동 비율이 낮음. 더 적극적으로 사전 점검 필요.',
+        'action': 'heartbeat에서 정기 점검 항목 추가',
+        'evidence': f'proactive ratio = {proactive_ratio}%'
+    })
+
+# ─── 출력 ───
+if proposals:
+    proposals.sort(key=lambda x: {'high': 0, 'medium': 1, 'low': 2}.get(x['priority'], 3))
+    print(f"  📋 {len(proposals)}개 제안:")
+    for i, p in enumerate(proposals):
+        icon = {'high': '🔴', 'medium': '🟡', 'low': '🟢'}.get(p['priority'], '⚪')
+        print(f"    {icon} [{p['priority']}] {p['id']}")
+        print(f"       지표: {p['metric']}")
+        print(f"       문제: {p['description']}")
+        print(f"       제안: {p['action']}")
+        print(f"       근거: {p['evidence']}")
+        print("")
+else:
+    print(f"  ✅ 개선 제안 없음 — 모든 지표 양호")
+
+# 제안 저장 (JSON)
+state['metacognitiveProposals'] = proposals
+state['lastProposalGeneration'] = timestamp
+
+with open(state_file, 'w') as f:
+    json.dump(state, f, indent=2, ensure_ascii=False)
+
+# ─── 제안을 memory/proposals/<id>.md 파일로도 생성 ───
+proposals_dir = os.path.expanduser('~/Projects/openclaw/memory/proposals')
+os.makedirs(proposals_dir, exist_ok=True)
+
+# 제안 ID → 대상 스크립트 매핑 (휴리스틱)
+target_map = {
+    'cron-critical-errors': 'cron-audit.sh',
+    'cron-warning': 'cron-audit.sh',
+    'cron-success-rate-low': 'cron-audit.sh',
+    'cron-slow': 'cron-audit.sh',
+    'pattern-timeout-repeat': 'evolve.sh',
+    'pattern-api-repeat': 'evolve.sh',
+    'conversation-completion-low': 'metacognitive.sh',
+    'memory-bloat': 'evolve.sh',
+    'proactive-low': 'evolve.sh',
+}
+
+written_count = 0
+for p in proposals:
+    pid = p.get('id', 'unknown')
+    proposal_path = os.path.join(proposals_dir, f"{pid}.md")
+    # 같은 날짜에 이미 생성된 파일이면 skip
+    if os.path.exists(proposal_path):
+        with open(proposal_path) as pf:
+            if f"DATE: {today}" in pf.read():
+                continue
+    target = target_map.get(pid, 'evolve.sh')
+    with open(proposal_path, 'w') as pf:
+        pf.write(f"TARGET: {target}\n")
+        pf.write(f"PRIORITY: {p.get('priority', 'low')}\n")
+        pf.write(f"METRIC: {p.get('metric', 'N/A')}\n")
+        pf.write(f"DESCRIPTION: {p.get('description', '')}\n")
+        pf.write(f"ACTION: {p.get('action', '')}\n")
+        pf.write(f"EVIDENCE: {p.get('evidence', '')}\n")
+        pf.write(f"DATE: {today}\n")
+        pf.write(f"STATUS: pending\n")
+    written_count += 1
+
+if written_count > 0:
+    print(f"  📁 {written_count}개 제안 파일 생성 → memory/proposals/")
+
+# ─── 메타인지 로그에 기록 (구체적 내용) ───
+if proposals:
+    high_count = len([p for p in proposals if p['priority'] == 'high'])
+    med_count = len([p for p in proposals if p['priority'] == 'medium'])
+    low_count = len([p for p in proposals if p['priority'] == 'low'])
+    
+    with open(meta_log, 'a') as f:
+        f.write(f"\n## [{today}] 메타인지 분석\n")
+        f.write(f"- **객관적 지표**:\n")
+        f.write(f"  - 크론잭 성공률: {success_rate:.0f}%\n")
+        f.write(f"  - 대화 완료율: {completion_rate:.0f}%\n")
+        f.write(f"  - 임계 에러: {critical}개\n")
+        f.write(f"- **제안**: 🔴{high_count} 🟡{med_count} 🟢{low_count}\n")
+        for p in proposals:
+            f.write(f"  - [{p['priority']}] {p['id']}: {p['action']}\n")
+        f.write(f"- **상태**: 대기 (AI 세션에서 검토 후 적용)\n")
+
+PYEOF
+}
+
+# ─── 메인 ───
+echo "🧠 메타인지 엔진 v2 ($TODAY)"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+collect_objective_metrics
+generate_proposals
+
+echo ""
+echo "✅ 메타인지 분석 완료"
