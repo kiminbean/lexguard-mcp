@@ -36,11 +36,6 @@ EOF
 
 log_evolution() {
     local type="$1" desc="$2" impact="$3"
-    # 같은 날짜 + 같은 타입이 이미 있으면 skip (중복 방지)
-    if grep -q "## \[$TODAY\] $type" "$EVOLUTION_LOG" 2>/dev/null; then
-        echo "  ℹ️ [$TODAY] $type — 이미 기록됨, skip"
-        return 0
-    fi
     echo "" >> "$EVOLUTION_LOG"
     echo "## [$TODAY] $type" >> "$EVOLUTION_LOG"
     echo "- **설명**: $desc" >> "$EVOLUTION_LOG"

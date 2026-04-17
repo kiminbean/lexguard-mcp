@@ -349,53 +349,12 @@ if proposals:
 else:
     print(f"  ✅ 개선 제안 없음 — 모든 지표 양호")
 
-# 제안 저장 (JSON)
+# 제안 저장
 state['metacognitiveProposals'] = proposals
 state['lastProposalGeneration'] = timestamp
 
 with open(state_file, 'w') as f:
     json.dump(state, f, indent=2, ensure_ascii=False)
-
-# ─── 제안을 memory/proposals/<id>.md 파일로도 생성 ───
-proposals_dir = os.path.expanduser('~/Projects/openclaw/memory/proposals')
-os.makedirs(proposals_dir, exist_ok=True)
-
-# 제안 ID → 대상 스크립트 매핑 (휴리스틱)
-target_map = {
-    'cron-critical-errors': 'cron-audit.sh',
-    'cron-warning': 'cron-audit.sh',
-    'cron-success-rate-low': 'cron-audit.sh',
-    'cron-slow': 'cron-audit.sh',
-    'pattern-timeout-repeat': 'evolve.sh',
-    'pattern-api-repeat': 'evolve.sh',
-    'conversation-completion-low': 'metacognitive.sh',
-    'memory-bloat': 'evolve.sh',
-    'proactive-low': 'evolve.sh',
-}
-
-written_count = 0
-for p in proposals:
-    pid = p.get('id', 'unknown')
-    proposal_path = os.path.join(proposals_dir, f"{pid}.md")
-    # 같은 날짜에 이미 생성된 파일이면 skip
-    if os.path.exists(proposal_path):
-        with open(proposal_path) as pf:
-            if f"DATE: {today}" in pf.read():
-                continue
-    target = target_map.get(pid, 'evolve.sh')
-    with open(proposal_path, 'w') as pf:
-        pf.write(f"TARGET: {target}\n")
-        pf.write(f"PRIORITY: {p.get('priority', 'low')}\n")
-        pf.write(f"METRIC: {p.get('metric', 'N/A')}\n")
-        pf.write(f"DESCRIPTION: {p.get('description', '')}\n")
-        pf.write(f"ACTION: {p.get('action', '')}\n")
-        pf.write(f"EVIDENCE: {p.get('evidence', '')}\n")
-        pf.write(f"DATE: {today}\n")
-        pf.write(f"STATUS: pending\n")
-    written_count += 1
-
-if written_count > 0:
-    print(f"  📁 {written_count}개 제안 파일 생성 → memory/proposals/")
 
 # ─── 메타인지 로그에 기록 (구체적 내용) ───
 if proposals:
