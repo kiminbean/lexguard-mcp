@@ -1,0 +1,53 @@
+```diff
+--- a/scripts/notify-hyperagent.sh
++++ b/scripts/notify-hyperagent.sh
+@@ -85,20 +85,35 @@ send_telegram() {
+     local escaped
+     escaped=$(json_escape "$message")
+     local payload="{\"chat_id\":\"$TELEGRAM_CHAT_ID\",\"text\":$escaped,\"parse_mode\":\"HTML\"}"
+ 
+-    local http_code
+-    http_code=$(curl -sS -o /tmp/telegram-notify-response.json -w "%{http_code}" \
+-        -X POST "https://api.telegram.org/bot${token}/sendMessage" \
+-        -H "Content-Type: application/json" \
+-        -d "$payload" 2>/dev/null || echo "000")
++    local max_retries=3
++    local attempt=1
++    local http_code="000"
+ 
+-    if [ "$http_code" = "200" ]; then
+-        log_event "delivered" "\"httpCode\":$http_code"
+-        return 0
+-    else
+-        log_event "failed" "\"httpCode\":$http_code"
+-        return 1
+-    fi
++    while [ "$attempt" -le "$max_retries" ]; do
++        http_code=$(curl -sS -o /tmp/telegram-notify-response.json -w "%{http_code}" \
++            -X POST "https://api.telegram.org/bot${token}/sendMessage" \
++            -H "Content-Type: application/json" \
++            -d "$payload" 2>/dev/null || echo "000")
++
++        # 성공 — 즉시 반환
++        if [ "$http_code" = "200" ]; then
++            log_event "delivered" "\"httpCode\":$http_code,\"attempt\":$attempt"
++            return 0
++        fi
++
++        # 429(요청제한) 또는 5xx(서버오류)만 재시도, 나머지는 즉시 실패
++        if [[ "$http_code" =~ ^(429|5[0-9]{2})$ ]]; then
++            local delay=$((2 ** (attempt - 1)))
++            log_event "retry" "\"httpCode\":$http_code,\"attempt\":$attempt,\"delay_s\":$delay"
++            sleep "$delay"
++            attempt=$((attempt + 1))
++        else
++            break
++        fi
++    done
++
++    log_event "failed" "\"httpCode\":$http_code,\"attempts\":$attempt"
++    return 1
+ }
+ 
+ # ─── 메인: state에서 결과 추출 → 메시지 조립 ───
+```

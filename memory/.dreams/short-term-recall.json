@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-17T01:04:44.244Z",
+  "updatedAt": "2026-04-17T13:18:27.414Z",
   "entries": {
     "memory:memory/2026-04-04.md:1:37": {
       "key": "memory:memory/2026-04-04.md:1:37",
@@ -458,6 +458,99 @@
         "객관적",
         "지표로만",
         "의미"
+      ]
+    },
+    "memory:memory/2026-04-15.md:1:21": {
+      "key": "memory:memory/2026-04-15.md:1:21",
+      "path": "memory/2026-04-15.md",
+      "startLine": 1,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "# 2026-04-15 Daily Notes ## 📋 북촌 BESS 채용 모니터링 (00:31) - **결과**: 새로운 채용 공고 없음 - 북촌 BESS는 2026년 1월 27일 준공 완료, 운영 단계 - 이전 공고: 동서발전 상반기 신입 (마감), 대명에너지 안전보건관리자 (마감) - 향후 채용은 운영사 정기 채용 또는 OSM 외주 업체 통해 가능 ## 📊 일일 진화 루틴 (07:32) - evolve.sh daily: 진화 점수 **85/100** (📈 상승) - metacognitive.sh: 크론 성공률 95%, 완료율 72% - 1개 medium 제안: cron-slow (평균 122초) ## 🔔 저녁 크론 알림 정리 (22:01~23:01) - 🔴 **Vercel 배포 실패 13건 연속** (4/14~4/15) — 사용자에게 알림 전달 완료 - 🟡 에어비앤비: Dajeong님 4/17 체크인, 게스트 후기 2명 대기 - 🟡 JIRA SR-67 할당됨 (전체 연동 테스트 통신 인터페이스 구현) - ✅ bylunai.com 보안 점검 정상 - ℹ️ Anthropic $110 결제, Slack Pro 평가판 종료 - ℹ️ Nata 계정 정지 (duplicate_comment) — 4/16 03:26 해제 예정",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3207929730415344,
+      "maxScore": 0.3207929730415344,
+      "firstRecalledAt": "2026-04-17T13:18:20.792Z",
+      "lastRecalledAt": "2026-04-17T13:18:20.792Z",
+      "queryHashes": [
+        "b2ebfe2b6f5f"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "evolve.sh",
+        "85/100",
+        "metacognitive.sh",
+        "cron-slow",
+        "4/14",
+        "4/15",
+        "4/17",
+        "sr-67"
+      ]
+    },
+    "memory:memory/2026-04-14.md:1:23": {
+      "key": "memory:memory/2026-04-14.md:1:23",
+      "path": "memory/2026-04-14.md",
+      "startLine": 1,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "# 2026-04-14 (화) — 작업 로그 ## voice-to-textnote 보안 감사 + 파이프라인 버그 수정 (Codex) ### 보안 커밋: `3880788` - 타이밍 공격 방지 (`secrets.compare_digest`) - JWT 시크릿 자동 생성 + 프로덕션 보안 강제 - FTS5 검색 인젝션 방지 - `datetime.utcnow()` deprecated 해결 - 설정 값 범위 검증, 빈 파일 업로드 차단 ### 파이프라인 버그 수정 커밋: `57195c0` - 12개 파일, 322줄 추가 / 81줄 삭제 - **핵심 원인 (15분+ 에러)**: 1. 화자 분리 OOM — `torchaudio.load()` 전체 로드 → 청크별 `frame_offset`/`num_frames` 부분 로드로 변경 2. 15분 경계 오프바이원 — `> threshold` → `>= threshold` 3. 오버랩 세그먼트 잘못 폐기 → 오버랩 구간만 잘라내고 나머지 유지 - 파이프라인 안정성: 선행 STT/DIA 실패 무시 문제, 재시도 시 원본 삭제, 화자 매칭 알고리즘 재작성, 메모리 누수, 오디오 길이 측정 개선, 인접 세그먼트 미병합 - API: 실패 시 `error_message` 필드 일관 반환 ## web_fetch_js — SPA 렌더링 웹 스크래퍼 신규 제작 - `web_fetch` 도구가 JS",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3093827903270721,
+      "maxScore": 0.3093827903270721,
+      "firstRecalledAt": "2026-04-17T13:18:20.792Z",
+      "lastRecalledAt": "2026-04-17T13:18:20.792Z",
+      "queryHashes": [
+        "b2ebfe2b6f5f"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "voice-to-textnote",
+        "secrets.compare-digest",
+        "datetime.utcnow",
+        "torchaudio.load",
+        "frame-offset",
+        "num-frames",
+        "stt/dia",
+        "error-message"
+      ]
+    },
+    "memory:memory/2026-04-17.md:1:7": {
+      "key": "memory:memory/2026-04-17.md:1:7",
+      "path": "memory/2026-04-17.md",
+      "startLine": 1,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "# 2026-04-17 Daily Notes ## 📊 아침 크론 결과 (07:32) - 오늘은 금요일 - Vercel 배포 실패 지속 (관찰 중) - Dajeong님 오늘 체크인 예정 - 관현님 후기 작성 필요",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.30431329011917113,
+      "maxScore": 0.30431329011917113,
+      "firstRecalledAt": "2026-04-17T13:18:27.414Z",
+      "lastRecalledAt": "2026-04-17T13:18:27.414Z",
+      "queryHashes": [
+        "4ab348814a27"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "아침",
+        "크론",
+        "결과",
+        "오늘은",
+        "금요일",
+        "vercel",
+        "배포",
+        "실패"
       ]
     }
   }

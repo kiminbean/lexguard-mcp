@@ -1,0 +1,23 @@
+{
+  "id": "0002",
+  "parent": "0001",
+  "timestamp": "2026-04-17T21:52:50Z",
+  "score": 74,
+  "reason": "applied:mutation-notify-hyperagent-20260418_065147",
+  "snapshotCount": 11,
+  "scriptHashes": {
+    "archive.sh": "4cd4ca6e1128a40efb7bed058475c651ab95cd2c4c7289570a912312336df7ed",
+    "auto-skill.sh": "9a054141eeb6b400ac97a015592ce1bac36654eee2c74b50c601803f9222ddbd",
+    "benchmark.sh": "90b36b6966adc6ff18badf79843ca00fa9b50687b13fa52dcdec7b2d5ce27e9c",
+    "cron-audit.sh": "9d785939ffc0d1426652152caee19d0e422299590c544c4ebccd0534bf6c3a7e",
+    "evolve.sh": "bffc1a8246b7458a935af57435a4f8b13ae6f43a056b8007d7232f7454a2ebe6",
+    "metacognitive.sh": "76e7e1a09bea196feca903a8a8096574d77fc1193c0d54e2ad929d4501241a5d",
+    "notify-hyperagent.sh": "3b2cc00524d60f2354124ae7fff48d2e8dc72ebecc3aee86c7bf1825d246461a",
+    "prediction-tracker.sh": "22deac272b755b7b865b83d81c53a404d736c59453bbf296f9daa5a311fec429",
+    "propose-mutation.sh": "111baf2c6e1218f4b84cfe3cd9c43d09d11d26cf27631426902e09296e7e1a9f",
+    "select-parent.sh": "63c7ff2531959f15f6e383c322685e5fdd802e1afb27b605ac533325df4d2782",
+    "self-modify.sh": "b0e4870fe76c8dc3f42937d5c0d083dae59b659c44529b20df66a5c1658af4fe"
+  },
+  "benchmark": {},
+  "children": []
+}

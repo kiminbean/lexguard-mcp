@@ -14,582 +14,6 @@
         "delivered": false
       },
       {
-        "name": "Gateway",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "달력",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "bylunai.com",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "하트비트:",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "X(Twitter)",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Reddit",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "macOS",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "북촌",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GeekNews",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Moltbook",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GitHub",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "AI",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "타로",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "OpenClaw",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "HuggingFace",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "ai-customer-support",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      }
-    ]
-  },
-  {
-    "date": "2026-04-12",
-    "total": 17,
-    "active": 17,
-    "problems": 0,
-    "details": [
-      {
-        "name": "Name",
-        "value": "❓ 미확인",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Gateway",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "달력",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "bylunai.com",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "하트비트:",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "X(Twitter)",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Reddit",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "macOS",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "북촌",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GeekNews",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Moltbook",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GitHub",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "AI",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "타로",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "OpenClaw",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "HuggingFace",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "ai-customer-support",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      }
-    ]
-  },
-  {
-    "date": "2026-04-12",
-    "total": 17,
-    "active": 17,
-    "problems": 0,
-    "details": [
-      {
-        "name": "Name",
-        "value": "❓ 미확인",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Gateway",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "달력",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "bylunai.com",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "하트비트:",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "X(Twitter)",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Reddit",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "macOS",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "북촌",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GeekNews",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Moltbook",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GitHub",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "AI",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "타로",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "OpenClaw",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "HuggingFace",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "ai-customer-support",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      }
-    ]
-  },
-  {
-    "date": "2026-04-12",
-    "total": 17,
-    "active": 17,
-    "problems": 0,
-    "details": [
-      {
-        "name": "Name",
-        "value": "❓ 미확인",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Gateway",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "달력",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "bylunai.com",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "하트비트:",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "X(Twitter)",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Reddit",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "macOS",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "북촌",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GeekNews",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "Moltbook",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "GitHub",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "AI",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "타로",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "OpenClaw",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "HuggingFace",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
-        "name": "ai-customer-support",
-        "value": "⚪ 자동",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      }
-    ]
-  },
-  {
-    "date": "2026-04-12",
-    "total": 17,
-    "active": 17,
-    "problems": 0,
-    "details": [
-      {
-        "name": "Name",
-        "value": "❓ 미확인",
-        "enabled": true,
-        "errors": 0,
-        "duration_s": 0.0,
-        "delivered": false
-      },
-      {
         "name": "X(Twitter)",
         "value": "⚪ 자동",
         "enabled": true,
@@ -4764,6 +4188,850 @@
         "errors": 0,
         "duration_s": 0.0,
         "delivered": false
+      }
+    ]
+  },
+  {
+    "date": "2026-04-18",
+    "timestamp": "2026-04-17T20:49:41Z",
+    "total": 20,
+    "active": 20,
+    "severe": 0,
+    "warning": 0,
+    "schemaVersion": 3,
+    "details": [
+      {
+        "id": "17bd5db1-6ecf-449f-9997-dd9378ea016a",
+        "name": "Gateway Watchdog (15분마다)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 32.0,
+        "delivered": false,
+        "lastRunAtMs": 1776458551368
+      },
+      {
+        "id": "7e932a00-e857-47d9-94d1-23dd0ede2357",
+        "name": "HyperAgents 진화 루프 (매일)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 41.5,
+        "delivered": false,
+        "lastRunAtMs": 1776373200014
+      },
+      {
+        "id": "ac956e51-fb83-45d9-98f0-19e0c17fcbac",
+        "name": "하트비트: 시스템 상태 확인 (30분)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 25.4,
+        "delivered": true,
+        "lastRunAtMs": 1776452542563
+      },
+      {
+        "id": "0f7671a1-b35f-4b1f-b4c8-7ff36167f528",
+        "name": "달력 오늘 일정 (매일 아침)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 35.2,
+        "delivered": true,
+        "lastRunAtMs": 1776378600009
+      },
+      {
+        "id": "4a680cc9-8a26-4ed6-bc24-fad16213fa66",
+        "name": "bylunai.com 보안 점검 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 9.9,
+        "delivered": true,
+        "lastRunAtMs": 1776380430129
+      },
+      {
+        "id": "853b8a73-481d-4264-970a-aa3a595337d9",
+        "name": "이메일 정기 확인 (3시간)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 53.7,
+        "delivered": true,
+        "lastRunAtMs": 1776434400016
+      },
+      {
+        "id": "6ba26820-f3bc-4745-94a9-efc916003419",
+        "name": "X(Twitter) 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 19.8,
+        "delivered": true,
+        "lastRunAtMs": 1776382800015
+      },
+      {
+        "id": "34bcb2fb-92b1-4b7b-803d-999513e50f59",
+        "name": "Reddit 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 70.9,
+        "delivered": true,
+        "lastRunAtMs": 1776383400015
+      },
+      {
+        "id": "d9700a04-ec30-4d86-a845-c5478c93d6aa",
+        "name": "북촌 BESS 채용 모니터링",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 65.6,
+        "delivered": true,
+        "lastRunAtMs": 1776384000015
+      },
+      {
+        "id": "e89474ff-379a-4565-99a4-0ec38d26983b",
+        "name": "GitHub 트렌딩 데일리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 14.2,
+        "delivered": true,
+        "lastRunAtMs": 1776385800014
+      },
+      {
+        "id": "0e06b3e0-450c-4709-a802-8b23dff837d5",
+        "name": "MoltGram 스마트 홍보 (하루 3회)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 82.0,
+        "delivered": true,
+        "lastRunAtMs": 1776427261109
+      },
+      {
+        "id": "94926823-12ec-4739-b210-6826e9b3989e",
+        "name": "Moltbook 인기글 다이제스트",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 46.4,
+        "delivered": false,
+        "lastRunAtMs": 1776452718509
+      },
+      {
+        "id": "26500703-bb82-41d2-beeb-537972cc94f7",
+        "name": "AI Marketer 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 305.8,
+        "delivered": true,
+        "lastRunAtMs": 1776391289919
+      },
+      {
+        "id": "cba11daf-af9d-41d6-9362-07e466b0f8ad",
+        "name": "타로 심리상담 사이트 데일리 점검 및 개선",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 187.7,
+        "delivered": true,
+        "lastRunAtMs": 1776402086394
+      },
+      {
+        "id": "d7a79807-bbcb-495a-b50e-93f6fef0f208",
+        "name": "Voice-to-TextNote 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 228.6,
+        "delivered": true,
+        "lastRunAtMs": 1776407400013
+      },
+      {
+        "id": "64074131-2a62-496e-b69d-5c43c465d39e",
+        "name": "ROS2 데일리 강의",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 61.1,
+        "delivered": true,
+        "lastRunAtMs": 1776427200040
+      },
+      {
+        "id": "b89b7b56-8ab7-4d09-ac8d-7acd690a27fb",
+        "name": "Obsidian 일일 동기화",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 55.9,
+        "delivered": true,
+        "lastRunAtMs": 1776431880012
+      },
+      {
+        "id": "1398b2d0-c98e-4bee-b079-27346132ab19",
+        "name": "OpenClaw 자동 업데이트 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 11.9,
+        "delivered": true,
+        "lastRunAtMs": 1776457791380
+      },
+      {
+        "id": "e6bbc483-9ca0-4c71-a7fe-26d066c1ff1a",
+        "name": "HyperAgents 주간 진화 (일요일)",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false,
+        "lastRunAtMs": 0
+      },
+      {
+        "id": "eee1c1ea-5e49-4735-984a-dc237eea9a4e",
+        "name": "HuggingFace 트렌딩 위클리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 84.7,
+        "delivered": true,
+        "lastRunAtMs": 1776393000028
+      }
+    ]
+  },
+  {
+    "date": "2026-04-18",
+    "timestamp": "2026-04-17T21:16:17Z",
+    "total": 20,
+    "active": 20,
+    "severe": 0,
+    "warning": 0,
+    "schemaVersion": 3,
+    "details": [
+      {
+        "id": "17bd5db1-6ecf-449f-9997-dd9378ea016a",
+        "name": "Gateway Watchdog (15분마다)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 54.6,
+        "delivered": false,
+        "lastRunAtMs": 1776460351388
+      },
+      {
+        "id": "0f7671a1-b35f-4b1f-b4c8-7ff36167f528",
+        "name": "달력 오늘 일정 (매일 아침)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 35.2,
+        "delivered": true,
+        "lastRunAtMs": 1776378600009
+      },
+      {
+        "id": "4a680cc9-8a26-4ed6-bc24-fad16213fa66",
+        "name": "bylunai.com 보안 점검 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 9.9,
+        "delivered": true,
+        "lastRunAtMs": 1776380430129
+      },
+      {
+        "id": "853b8a73-481d-4264-970a-aa3a595337d9",
+        "name": "이메일 정기 확인 (3시간)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 53.7,
+        "delivered": true,
+        "lastRunAtMs": 1776434400016
+      },
+      {
+        "id": "ac956e51-fb83-45d9-98f0-19e0c17fcbac",
+        "name": "하트비트: 시스템 상태 확인 (30분)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 30.8,
+        "delivered": true,
+        "lastRunAtMs": 1776459742570
+      },
+      {
+        "id": "6ba26820-f3bc-4745-94a9-efc916003419",
+        "name": "X(Twitter) 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 19.8,
+        "delivered": true,
+        "lastRunAtMs": 1776382800015
+      },
+      {
+        "id": "34bcb2fb-92b1-4b7b-803d-999513e50f59",
+        "name": "Reddit 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 70.9,
+        "delivered": true,
+        "lastRunAtMs": 1776383400015
+      },
+      {
+        "id": "d9700a04-ec30-4d86-a845-c5478c93d6aa",
+        "name": "북촌 BESS 채용 모니터링",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 65.6,
+        "delivered": true,
+        "lastRunAtMs": 1776384000015
+      },
+      {
+        "id": "e89474ff-379a-4565-99a4-0ec38d26983b",
+        "name": "GitHub 트렌딩 데일리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 14.2,
+        "delivered": true,
+        "lastRunAtMs": 1776385800014
+      },
+      {
+        "id": "0e06b3e0-450c-4709-a802-8b23dff837d5",
+        "name": "MoltGram 스마트 홍보 (하루 3회)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 82.0,
+        "delivered": true,
+        "lastRunAtMs": 1776427261109
+      },
+      {
+        "id": "94926823-12ec-4739-b210-6826e9b3989e",
+        "name": "Moltbook 인기글 다이제스트",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 46.4,
+        "delivered": false,
+        "lastRunAtMs": 1776452718509
+      },
+      {
+        "id": "26500703-bb82-41d2-beeb-537972cc94f7",
+        "name": "AI Marketer 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 305.8,
+        "delivered": true,
+        "lastRunAtMs": 1776391289919
+      },
+      {
+        "id": "cba11daf-af9d-41d6-9362-07e466b0f8ad",
+        "name": "타로 심리상담 사이트 데일리 점검 및 개선",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 187.7,
+        "delivered": true,
+        "lastRunAtMs": 1776402086394
+      },
+      {
+        "id": "d7a79807-bbcb-495a-b50e-93f6fef0f208",
+        "name": "Voice-to-TextNote 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 228.6,
+        "delivered": true,
+        "lastRunAtMs": 1776407400013
+      },
+      {
+        "id": "64074131-2a62-496e-b69d-5c43c465d39e",
+        "name": "ROS2 데일리 강의",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 61.1,
+        "delivered": true,
+        "lastRunAtMs": 1776427200040
+      },
+      {
+        "id": "b89b7b56-8ab7-4d09-ac8d-7acd690a27fb",
+        "name": "Obsidian 일일 동기화",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 55.9,
+        "delivered": true,
+        "lastRunAtMs": 1776431880012
+      },
+      {
+        "id": "1398b2d0-c98e-4bee-b079-27346132ab19",
+        "name": "OpenClaw 자동 업데이트 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 11.9,
+        "delivered": true,
+        "lastRunAtMs": 1776457791380
+      },
+      {
+        "id": "7e932a00-e857-47d9-94d1-23dd0ede2357",
+        "name": "HyperAgents 진화 루프 (매일)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 45.3,
+        "delivered": false,
+        "lastRunAtMs": 1776459600015
+      },
+      {
+        "id": "e6bbc483-9ca0-4c71-a7fe-26d066c1ff1a",
+        "name": "HyperAgents 주간 진화 (일요일)",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false,
+        "lastRunAtMs": 0
+      },
+      {
+        "id": "eee1c1ea-5e49-4735-984a-dc237eea9a4e",
+        "name": "HuggingFace 트렌딩 위클리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 84.7,
+        "delivered": true,
+        "lastRunAtMs": 1776393000028
+      }
+    ]
+  },
+  {
+    "date": "2026-04-18",
+    "timestamp": "2026-04-17T21:16:33Z",
+    "total": 20,
+    "active": 20,
+    "severe": 0,
+    "warning": 0,
+    "schemaVersion": 3,
+    "details": [
+      {
+        "id": "17bd5db1-6ecf-449f-9997-dd9378ea016a",
+        "name": "Gateway Watchdog (15분마다)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 54.6,
+        "delivered": false,
+        "lastRunAtMs": 1776460351388
+      },
+      {
+        "id": "0f7671a1-b35f-4b1f-b4c8-7ff36167f528",
+        "name": "달력 오늘 일정 (매일 아침)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 35.2,
+        "delivered": true,
+        "lastRunAtMs": 1776378600009
+      },
+      {
+        "id": "4a680cc9-8a26-4ed6-bc24-fad16213fa66",
+        "name": "bylunai.com 보안 점검 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 9.9,
+        "delivered": true,
+        "lastRunAtMs": 1776380430129
+      },
+      {
+        "id": "853b8a73-481d-4264-970a-aa3a595337d9",
+        "name": "이메일 정기 확인 (3시간)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 53.7,
+        "delivered": true,
+        "lastRunAtMs": 1776434400016
+      },
+      {
+        "id": "ac956e51-fb83-45d9-98f0-19e0c17fcbac",
+        "name": "하트비트: 시스템 상태 확인 (30분)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 30.8,
+        "delivered": true,
+        "lastRunAtMs": 1776459742570
+      },
+      {
+        "id": "6ba26820-f3bc-4745-94a9-efc916003419",
+        "name": "X(Twitter) 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 19.8,
+        "delivered": true,
+        "lastRunAtMs": 1776382800015
+      },
+      {
+        "id": "34bcb2fb-92b1-4b7b-803d-999513e50f59",
+        "name": "Reddit 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 70.9,
+        "delivered": true,
+        "lastRunAtMs": 1776383400015
+      },
+      {
+        "id": "d9700a04-ec30-4d86-a845-c5478c93d6aa",
+        "name": "북촌 BESS 채용 모니터링",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 65.6,
+        "delivered": true,
+        "lastRunAtMs": 1776384000015
+      },
+      {
+        "id": "e89474ff-379a-4565-99a4-0ec38d26983b",
+        "name": "GitHub 트렌딩 데일리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 14.2,
+        "delivered": true,
+        "lastRunAtMs": 1776385800014
+      },
+      {
+        "id": "0e06b3e0-450c-4709-a802-8b23dff837d5",
+        "name": "MoltGram 스마트 홍보 (하루 3회)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 82.0,
+        "delivered": true,
+        "lastRunAtMs": 1776427261109
+      },
+      {
+        "id": "94926823-12ec-4739-b210-6826e9b3989e",
+        "name": "Moltbook 인기글 다이제스트",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 46.4,
+        "delivered": false,
+        "lastRunAtMs": 1776452718509
+      },
+      {
+        "id": "26500703-bb82-41d2-beeb-537972cc94f7",
+        "name": "AI Marketer 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 305.8,
+        "delivered": true,
+        "lastRunAtMs": 1776391289919
+      },
+      {
+        "id": "cba11daf-af9d-41d6-9362-07e466b0f8ad",
+        "name": "타로 심리상담 사이트 데일리 점검 및 개선",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 187.7,
+        "delivered": true,
+        "lastRunAtMs": 1776402086394
+      },
+      {
+        "id": "d7a79807-bbcb-495a-b50e-93f6fef0f208",
+        "name": "Voice-to-TextNote 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 228.6,
+        "delivered": true,
+        "lastRunAtMs": 1776407400013
+      },
+      {
+        "id": "64074131-2a62-496e-b69d-5c43c465d39e",
+        "name": "ROS2 데일리 강의",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 61.1,
+        "delivered": true,
+        "lastRunAtMs": 1776427200040
+      },
+      {
+        "id": "b89b7b56-8ab7-4d09-ac8d-7acd690a27fb",
+        "name": "Obsidian 일일 동기화",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 55.9,
+        "delivered": true,
+        "lastRunAtMs": 1776431880012
+      },
+      {
+        "id": "1398b2d0-c98e-4bee-b079-27346132ab19",
+        "name": "OpenClaw 자동 업데이트 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 11.9,
+        "delivered": true,
+        "lastRunAtMs": 1776457791380
+      },
+      {
+        "id": "7e932a00-e857-47d9-94d1-23dd0ede2357",
+        "name": "HyperAgents 진화 루프 (매일)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 45.3,
+        "delivered": false,
+        "lastRunAtMs": 1776459600015
+      },
+      {
+        "id": "e6bbc483-9ca0-4c71-a7fe-26d066c1ff1a",
+        "name": "HyperAgents 주간 진화 (일요일)",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false,
+        "lastRunAtMs": 0
+      },
+      {
+        "id": "eee1c1ea-5e49-4735-984a-dc237eea9a4e",
+        "name": "HuggingFace 트렌딩 위클리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 84.7,
+        "delivered": true,
+        "lastRunAtMs": 1776393000028
+      }
+    ]
+  },
+  {
+    "date": "2026-04-18",
+    "timestamp": "2026-04-17T21:28:40Z",
+    "total": 20,
+    "active": 20,
+    "severe": 0,
+    "warning": 0,
+    "schemaVersion": 3,
+    "details": [
+      {
+        "id": "17bd5db1-6ecf-449f-9997-dd9378ea016a",
+        "name": "Gateway Watchdog (15분마다)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 46.0,
+        "delivered": false,
+        "lastRunAtMs": 1776461251407
+      },
+      {
+        "id": "0f7671a1-b35f-4b1f-b4c8-7ff36167f528",
+        "name": "달력 오늘 일정 (매일 아침)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 35.2,
+        "delivered": true,
+        "lastRunAtMs": 1776378600009
+      },
+      {
+        "id": "4a680cc9-8a26-4ed6-bc24-fad16213fa66",
+        "name": "bylunai.com 보안 점검 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 9.9,
+        "delivered": true,
+        "lastRunAtMs": 1776380430129
+      },
+      {
+        "id": "853b8a73-481d-4264-970a-aa3a595337d9",
+        "name": "이메일 정기 확인 (3시간)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 53.7,
+        "delivered": true,
+        "lastRunAtMs": 1776434400016
+      },
+      {
+        "id": "ac956e51-fb83-45d9-98f0-19e0c17fcbac",
+        "name": "하트비트: 시스템 상태 확인 (30분)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 30.8,
+        "delivered": true,
+        "lastRunAtMs": 1776459742570
+      },
+      {
+        "id": "6ba26820-f3bc-4745-94a9-efc916003419",
+        "name": "X(Twitter) 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 19.8,
+        "delivered": true,
+        "lastRunAtMs": 1776382800015
+      },
+      {
+        "id": "34bcb2fb-92b1-4b7b-803d-999513e50f59",
+        "name": "Reddit 데일리 핫이슈",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 70.9,
+        "delivered": true,
+        "lastRunAtMs": 1776383400015
+      },
+      {
+        "id": "d9700a04-ec30-4d86-a845-c5478c93d6aa",
+        "name": "북촌 BESS 채용 모니터링",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 65.6,
+        "delivered": true,
+        "lastRunAtMs": 1776384000015
+      },
+      {
+        "id": "e89474ff-379a-4565-99a4-0ec38d26983b",
+        "name": "GitHub 트렌딩 데일리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 14.2,
+        "delivered": true,
+        "lastRunAtMs": 1776385800014
+      },
+      {
+        "id": "0e06b3e0-450c-4709-a802-8b23dff837d5",
+        "name": "MoltGram 스마트 홍보 (하루 3회)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 82.0,
+        "delivered": true,
+        "lastRunAtMs": 1776427261109
+      },
+      {
+        "id": "94926823-12ec-4739-b210-6826e9b3989e",
+        "name": "Moltbook 인기글 다이제스트",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 46.4,
+        "delivered": false,
+        "lastRunAtMs": 1776452718509
+      },
+      {
+        "id": "26500703-bb82-41d2-beeb-537972cc94f7",
+        "name": "AI Marketer 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 305.8,
+        "delivered": true,
+        "lastRunAtMs": 1776391289919
+      },
+      {
+        "id": "cba11daf-af9d-41d6-9362-07e466b0f8ad",
+        "name": "타로 심리상담 사이트 데일리 점검 및 개선",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 187.7,
+        "delivered": true,
+        "lastRunAtMs": 1776402086394
+      },
+      {
+        "id": "d7a79807-bbcb-495a-b50e-93f6fef0f208",
+        "name": "Voice-to-TextNote 데일리 점검·개선·보안감사",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 228.6,
+        "delivered": true,
+        "lastRunAtMs": 1776407400013
+      },
+      {
+        "id": "64074131-2a62-496e-b69d-5c43c465d39e",
+        "name": "ROS2 데일리 강의",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 61.1,
+        "delivered": true,
+        "lastRunAtMs": 1776427200040
+      },
+      {
+        "id": "b89b7b56-8ab7-4d09-ac8d-7acd690a27fb",
+        "name": "Obsidian 일일 동기화",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 55.9,
+        "delivered": true,
+        "lastRunAtMs": 1776431880012
+      },
+      {
+        "id": "1398b2d0-c98e-4bee-b079-27346132ab19",
+        "name": "OpenClaw 자동 업데이트 (매일)",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 11.9,
+        "delivered": true,
+        "lastRunAtMs": 1776457791380
+      },
+      {
+        "id": "7e932a00-e857-47d9-94d1-23dd0ede2357",
+        "name": "HyperAgents 진화 루프 (매일)",
+        "value": "⚪ 자동",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 45.3,
+        "delivered": false,
+        "lastRunAtMs": 1776459600015
+      },
+      {
+        "id": "e6bbc483-9ca0-4c71-a7fe-26d066c1ff1a",
+        "name": "HyperAgents 주간 진화 (일요일)",
+        "value": "❓ 미확인",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 0.0,
+        "delivered": false,
+        "lastRunAtMs": 0
+      },
+      {
+        "id": "eee1c1ea-5e49-4735-984a-dc237eea9a4e",
+        "name": "HuggingFace 트렌딩 위클리",
+        "value": "🟢 활성",
+        "enabled": true,
+        "errors": 0,
+        "duration_s": 84.7,
+        "delivered": true,
+        "lastRunAtMs": 1776393000028
       }
     ]
   }
