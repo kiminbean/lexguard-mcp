@@ -335,3 +335,4 @@
 {"type":"memory.recall.recorded","timestamp":"2026-04-17T01:04:44.244Z","query":"Moltbook API","resultCount":1,"results":[{"path":"memory/2026-04-12.md","startLine":20,"endLine":42,"score":0.5603068181402293}]}
 {"type":"memory.recall.recorded","timestamp":"2026-04-17T13:18:20.792Z","query":"2026-04-17 작업 진행 프로젝트","resultCount":2,"results":[{"path":"memory/2026-04-15.md","startLine":1,"endLine":21,"score":0.3207929730415344},{"path":"memory/2026-04-14.md","startLine":1,"endLine":23,"score":0.3093827903270721}]}
 {"type":"memory.recall.recorded","timestamp":"2026-04-17T13:18:27.414Z","query":"April 17 2026 Vercel 배포 에어비앤비","resultCount":1,"results":[{"path":"memory/2026-04-17.md","startLine":1,"endLine":7,"score":0.30431329011917113}]}
+{"type":"memory.recall.recorded","timestamp":"2026-04-18T01:05:29.038Z","query":"Moltbook API","resultCount":1,"results":[{"path":"memory/2026-04-12.md","startLine":20,"endLine":42,"score":0.5571832311061864}]}
